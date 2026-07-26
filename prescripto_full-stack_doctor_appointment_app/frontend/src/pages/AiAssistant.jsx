@@ -20,7 +20,19 @@ const AiAssistant = () => {
     const [selectedSpecialty, setSelectedSpecialty] = useState('All');
     const [selectedLanguage, setSelectedLanguage] = useState('English');
     // Mobile: sidebar closed by default; Desktop: open by default
+    const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
     const [sidebarOpen, setSidebarOpen] = useState(typeof window !== 'undefined' ? window.innerWidth >= 768 : true);
+
+    // Track viewport changes
+    React.useEffect(() => {
+        const handler = () => {
+            const mobile = window.innerWidth < 768;
+            setIsMobile(mobile);
+            if (!mobile && !sidebarOpen) setSidebarOpen(false); // keep as-is on desktop
+        };
+        window.addEventListener('resize', handler);
+        return () => window.removeEventListener('resize', handler);
+    }, []);
 
     // Sessions State Management: Each conversation is a full multi-turn session
     const [sessions, setSessions] = useState([
@@ -271,17 +283,28 @@ const AiAssistant = () => {
             {/* LEFT SIDEBAR (ChatGPT Style Layout)                            */}
             {/* ════════════════════════════════════════════════════════════════ */}
             {/* Mobile overlay backdrop */}
-            {sidebarOpen && (
+            {sidebarOpen && isMobile && (
                 <div
-                    className="fixed inset-0 bg-black/60 z-30 md:hidden"
+                    className="fixed inset-0 bg-black/60 z-30"
                     onClick={() => setSidebarOpen(false)}
                 />
             )}
-            <div className={`${
-                sidebarOpen
-                    ? 'w-64 translate-x-0'
-                    : 'w-0 -translate-x-full md:translate-x-0 md:w-16'
-            } fixed md:relative top-0 left-0 h-full transition-all duration-300 bg-[#202123] border-r border-[#303030] flex flex-col justify-between z-40 shrink-0 overflow-hidden`}>
+            {/* SIDEBAR — fixed overlay on mobile, in-flow on desktop */}
+            <div
+                style={{
+                    position: isMobile ? 'fixed' : 'relative',
+                    top: isMobile ? 0 : 'auto',
+                    left: isMobile ? 0 : 'auto',
+                    height: isMobile ? '100vh' : '100%',
+                    width: sidebarOpen ? '256px' : (isMobile ? '0' : '64px'),
+                    transform: isMobile && !sidebarOpen ? 'translateX(-100%)' : 'translateX(0)',
+                    zIndex: isMobile ? 40 : 'auto',
+                    flexShrink: 0,
+                    overflow: 'hidden',
+                    transition: 'width 0.3s ease, transform 0.3s ease',
+                }}
+                className="bg-[#202123] border-r border-[#303030] flex flex-col justify-between"
+            >
                 <div className="p-3 flex flex-col gap-2 overflow-y-auto max-h-[calc(100vh-80px)]">
                     {/* Top Sidebar Header */}
                     <div className="flex items-center justify-between px-2 py-1 mb-1">
