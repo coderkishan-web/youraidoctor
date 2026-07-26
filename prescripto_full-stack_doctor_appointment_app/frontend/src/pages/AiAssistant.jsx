@@ -439,12 +439,13 @@ const AiAssistant = () => {
                         </span>
                     </div>
 
-                    <div className="flex items-center gap-1 bg-[#2A2B32] px-2 py-1.5 rounded-lg border border-[#3E3F4B] text-xs shrink-0">
+                    <div className="relative flex items-center gap-1 bg-[#2A2B32] px-2 py-1.5 rounded-lg border border-[#3E3F4B] text-xs shrink-0">
                         <span className="text-gray-400 hidden sm:block">🌐</span>
                         <select
                             value={selectedLanguage}
                             onChange={(e) => setSelectedLanguage(e.target.value)}
-                            className="bg-transparent font-semibold text-white focus:outline-none cursor-pointer text-xs max-w-[80px] sm:max-w-[120px]"
+                            className="bg-transparent font-semibold text-white focus:outline-none cursor-pointer text-xs max-w-[72px] sm:max-w-[110px]"
+                            style={{ direction: 'ltr' }}
                         >
                             {languages.map(l => (
                                 <option key={l} value={l} className="bg-[#212121] text-white">{l}</option>
@@ -473,50 +474,60 @@ const AiAssistant = () => {
 
                 {/* STAGE 1: MAIN DIAGNOSTIC CHAT */}
                 {activeTab === 'chat' && (
-                    <div className="flex-1 flex flex-col justify-between overflow-hidden">
+                    <div className="flex-1 flex flex-col overflow-hidden min-h-0">
                         {messages.length === 0 ? (
-                            <div className="flex-1 flex flex-col items-center justify-center px-4 py-6 text-center max-w-3xl mx-auto w-full space-y-6">
-                                <div>
-                                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-blue-600 flex items-center justify-center text-2xl md:text-3xl mx-auto mb-3 shadow-lg">
+                            /* ── WELCOME SCREEN: No-scroll one-fold layout on mobile ── */
+                            <div className="flex-1 flex flex-col items-center justify-between px-3 pt-3 pb-1 md:justify-center md:px-8 md:pt-8 md:pb-6 text-center max-w-3xl mx-auto w-full">
+                                {/* Top: icon + heading + subtitle */}
+                                <div className="flex flex-col items-center gap-1 md:gap-3 md:mb-4">
+                                    <div className="w-9 h-9 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-blue-600 flex items-center justify-center text-lg md:text-3xl shadow-lg">
                                         👨‍⚕️
                                     </div>
-                                    <h2 className="text-xl md:text-3xl font-bold text-white mb-2 leading-tight">What's on your mind today, {userName.split(' ')[0]}?</h2>
-                                    <p className="text-xs md:text-sm text-gray-400 max-w-xs md:max-w-full mx-auto">Describe any symptom or health question. I am your 24/7 Personal Family Doctor.</p>
+                                    <div>
+                                        <h2 className="text-base md:text-3xl font-bold text-white leading-tight">
+                                            What's on your mind, <span className="text-blue-400">{userName.split(' ')[0]}</span>?
+                                        </h2>
+                                        <p className="text-[10px] md:text-sm text-gray-500 mt-0.5">Your 24/7 AI Personal Family Doctor</p>
+                                    </div>
                                 </div>
 
-                                <div className="grid grid-cols-2 gap-2 md:gap-3 w-full text-left">
+                                {/* Middle: 2x2 quick-action cards */}
+                                <div className="grid grid-cols-2 gap-1.5 md:gap-3 w-full text-left my-2 md:my-6">
                                     <button
                                         onClick={() => { setChatInput("I have a headache and mild fever since morning"); }}
-                                        className="p-3 md:p-4 bg-[#2A2B32] hover:bg-[#343541] border border-[#3E3F4B] rounded-xl transition group text-left"
+                                        className="p-2 md:p-4 bg-[#2A2B32] hover:bg-[#343541] active:bg-[#343541] border border-[#3E3F4B] rounded-xl transition group text-left"
                                     >
-                                        <p className="text-xs md:text-sm font-bold text-white mb-1 group-hover:text-blue-400">🩺 Symptom Checkup</p>
-                                        <p className="text-[10px] md:text-xs text-gray-400 line-clamp-2">"I have a headache and mild fever since morning"</p>
+                                        <p className="text-[11px] md:text-sm font-bold text-white group-hover:text-blue-400 leading-tight">🩺 Symptom Checkup</p>
+                                        <p className="text-[9px] md:text-xs text-gray-500 mt-0.5 leading-tight">Headache, fever, pain...</p>
                                     </button>
 
                                     <button
                                         onClick={() => { setActiveTab('scanner'); }}
-                                        className="p-3 md:p-4 bg-[#2A2B32] hover:bg-[#343541] border border-[#3E3F4B] rounded-xl transition group text-left"
+                                        className="p-2 md:p-4 bg-[#2A2B32] hover:bg-[#343541] active:bg-[#343541] border border-[#3E3F4B] rounded-xl transition group text-left"
                                     >
-                                        <p className="text-xs md:text-sm font-bold text-white mb-1 group-hover:text-blue-400">📷 Scan Medicine</p>
-                                        <p className="text-[10px] md:text-xs text-gray-400 line-clamp-2">Check dosage, active ingredients & precautions</p>
+                                        <p className="text-[11px] md:text-sm font-bold text-white group-hover:text-blue-400 leading-tight">📷 Scan Medicine</p>
+                                        <p className="text-[9px] md:text-xs text-gray-500 mt-0.5 leading-tight">Dosage & ingredients</p>
                                     </button>
 
                                     <button
                                         onClick={() => { setActiveTab('vitals'); }}
-                                        className="p-3 md:p-4 bg-[#2A2B32] hover:bg-[#343541] border border-[#3E3F4B] rounded-xl transition group text-left"
+                                        className="p-2 md:p-4 bg-[#2A2B32] hover:bg-[#343541] active:bg-[#343541] border border-[#3E3F4B] rounded-xl transition group text-left"
                                     >
-                                        <p className="text-xs md:text-sm font-bold text-white mb-1 group-hover:text-emerald-400">📊 Log Vitals</p>
-                                        <p className="text-[10px] md:text-xs text-gray-400 line-clamp-2">Record daily health readings and view history</p>
+                                        <p className="text-[11px] md:text-sm font-bold text-white group-hover:text-emerald-400 leading-tight">📊 Log Vitals</p>
+                                        <p className="text-[9px] md:text-xs text-gray-500 mt-0.5 leading-tight">BP, glucose & history</p>
                                     </button>
 
                                     <button
                                         onClick={() => { setActiveTab('emergency'); }}
-                                        className="p-3 md:p-4 bg-[#2A2B32] hover:bg-[#343541] border border-[#3E3F4B] rounded-xl transition group text-left"
+                                        className="p-2 md:p-4 bg-[#2A2B32] hover:bg-[#343541] active:bg-[#343541] border border-[#3E3F4B] rounded-xl transition group text-left"
                                     >
-                                        <p className="text-xs md:text-sm font-bold text-white mb-1 group-hover:text-red-400">🚨 Emergency & ER</p>
-                                        <p className="text-[10px] md:text-xs text-gray-400 line-clamp-2">Find nearby 24/7 ERs, ambulances & share health ID</p>
+                                        <p className="text-[11px] md:text-sm font-bold text-white group-hover:text-red-400 leading-tight">🚨 Emergency</p>
+                                        <p className="text-[9px] md:text-xs text-gray-500 mt-0.5 leading-tight">ER map & first aid</p>
                                     </button>
                                 </div>
+
+                                {/* Bottom hint */}
+                                <p className="text-[9px] md:text-xs text-gray-600 pb-1">Type or tap a card to begin your session</p>
                             </div>
                         ) : (
                             <div className="flex-1 overflow-y-auto p-6 space-y-6 max-w-4xl w-full mx-auto">
@@ -606,19 +617,19 @@ const AiAssistant = () => {
                             </div>
                         )}
 
-                        <div className="p-4 bg-[#171717] border-t border-[#303030]">
-                            <form onSubmit={handleSendMessage} className="max-w-4xl mx-auto flex items-center bg-[#2A2B32] border border-[#3E3F4B] rounded-2xl px-4 py-2 shadow-lg focus-within:border-blue-500 transition">
+                        <div className="px-3 py-2 md:p-4 bg-[#171717] border-t border-[#303030] shrink-0">
+                            <form onSubmit={handleSendMessage} className="max-w-4xl mx-auto flex items-center bg-[#2A2B32] border border-[#3E3F4B] rounded-xl px-3 py-1.5 md:py-2 shadow-lg focus-within:border-blue-500 transition">
                                 <input
                                     type="text"
                                     value={chatInput}
                                     onChange={(e) => setChatInput(e.target.value)}
-                                    placeholder={`Ask your Personal Doctor anything in ${selectedLanguage}...`}
-                                    className="flex-1 bg-transparent text-white placeholder-gray-400 text-sm focus:outline-none py-2"
+                                    placeholder={`Ask anything...`}
+                                    className="flex-1 bg-transparent text-white placeholder-gray-500 text-xs md:text-sm focus:outline-none py-1.5 md:py-2"
                                 />
                                 <button
                                     type="submit"
                                     disabled={loading || !chatInput.trim()}
-                                    className="w-9 h-9 bg-blue-600 hover:bg-blue-500 disabled:opacity-40 text-white font-bold rounded-xl flex items-center justify-center transition shadow"
+                                    className="w-8 h-8 md:w-9 md:h-9 bg-blue-600 hover:bg-blue-500 disabled:opacity-40 text-white font-bold rounded-lg flex items-center justify-center transition shadow shrink-0"
                                 >
                                     ➔
                                 </button>

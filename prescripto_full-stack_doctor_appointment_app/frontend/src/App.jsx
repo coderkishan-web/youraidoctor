@@ -26,7 +26,17 @@ const App = () => {
   if (isAiAssistantPage) {
     return (
       <div className='w-full min-h-screen bg-[#0d0d0d] text-white font-sans overflow-hidden'>
-        <ToastContainer />
+        <ToastContainer
+          position="bottom-center"
+          autoClose={2500}
+          hideProgressBar={true}
+          newestOnTop
+          closeOnClick
+          pauseOnFocusLoss={false}
+          draggable
+          pauseOnHover={false}
+          toastStyle={{ fontSize: '12px', padding: '8px 12px', minHeight: '40px' }}
+        />
         <Routes>
           <Route path='/ai-assistant' element={<AiAssistant />} />
         </Routes>
@@ -36,7 +46,17 @@ const App = () => {
 
   return (
     <div className='mx-4 sm:mx-[10%]'>
-      <ToastContainer />
+      <ToastContainer
+        position="bottom-center"
+        autoClose={2500}
+        hideProgressBar={true}
+        newestOnTop
+        closeOnClick
+        pauseOnFocusLoss={false}
+        draggable
+        pauseOnHover={false}
+        toastStyle={{ fontSize: '12px', padding: '8px 12px', minHeight: '40px' }}
+      />
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />

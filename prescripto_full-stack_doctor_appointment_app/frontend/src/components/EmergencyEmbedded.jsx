@@ -291,36 +291,36 @@ const EmergencyEmbedded = () => {
     };
 
     return (
-        <div className="h-full flex flex-col gap-4">
-            {/* Header */}
-            <div className="flex items-center justify-between p-4 bg-[#1a0e0e] border border-red-900/60 rounded-2xl">
-                <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-red-600 flex items-center justify-center text-xl shadow animate-pulse">🚨</div>
-                    <div>
-                        <h3 className="font-extrabold text-white text-lg">Emergency Response Centre</h3>
-                        <p className="text-xs text-red-300">GPS Hospital Locator • First Aid Guide • Ambulance Hotlines</p>
+        <div className="h-full flex flex-col gap-2 md:gap-4 overflow-hidden">
+            {/* ── COMPACT HEADER ── */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 p-3 md:p-4 bg-[#1a0e0e] border border-red-900/60 rounded-xl md:rounded-2xl shrink-0">
+                {/* Left: icon + title */}
+                <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-red-600 flex items-center justify-center text-base md:text-xl shadow animate-pulse shrink-0">🚨</div>
+                    <div className="min-w-0">
+                        <h3 className="font-extrabold text-white text-sm md:text-lg leading-tight">Emergency Response Centre</h3>
+                        <p className="text-[10px] md:text-xs text-red-300 truncate">GPS Hospital Locator • First Aid • Ambulance Hotlines</p>
                     </div>
                 </div>
 
-                <div className="flex items-center gap-2">
-                    <a href="tel:108" className="px-4 py-2 bg-red-600 hover:bg-red-500 text-white font-extrabold text-xs rounded-xl shadow flex items-center gap-1.5 transition">
+                {/* Right: call buttons + view toggle */}
+                <div className="flex items-center gap-1.5 flex-wrap">
+                    <a href="tel:108" className="px-2.5 py-1.5 md:px-4 md:py-2 bg-red-600 hover:bg-red-500 text-white font-extrabold text-[10px] md:text-xs rounded-lg md:rounded-xl shadow flex items-center gap-1 transition">
                         📞 108 Ambulance
                     </a>
-                    <a href="tel:112" className="px-4 py-2 bg-[#2A2B32] hover:bg-[#3E3F4B] text-white font-bold text-xs rounded-xl shadow flex items-center gap-1.5 border border-[#444654] transition">
+                    <a href="tel:112" className="px-2.5 py-1.5 md:px-4 md:py-2 bg-[#2A2B32] hover:bg-[#3E3F4B] text-white font-bold text-[10px] md:text-xs rounded-lg md:rounded-xl shadow flex items-center gap-1 border border-[#444654] transition">
                         📞 112 Police
                     </a>
-
-                    {/* View Toggle */}
-                    <div className="flex bg-[#2A2B32] border border-[#3E3F4B] rounded-xl overflow-hidden text-xs font-bold">
+                    <div className="flex bg-[#2A2B32] border border-[#3E3F4B] rounded-lg overflow-hidden text-[10px] md:text-xs font-bold">
                         <button
                             onClick={() => setActiveView('chat')}
-                            className={`px-3 py-2 transition ${activeView === 'chat' ? 'bg-red-600 text-white' : 'text-gray-400 hover:text-white'}`}
+                            className={`px-2.5 py-1.5 md:px-3 md:py-2 transition ${activeView === 'chat' ? 'bg-red-600 text-white' : 'text-gray-400 hover:text-white'}`}
                         >
                             💬 Chat
                         </button>
                         <button
                             onClick={() => { setActiveView('map'); if (!userLocation) activateGPS(); }}
-                            className={`px-3 py-2 transition ${activeView === 'map' ? 'bg-blue-600 text-white' : 'text-gray-400 hover:text-white'}`}
+                            className={`px-2.5 py-1.5 md:px-3 md:py-2 transition ${activeView === 'map' ? 'bg-blue-600 text-white' : 'text-gray-400 hover:text-white'}`}
                         >
                             🗺️ Map
                         </button>
@@ -329,15 +329,31 @@ const EmergencyEmbedded = () => {
             </div>
 
             {/* ── MAIN CONTENT ── */}
-            <div className="flex-1 flex gap-4 min-h-0">
+            <div className="flex-1 flex gap-4 min-h-0 overflow-hidden">
 
                 {/* ══════════════════════════════════════ */}
                 {/* CHAT VIEW                             */}
                 {/* ══════════════════════════════════════ */}
                 {activeView === 'chat' && (
-                    <div className="flex-1 flex gap-4 min-h-0">
+                    <div className="flex-1 flex flex-col md:flex-row gap-2 md:gap-4 min-h-0 overflow-hidden w-full">
+                        {/* Mobile: compact hotline strip above chat */}
+                        <div className="flex md:hidden gap-1.5 overflow-x-auto shrink-0 pb-0.5">
+                            {[
+                                { label: 'Ambulance', num: '108', icon: '🚑' },
+                                { label: 'Emergency', num: '112', icon: '🆘' },
+                                { label: 'Police', num: '100', icon: '🚓' },
+                                { label: 'Fire', num: '101', icon: '🔥' },
+                                { label: 'Poison', num: '1800-116-117', icon: '☠️' },
+                            ].map(h => (
+                                <a key={h.num} href={`tel:${h.num}`}
+                                   className="flex items-center gap-1 px-2 py-1 bg-[#2A2B32] border border-[#3E3F4B] rounded-lg text-[10px] text-gray-300 whitespace-nowrap shrink-0">
+                                    <span>{h.icon}</span>
+                                    <span className="font-bold text-white">{h.num}</span>
+                                </a>
+                            ))}
+                        </div>
                         {/* Chat Panel */}
-                        <div className="flex-1 flex flex-col bg-[#1E1E1E] border border-[#3E3F4B] rounded-2xl overflow-hidden">
+                        <div className="flex-1 flex flex-col bg-[#1E1E1E] border border-[#3E3F4B] rounded-xl md:rounded-2xl overflow-hidden min-h-0">
                             {/* Messages */}
                             <div className="flex-1 overflow-y-auto p-4 space-y-4">
                                 {chatMessages.map((msg, idx) => (
@@ -397,8 +413,8 @@ const EmergencyEmbedded = () => {
                             </form>
                         </div>
 
-                        {/* Right Side: Quick First Aid Guide */}
-                        <div className="w-80 shrink-0 flex flex-col gap-3 overflow-y-auto">
+                        {/* Right Side: Quick First Aid Guide — hidden on mobile */}
+                        <div className="hidden md:flex w-80 shrink-0 flex-col gap-3 overflow-y-auto">
                             {/* Emergency Hotlines Card */}
                             <div className="p-4 bg-[#1a0e0e] border border-red-900/50 rounded-2xl space-y-2">
                                 <h4 className="font-extrabold text-red-400 text-sm flex items-center gap-2">📞 Emergency Hotlines (India)</h4>
