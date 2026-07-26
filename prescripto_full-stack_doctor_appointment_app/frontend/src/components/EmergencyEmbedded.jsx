@@ -490,10 +490,11 @@ const EmergencyEmbedded = () => {
                 {/* ══════════════════════════════════════ */}
                 {/* MAP VIEW (GPS + 5 Nearest Hospitals)  */}
                 {/* ══════════════════════════════════════ */}
-                {activeView === 'map' && (
-                    <div className="flex-1 flex gap-4 min-h-0">
-                        {/* Map */}
-                        <div className="flex-1 rounded-2xl overflow-hidden border border-[#3E3F4B] relative">
+                {activeView === 'map' && (() => {
+                    const [drawerOpen, setDrawerOpen] = React.useState(false);
+                    return (
+                        <div className="flex-1 relative min-h-0 rounded-xl md:rounded-2xl overflow-hidden border border-[#3E3F4B]">
+                            {/* \u2500\u2500 FULL-SCREEN MAP \u2500\u2500 */}
                             {!userLocation ? (
                                 <div className="w-full h-full flex flex-col items-center justify-center bg-[#1E1E1E] text-center p-6 gap-4">
                                     <div className="text-5xl animate-bounce">📡</div>
@@ -517,25 +518,18 @@ const EmergencyEmbedded = () => {
                                     center={userLocation}
                                     zoom={14}
                                     style={{ width: '100%', height: '100%' }}
-                                    className="rounded-2xl"
                                 >
                                     <TileLayer
                                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                                     />
                                     <MapController center={userLocation} />
-
-                                    {/* User Location Marker */}
                                     <Marker position={userLocation} icon={userIcon}>
-                                        <Popup>
-                                            <div className="text-xs font-bold text-red-600">📍 You are here</div>
-                                        </Popup>
+                                        <Popup><div className="text-xs font-bold text-red-600">📍 You are here</div></Popup>
                                     </Marker>
-
-                                    {/* Hospital Markers */}
                                     {nearbyHospitals.map((h) => (
                                         <Marker key={h.id} position={[h.lat, h.lng]} icon={hospitalIcon}
-                                            eventHandlers={{ click: () => setSelectedHospital(h) }}>
+                                            eventHandlers={{ click: () => { setSelectedHospital(h); setDrawerOpen(true); } }}>
                                             <Popup>
                                                 <div className="text-xs space-y-1.5 min-w-[180px]">
                                                     <p className="font-extrabold text-blue-700 text-sm">🏥 {h.name}</p>
@@ -556,93 +550,135 @@ const EmergencyEmbedded = () => {
 
                             {/* Locating overlay */}
                             {locating && userLocation && (
-                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center rounded-2xl">
+                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center z-10">
                                     <div className="bg-[#212121] border border-[#3E3F4B] rounded-2xl px-6 py-4 text-sm text-blue-400 font-bold animate-pulse">
                                         🔍 Searching nearby hospitals...
                                     </div>
                                 </div>
                             )}
-                        </div>
 
-                        {/* Hospitals Sidebar List */}
-                        <div className="w-80 shrink-0 flex flex-col gap-3 overflow-y-auto">
-                            <div className="p-3 bg-[#1E1E1E] border border-[#3E3F4B] rounded-2xl">
-                                <h4 className="font-extrabold text-white text-sm flex items-center gap-2">
-                                    🏥 5 Nearest Hospitals
-                                    {userLocation && (
-                                        <button
-                                            onClick={activateGPS}
-                                            className="ml-auto text-[10px] px-2 py-1 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-bold"
-                                        >
-                                            🔄 Refresh
-                                        </button>
-                                    )}
-                                </h4>
-                            </div>
-
-                            {!userLocation ? (
-                                <div className="p-4 text-center text-gray-400 text-xs bg-[#1E1E1E] border border-[#3E3F4B] rounded-2xl">
-                                    Enable GPS to see nearest hospitals
-                                </div>
-                            ) : nearbyHospitals.length === 0 ? (
-                                <div className="p-4 text-center bg-[#1E1E1E] border border-[#3E3F4B] rounded-2xl space-y-2">
-                                    <p className="text-amber-400 text-xs font-bold animate-pulse">🔍 Searching for hospitals in 5km radius...</p>
-                                </div>
-                            ) : (
-                                nearbyHospitals.map((h, idx) => (
-                                    <div
-                                        key={h.id}
-                                        onClick={() => setSelectedHospital(h)}
-                                        className={`p-4 rounded-2xl border cursor-pointer transition space-y-2 ${
-                                            selectedHospital?.id === h.id
-                                                ? 'bg-blue-900/30 border-blue-500 shadow-lg'
-                                                : 'bg-[#1E1E1E] border-[#3E3F4B] hover:border-blue-500/50 hover:bg-[#2A2B32]'
-                                        }`}
-                                    >
-                                        <div className="flex items-start justify-between gap-2">
-                                            <div className="flex items-center gap-2">
-                                                <span className="w-6 h-6 rounded-full bg-blue-600 text-white font-extrabold text-xs flex items-center justify-center shrink-0">
-                                                    {idx + 1}
-                                                </span>
-                                                <p className="font-bold text-white text-sm leading-tight">{h.name}</p>
-                                            </div>
-                                            <span className="shrink-0 px-2 py-0.5 bg-emerald-500/20 text-emerald-300 text-[10px] font-bold rounded border border-emerald-500/30">
-                                                {h.dist} km
-                                            </span>
-                                        </div>
-
-                                        <p className="text-xs text-gray-400">📞 {h.phone}</p>
-
-                                        <button
-                                            onClick={(e) => { e.stopPropagation(); openGoogleMapsDirections(h); }}
-                                            className="w-full py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 text-white font-bold text-xs rounded-xl transition flex items-center justify-center gap-1.5"
-                                        >
-                                            🗺️ Get Google Maps Directions
-                                        </button>
-                                    </div>
-                                ))
+                            {/* \u2500\u2500 FLOATING HOSPITAL LIST BUTTON \u2500\u2500 */}
+                            {userLocation && (
+                                <button
+                                    onClick={() => setDrawerOpen(true)}
+                                    className="absolute top-3 right-3 z-20 flex items-center gap-2 px-3 py-2 bg-[#1E1E1E]/90 backdrop-blur border border-[#3E3F4B] hover:border-blue-500 text-white text-xs font-bold rounded-xl shadow-lg transition"
+                                >
+                                    🏥 {nearbyHospitals.length > 0 ? `${nearbyHospitals.length} Hospitals` : 'Hospitals'}
+                                    <span className="text-gray-400">›</span>
+                                </button>
                             )}
 
-                            {/* Emergency Hotlines compact */}
-                            <div className="p-3 bg-[#1a0e0e] border border-red-900/40 rounded-2xl space-y-2">
-                                <h4 className="font-bold text-red-400 text-xs">📞 Quick Dial</h4>
-                                <div className="grid grid-cols-2 gap-2">
-                                    {[
-                                        { label: 'Ambulance', num: '108' },
-                                        { label: 'Emergency', num: '112' },
-                                        { label: 'Police', num: '100' },
-                                        { label: 'Fire', num: '101' },
-                                    ].map(h => (
-                                        <a key={h.num} href={`tel:${h.num}`}
-                                            className="p-2 bg-[#2A2B32] hover:bg-[#343541] border border-red-900/40 rounded-xl text-xs text-center font-bold text-red-300 hover:text-red-200 transition">
-                                            {h.label}<br /><span className="text-white">{h.num}</span>
-                                        </a>
-                                    ))}
+                            {/* \u2500\u2500 RIGHT SLIDING DRAWER \u2500\u2500 */}
+                            {/* Backdrop */}
+                            {drawerOpen && (
+                                <div
+                                    className="absolute inset-0 bg-black/50 z-20"
+                                    onClick={() => setDrawerOpen(false)}
+                                />
+                            )}
+                            {/* Drawer panel */}
+                            <div
+                                style={{
+                                    position: 'absolute',
+                                    top: 0,
+                                    right: 0,
+                                    height: '100%',
+                                    width: '280px',
+                                    maxWidth: '85%',
+                                    transform: drawerOpen ? 'translateX(0)' : 'translateX(100%)',
+                                    transition: 'transform 0.3s ease',
+                                    zIndex: 30,
+                                    overflowY: 'auto',
+                                    background: '#1E1E1E',
+                                    borderLeft: '1px solid #3E3F4B',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: '8px',
+                                    padding: '12px',
+                                }}
+                            >
+                                {/* Drawer Header */}
+                                <div className="flex items-center justify-between mb-1">
+                                    <h4 className="font-extrabold text-white text-sm flex items-center gap-2">
+                                        🏥 Nearest Hospitals
+                                    </h4>
+                                    <button
+                                        onClick={() => setDrawerOpen(false)}
+                                        className="w-7 h-7 bg-[#2A2B32] hover:bg-[#343541] border border-[#3E3F4B] rounded-lg text-gray-400 hover:text-white text-xs flex items-center justify-center transition"
+                                    >
+                                        ✕
+                                    </button>
+                                </div>
+
+                                {/* Refresh button */}
+                                {userLocation && (
+                                    <button
+                                        onClick={() => { activateGPS(); }}
+                                        className="w-full py-1.5 text-[10px] px-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-bold mb-1"
+                                    >
+                                        🔄 Refresh Hospitals
+                                    </button>
+                                )}
+
+                                {/* Hospital list */}
+                                {nearbyHospitals.length === 0 ? (
+                                    <div className="p-4 text-center bg-[#2A2B32] border border-[#3E3F4B] rounded-xl">
+                                        <p className="text-amber-400 text-xs font-bold animate-pulse">🔍 Searching hospitals in 5km...</p>
+                                    </div>
+                                ) : (
+                                    nearbyHospitals.map((h, idx) => (
+                                        <div
+                                            key={h.id}
+                                            onClick={() => setSelectedHospital(h)}
+                                            className={`p-3 rounded-xl border cursor-pointer transition space-y-2 ${
+                                                selectedHospital?.id === h.id
+                                                    ? 'bg-blue-900/30 border-blue-500 shadow-lg'
+                                                    : 'bg-[#2A2B32] border-[#3E3F4B] hover:border-blue-500/50'
+                                            }`}
+                                        >
+                                            <div className="flex items-start justify-between gap-2">
+                                                <div className="flex items-center gap-2 min-w-0">
+                                                    <span className="w-5 h-5 rounded-full bg-blue-600 text-white font-extrabold text-[10px] flex items-center justify-center shrink-0">
+                                                        {idx + 1}
+                                                    </span>
+                                                    <p className="font-bold text-white text-xs leading-tight truncate">{h.name}</p>
+                                                </div>
+                                                <span className="shrink-0 px-1.5 py-0.5 bg-emerald-500/20 text-emerald-300 text-[9px] font-bold rounded border border-emerald-500/30">
+                                                    {h.dist}km
+                                                </span>
+                                            </div>
+                                            <p className="text-[10px] text-gray-400">📞 {h.phone}</p>
+                                            <button
+                                                onClick={(e) => { e.stopPropagation(); openGoogleMapsDirections(h); }}
+                                                className="w-full py-1.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 text-white font-bold text-[10px] rounded-lg transition flex items-center justify-center gap-1"
+                                            >
+                                                🗺️ Get Directions
+                                            </button>
+                                        </div>
+                                    ))
+                                )}
+
+                                {/* Quick Dial */}
+                                <div className="p-3 bg-[#1a0e0e] border border-red-900/40 rounded-xl space-y-2 mt-auto">
+                                    <h4 className="font-bold text-red-400 text-[10px]">📞 Quick Dial</h4>
+                                    <div className="grid grid-cols-2 gap-1.5">
+                                        {[
+                                            { label: 'Ambulance', num: '108' },
+                                            { label: 'Emergency', num: '112' },
+                                            { label: 'Police', num: '100' },
+                                            { label: 'Fire', num: '101' },
+                                        ].map(h => (
+                                            <a key={h.num} href={`tel:${h.num}`}
+                                                className="p-2 bg-[#2A2B32] hover:bg-[#343541] border border-red-900/40 rounded-lg text-[10px] text-center font-bold text-red-300 hover:text-red-200 transition">
+                                                {h.label}<br /><span className="text-white">{h.num}</span>
+                                            </a>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                )}
+                    );
+                })()}
             </div>
         </div>
     );
