@@ -178,6 +178,13 @@ const EmergencyEmbedded = () => {
         chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }, [chatMessages]);
 
+    // Auto-open hospital drawer when hospitals are found
+    useEffect(() => {
+        if (nearbyHospitals.length > 0) {
+            setDrawerOpen(true);
+        }
+    }, [nearbyHospitals]);
+
     const findNearbyHospitals = useCallback(async (lat, lng) => {
         try {
             // Use Overpass API (free, no key needed) to find hospitals within 5km
@@ -556,22 +563,23 @@ const EmergencyEmbedded = () => {
                                 </div>
                             )}
 
-                            {/* \u2500\u2500 FLOATING HOSPITAL LIST BUTTON \u2500\u2500 */}
+                            {/* ── FLOATING HOSPITAL LIST BUTTON ── */}
                             {userLocation && (
                                 <button
                                     onClick={() => setDrawerOpen(true)}
-                                    className="absolute top-3 right-3 z-20 flex items-center gap-2 px-3 py-2 bg-[#1E1E1E]/90 backdrop-blur border border-[#3E3F4B] hover:border-blue-500 text-white text-xs font-bold rounded-xl shadow-lg transition"
+                                    style={{ zIndex: 1000 }}
+                                    className="absolute top-3 right-3 flex items-center gap-2 px-3 py-2 bg-[#1E1E1E]/90 backdrop-blur border border-[#3E3F4B] hover:border-blue-500 text-white text-xs font-bold rounded-xl shadow-lg transition"
                                 >
                                     🏥 {nearbyHospitals.length > 0 ? `${nearbyHospitals.length} Hospitals` : 'Hospitals'}
                                     <span className="text-gray-400">›</span>
                                 </button>
                             )}
 
-                            {/* \u2500\u2500 RIGHT SLIDING DRAWER \u2500\u2500 */}
+                            {/* ── RIGHT SLIDING DRAWER ── */}
                             {/* Backdrop */}
                             {drawerOpen && (
                                 <div
-                                    className="absolute inset-0 bg-black/50 z-20"
+                                    style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.5)', zIndex: 999 }}
                                     onClick={() => setDrawerOpen(false)}
                                 />
                             )}
@@ -586,7 +594,7 @@ const EmergencyEmbedded = () => {
                                     maxWidth: '85%',
                                     transform: drawerOpen ? 'translateX(0)' : 'translateX(100%)',
                                     transition: 'transform 0.3s ease',
-                                    zIndex: 30,
+                                    zIndex: 1001,
                                     overflowY: 'auto',
                                     background: '#1E1E1E',
                                     borderLeft: '1px solid #3E3F4B',

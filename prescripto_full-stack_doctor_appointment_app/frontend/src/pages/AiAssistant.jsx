@@ -285,7 +285,7 @@ const AiAssistant = () => {
             {/* Mobile overlay backdrop */}
             {sidebarOpen && isMobile && (
                 <div
-                    className="fixed inset-0 bg-black/60 z-30"
+                    className="fixed inset-0 bg-black/60 z-[9998]"
                     onClick={() => setSidebarOpen(false)}
                 />
             )}
@@ -298,7 +298,7 @@ const AiAssistant = () => {
                     height: isMobile ? '100vh' : '100%',
                     width: sidebarOpen ? '256px' : (isMobile ? '0' : '64px'),
                     transform: isMobile && !sidebarOpen ? 'translateX(-100%)' : 'translateX(0)',
-                    zIndex: isMobile ? 40 : 'auto',
+                    zIndex: isMobile ? 9999 : 'auto',
                     flexShrink: 0,
                     overflow: 'hidden',
                     transition: 'width 0.3s ease, transform 0.3s ease',
