@@ -170,6 +170,7 @@ const EmergencyEmbedded = () => {
     const [locating, setLocating] = useState(false);
     const [locationError, setLocationError] = useState('');
     const [selectedHospital, setSelectedHospital] = useState(null);
+    const [drawerOpen, setDrawerOpen] = useState(false);
 
     const chatEndRef = useRef(null);
 
@@ -490,10 +491,8 @@ const EmergencyEmbedded = () => {
                 {/* ══════════════════════════════════════ */}
                 {/* MAP VIEW (GPS + 5 Nearest Hospitals)  */}
                 {/* ══════════════════════════════════════ */}
-                {activeView === 'map' && (() => {
-                    const [drawerOpen, setDrawerOpen] = React.useState(false);
-                    return (
-                        <div className="flex-1 relative min-h-0 rounded-xl md:rounded-2xl overflow-hidden border border-[#3E3F4B]">
+                {activeView === 'map' && (
+                    <div className="flex-1 relative min-h-0 rounded-xl md:rounded-2xl overflow-hidden border border-[#3E3F4B]">
                             {/* \u2500\u2500 FULL-SCREEN MAP \u2500\u2500 */}
                             {!userLocation ? (
                                 <div className="w-full h-full flex flex-col items-center justify-center bg-[#1E1E1E] text-center p-6 gap-4">
@@ -677,8 +676,7 @@ const EmergencyEmbedded = () => {
                                 </div>
                             </div>
                         </div>
-                    );
-                })()}
+                    )}
             </div>
         </div>
     );
