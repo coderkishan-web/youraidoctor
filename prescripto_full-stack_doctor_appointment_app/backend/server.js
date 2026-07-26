@@ -22,18 +22,28 @@ connectCloudinary()
 // middlewares
 app.use(express.json())
 app.use(cors({
-  origin: [
-    'http://localhost:5173',
-    'http://localhost:5174',
-    'http://localhost:5175',
-    'http://localhost:5176',
-    'http://localhost:5177',
-    'http://localhost:5178',
-    'http://localhost:5179',
-    'http://localhost:5180',
-    'https://adminprescriptodr.vercel.app',
-    'https://prescriptoapp-wheat.vercel.app'
-  ],
+  origin: function (origin, callback) {
+    // Allow all vercel.app, localhost, and no-origin requests (like Render health checks)
+    const allowed = [
+      'http://localhost:5173',
+      'http://localhost:5174',
+      'http://localhost:5175',
+      'http://localhost:5176',
+      'http://localhost:5177',
+      'http://localhost:5178',
+      'http://localhost:5179',
+      'http://localhost:5180',
+      'https://youraidoctor.vercel.app',
+      'https://youraidoctor-bk7o.vercel.app',
+      'https://adminprescriptodr.vercel.app',
+      'https://prescriptoapp-wheat.vercel.app',
+    ];
+    if (!origin || allowed.includes(origin) || origin.endsWith('.vercel.app')) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }))
 
