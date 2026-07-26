@@ -1,0 +1,12 @@
+[
+  {
+    "_id": "1",
+    "userId": "7",
+    "title": "Take Vitamin D",
+    "time": "08:00 AM09:00 AM",
+    "type": "Lifestyle Check",
+    "frequency": "Daily",
+    "active": true,
+    "createdAt": 1785067839420
+  }
+]

@@ -1,0 +1,70 @@
+[
+  {
+    "_id": "1",
+    "name": "Dr. Richard James",
+    "email": "richard@prescripto.com",
+    "password": "$2b$10$9VQPAoJFzQRklI/5EVB9P.LlKzs1gadoqvWOy4Ck4AFxDOxeWFXIm",
+    "image": "https://via.placeholder.com/150",
+    "speciality": "General Physician",
+    "degree": "MBBS",
+    "experience": "4 Years",
+    "about": "A dedicated physician with 4 years of clinical experience.",
+    "available": true,
+    "fees": 50,
+    "slots_booked": {
+      "2026-07-27": [
+        "10:00 AM"
+      ],
+      "26_7_2026": [
+        "06:30 PM"
+      ]
+    },
+    "address": {
+      "line1": "17th Cross, Richmond",
+      "line2": "Circle, Ring Road, London"
+    },
+    "date": 1784826333922
+  },
+  {
+    "_id": "2",
+    "name": "Dr. Sarah Connor",
+    "email": "sarah@prescripto.com",
+    "password": "$2b$10$73/KLIwRzX/F6eblYkSFK.yH5TTr2.W0dlRxOIHD2UvrWRV7dVRYe",
+    "image": "https://ui-avatars.com/api/?name=Doctor&background=5f6FFF&color=fff&size=200&rounded=true",
+    "speciality": "Cardiologist",
+    "degree": "MD",
+    "experience": "5 Years",
+    "about": "Experienced cardiologist",
+    "available": true,
+    "fees": 80,
+    "slots_booked": {
+      "24_7_2026": [
+        "10:30 AM"
+      ]
+    },
+    "address": {
+      "line1": "123 Heart St",
+      "line2": "London"
+    },
+    "date": 1784826896534
+  },
+  {
+    "_id": "3",
+    "name": "Dr. Alex Morgan",
+    "email": "alex@prescripto.com",
+    "password": "$2b$10$3yxX78c7oDYpvwExBfEqG.S19O9okPPOtIAwm2S6dVLrLP2LQuyT6",
+    "image": "https://ui-avatars.com/api/?name=Doctor&background=5f6FFF&color=fff&size=200&rounded=true",
+    "speciality": "General physician",
+    "degree": "MBBS",
+    "experience": "4 Year",
+    "about": "General physician with 4 years experience.",
+    "available": true,
+    "fees": 50,
+    "slots_booked": {},
+    "address": {
+      "line1": "100 Health St",
+      "line2": "London"
+    },
+    "date": 1784827668601
+  }
+]

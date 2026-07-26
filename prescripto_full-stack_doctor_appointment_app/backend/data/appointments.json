@@ -1,0 +1,242 @@
+[
+  {
+    "_id": "1",
+    "userId": "1",
+    "docId": "2",
+    "slotDate": "24_7_2026",
+    "slotTime": "10:30 AM",
+    "userData": {
+      "_id": "1",
+      "name": "Test Patient",
+      "email": "patient@test.com",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAADwCAYAAAA+VemSAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAB3RJTUUH6AcXEjQXRMNrCQAAAAxpVFh0Q29tbWVudAAAAAAAvK6ymQAAABF0RVh0U29mdHdhcmUAU25pcGFzdGUuTmV0V29sZqUAAAAldEVYdENyZWF0aW9uIFRpbWUAMjAyNC0wNy0yM1QxMjoxMjoxMFoK6G0+AAAFxklEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAMBuAABHgAAAABJRU5ErkJggg==",
+      "phone": "000000000",
+      "address": {
+        "line1": "",
+        "line2": ""
+      },
+      "gender": "Not Selected",
+      "dob": "Not Selected"
+    },
+    "docData": {
+      "_id": "2",
+      "name": "Dr. Sarah Connor",
+      "email": "sarah@prescripto.com",
+      "image": "https://ui-avatars.com/api/?name=Doctor&background=5f6FFF&color=fff&size=200&rounded=true",
+      "speciality": "Cardiologist",
+      "degree": "MD",
+      "experience": "5 Years",
+      "about": "Experienced cardiologist",
+      "available": true,
+      "fees": 80,
+      "address": {
+        "line1": "123 Heart St",
+        "line2": "London"
+      },
+      "date": 1784826896534
+    },
+    "amount": 80,
+    "date": 1784828074548,
+    "cancelled": false,
+    "payment": false,
+    "isCompleted": false
+  },
+  {
+    "_id": "2",
+    "userId": "6",
+    "docId": "1",
+    "slotDate": "2026-07-27",
+    "slotTime": "10:00 AM",
+    "userData": {
+      "_id": "6",
+      "name": "Test User",
+      "email": "test_random_123@gmail.com",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAADwCAYAAAA+VemSAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAB3RJTUUH6AcXEjQXRMNrCQAAAAxpVFh0Q29tbWVudAAAAAAAvK6ymQAAABF0RVh0U29mdHdhcmUAU25pcGFzdGUuTmV0V29sZqUAAAAldEVYdENyZWF0aW9uIFRpbWUAMjAyNC0wNy0yM1QxMjoxMjoxMFoK6G0+AAAFxklEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAMBuAABHgAAAABJRU5ErkJggg==",
+      "phone": "000000000",
+      "address": {
+        "line1": "",
+        "line2": ""
+      },
+      "gender": "Not Selected",
+      "dob": "Not Selected",
+      "role": "patient",
+      "hasCompletedOnboarding": true,
+      "healthProfile": {
+        "preferredLanguage": "English",
+        "ageGender": "25 years old, Male",
+        "ageCategory": "adult",
+        "ageLabel": "Adults (18 - 59 years)",
+        "healthHistory": "No major health issues till now",
+        "medicationsAllergies": "None",
+        "familyHistory": "No family sub-profiles added during onboarding",
+        "lifestyleGoals": "Healthy lifestyle",
+        "learnedInsights": [],
+        "completedAt": "2026-07-26T09:10:27.629Z",
+        "activeSession": {
+          "turn": 0,
+          "status": "completed"
+        }
+      },
+      "familyMembers": [],
+      "subscription": {
+        "plan": "patient_100",
+        "status": "trial",
+        "trialStartDate": 1785056920664,
+        "trialEndDate": 1785661720664,
+        "price": 100
+      },
+      "emergencyCard": {
+        "bloodType": "O+",
+        "allergies": "None",
+        "chronicConditions": "No major health issues till now",
+        "emergencyContact": "000000000",
+        "shareToken": "EMG-L79I9P7"
+      },
+      "vitalsLog": [],
+      "vaccineSchedules": [],
+      "scannedMedicines": [],
+      "aiChatHistory": [
+        {
+          "id": "msg-1785057048593-user",
+          "sender": "user",
+          "message": "I have a headache and mild fever since morning",
+          "timestamp": "2026-07-26T09:10:48.593Z"
+        },
+        {
+          "id": "msg-1785057048593-ai",
+          "sender": "ai",
+          "message": "🤝 **Don't worry Test User, I'm here to help you.** (Diagnostic Checkup: Step 1/3)\n\nCould you tell me: **How long have you been experiencing this** (hours/days) and **where exactly is the discomfort located**?",
+          "riskBadge": "STEP 1 OF 3",
+          "recommendedSpecialty": null,
+          "bookingAction": false,
+          "timestamp": "2026-07-26T09:10:48.593Z"
+        },
+        {
+          "id": "msg-1785057055454-user",
+          "sender": "user",
+          "message": "2 days",
+          "timestamp": "2026-07-26T09:10:55.454Z"
+        },
+        {
+          "id": "msg-1785057055454-ai",
+          "sender": "ai",
+          "message": "👍 **Got it, thank you for clarifying Test User.** (Diagnostic Checkup: Step 2/3)\n\nOne more important clinical detail: Are you also noticing any **nausea, dizziness, fever, or sensitivity to light/sound**? Does anything specific trigger or worsen it?",
+          "riskBadge": "STEP 2 OF 3",
+          "recommendedSpecialty": null,
+          "bookingAction": false,
+          "timestamp": "2026-07-26T09:10:55.454Z"
+        },
+        {
+          "id": "msg-1785057061679-user",
+          "sender": "user",
+          "message": "no",
+          "timestamp": "2026-07-26T09:11:01.679Z"
+        },
+        {
+          "id": "msg-1785057061679-ai",
+          "sender": "ai",
+          "message": "📋 **FULL CLINICAL ASSESSMENT SUMMARY** (Test User)\n\n• **Primary Concern**: Reported discomfort (I have a headache and mild fever since morning)\n• **Duration & Location**: 2 days\n• **Associated Symptoms**: no\n• **Clinical Impression**: Potential Neurologist-related condition. Home care: Rest, stay hydrated, avoid heavy physical strain.\n\n👨‍⚕️ **DOCTOR CONSULTATION RECOMMENDATION**:\nBased on your symptoms across our 3-step diagnostic checkup, I strongly recommend consulting a **Neurologist** for a physical checkup.\n\n👇 Click the button below to book an appointment with our available **Neurologists**!",
+          "riskBadge": "CLINICAL ANALYSIS COMPLETE",
+          "recommendedSpecialty": {
+            "name": "Neurologist",
+            "icon": "🧠",
+            "description": "Brain & Nervous System Specialist"
+          },
+          "bookingAction": true,
+          "timestamp": "2026-07-26T09:11:01.679Z"
+        }
+      ]
+    },
+    "docData": {
+      "_id": "1",
+      "name": "Dr. Richard James",
+      "email": "richard@prescripto.com",
+      "image": "https://via.placeholder.com/150",
+      "speciality": "General Physician",
+      "degree": "MBBS",
+      "experience": "4 Years",
+      "about": "A dedicated physician with 4 years of clinical experience.",
+      "available": true,
+      "fees": 50,
+      "address": {
+        "line1": "17th Cross, Richmond",
+        "line2": "Circle, Ring Road, London"
+      },
+      "date": 1784826333922
+    },
+    "amount": 50,
+    "date": 1785057085952,
+    "cancelled": false,
+    "payment": false,
+    "isCompleted": false
+  },
+  {
+    "_id": "3",
+    "userId": "7",
+    "docId": "1",
+    "slotDate": "26_7_2026",
+    "slotTime": "06:30 PM",
+    "userData": {
+      "_id": "7",
+      "name": "Test User",
+      "email": "test_user_new@example.com",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAADwCAYAAAA+VemSAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAB3RJTUUH6AcXEjQXRMNrCQAAAAxpVFh0Q29tbWVudAAAAAAAvK6ymQAAABF0RVh0U29mdHdhcmUAU25pcGFzdGUuTmV0V29sZqUAAAAldEVYdENyZWF0aW9uIFRpbWUAMjAyNC0wNy0yM1QxMjoxMjoxMFoK6G0+AAAFxklEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAMBuAABHgAAAABJRU5ErkJggg==",
+      "phone": "000000000",
+      "address": {
+        "line1": "",
+        "line2": ""
+      },
+      "gender": "Not Selected",
+      "dob": "Not Selected",
+      "role": "patient",
+      "hasCompletedOnboarding": false,
+      "healthProfile": {},
+      "familyMembers": [
+        {
+          "id": "FAM-1785067770446",
+          "name": "Jane Doe",
+          "relation": "Parent",
+          "age": "30",
+          "bloodGroup": "A+",
+          "medicalNotes": "Penicillin Allergy",
+          "addedAt": "2026-07-26T12:09:30.446Z"
+        }
+      ],
+      "subscription": {
+        "plan": "patient_100",
+        "status": "active",
+        "activatedAt": 1785067342540,
+        "expiresAt": 1787659342540,
+        "price": 100,
+        "currency": "INR"
+      },
+      "emergencyCard": {},
+      "vitalsLog": [],
+      "vaccineSchedules": [],
+      "scannedMedicines": [],
+      "aiChatHistory": []
+    },
+    "docData": {
+      "_id": "1",
+      "name": "Dr. Richard James",
+      "email": "richard@prescripto.com",
+      "image": "https://via.placeholder.com/150",
+      "speciality": "General Physician",
+      "degree": "MBBS",
+      "experience": "4 Years",
+      "about": "A dedicated physician with 4 years of clinical experience.",
+      "available": true,
+      "fees": 50,
+      "address": {
+        "line1": "17th Cross, Richmond",
+        "line2": "Circle, Ring Road, London"
+      },
+      "date": 1784826333922
+    },
+    "amount": 50,
+    "date": 1785067971449,
+    "cancelled": false,
+    "payment": false,
+    "isCompleted": false
+  }
+]

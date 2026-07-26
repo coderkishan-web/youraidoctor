@@ -1,0 +1,1641 @@
+[
+  {
+    "_id": "1",
+    "name": "Test Patient",
+    "email": "patient@test.com",
+    "password": "$2b$10$.HU1TR91vfhKLr6AnwfyGO4Jhvk94NuCyaxQCSp5hCkRoBQM/nBxu",
+    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAADwCAYAAAA+VemSAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAB3RJTUUH6AcXEjQXRMNrCQAAAAxpVFh0Q29tbWVudAAAAAAAvK6ymQAAABF0RVh0U29mdHdhcmUAU25pcGFzdGUuTmV0V29sZqUAAAAldEVYdENyZWF0aW9uIFRpbWUAMjAyNC0wNy0yM1QxMjoxMjoxMFoK6G0+AAAFxklEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAMBuAABHgAAAABJRU5ErkJggg==",
+    "phone": "000000000",
+    "address": {
+      "line1": "",
+      "line2": ""
+    },
+    "gender": "Not Selected",
+    "dob": "Not Selected",
+    "familyMembers": [
+      {
+        "id": "FAM-1784920365624",
+        "name": "Sarah",
+        "relation": "Spouse",
+        "age": "28",
+        "bloodGroup": "O+",
+        "medicalNotes": "No notes",
+        "addedAt": "2026-07-24T19:12:45.624Z"
+      }
+    ],
+    "hasCompletedOnboarding": true,
+    "healthProfile": {
+      "ageGender": "24 yeas , man",
+      "ageCategory": "adult",
+      "ageLabel": "Adults (18 - 59 years)",
+      "conditions": "None reported",
+      "allergies": "None reported",
+      "familyHistory": "No family sub-profiles added during onboarding",
+      "lifestyleGoals": "na",
+      "completedAt": "2026-07-24T19:18:45.046Z",
+      "preferredLanguage": "Marathi (मराठी)"
+    },
+    "emergencyCard": {
+      "bloodType": "O+",
+      "allergies": "None reported",
+      "chronicConditions": "None reported",
+      "emergencyContact": "Not set (Update in profile)",
+      "shareToken": "EMG-Q8TI051"
+    },
+    "subscription": {
+      "plan": "patient_100",
+      "status": "active",
+      "activatedAt": 1784921640736,
+      "expiresAt": 1787513640736,
+      "price": 100,
+      "currency": "INR"
+    }
+  },
+  {
+    "_id": "2",
+    "name": "kishh",
+    "email": "shindekishan937@gmail.com",
+    "password": "$2b$10$07UNiluSc8JwNU95xiYSPuI8Dvl6by8YQSi2vGKoDvNEzsA.XozcS",
+    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAADwCAYAAAA+VemSAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAB3RJTUUH6AcXEjQXRMNrCQAAAAxpVFh0Q29tbWVudAAAAAAAvK6ymQAAABF0RVh0U29mdHdhcmUAU25pcGFzdGUuTmV0V29sZqUAAAAldEVYdENyZWF0aW9uIFRpbWUAMjAyNC0wNy0yM1QxMjoxMjoxMFoK6G0+AAAFxklEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAMBuAABHgAAAABJRU5ErkJggg==",
+    "phone": "000000000",
+    "address": {
+      "line1": "",
+      "line2": ""
+    },
+    "gender": "Not Selected",
+    "dob": "Not Selected"
+  },
+  {
+    "_id": "3",
+    "name": "Test User",
+    "email": "testuser1@prescripto.com",
+    "password": "$2b$10$P0UZ0xR0XEK9rA6sQtaNV.PNTpuwla4NdXbcAeDv58qMljdzqNPpS",
+    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAADwCAYAAAA+VemSAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAB3RJTUUH6AcXEjQXRMNrCQAAAAxpVFh0Q29tbWVudAAAAAAAvK6ymQAAABF0RVh0U29mdHdhcmUAU25pcGFzdGUuTmV0V29sZqUAAAAldEVYdENyZWF0aW9uIFRpbWUAMjAyNC0wNy0yM1QxMjoxMjoxMFoK6G0+AAAFxklEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAMBuAABHgAAAABJRU5ErkJggg==",
+    "phone": "000000000",
+    "address": {
+      "line1": "",
+      "line2": ""
+    },
+    "gender": "Not Selected",
+    "dob": "Not Selected",
+    "role": "patient",
+    "hasCompletedOnboarding": true,
+    "healthProfile": {
+      "preferredLanguage": "English",
+      "ageGender": "30 years old, Male",
+      "ageCategory": "adult",
+      "ageLabel": "Adults (18 - 59 years)",
+      "healthHistory": "No major health issues",
+      "medicationsAllergies": "Allergic to Penicillin",
+      "familyHistory": "No family sub-profiles added during onboarding",
+      "lifestyleGoals": "7 hours sleep, Goal: weight loss",
+      "learnedInsights": [],
+      "completedAt": "2026-07-26T08:32:24.595Z"
+    },
+    "familyMembers": [],
+    "subscription": {
+      "plan": "patient_100",
+      "status": "trial",
+      "trialStartDate": 1785054575813,
+      "trialEndDate": 1785659375813,
+      "price": 100
+    },
+    "emergencyCard": {
+      "bloodType": "O+",
+      "allergies": "Allergic to Penicillin",
+      "chronicConditions": "No major health issues",
+      "emergencyContact": "000000000",
+      "shareToken": "EMG-P8FXBY4"
+    },
+    "vitalsLog": [],
+    "vaccineSchedules": [],
+    "scannedMedicines": [],
+    "aiChatHistory": [
+      {
+        "id": "msg-1785054770878-user",
+        "sender": "user",
+        "message": "I have a severe migraine headache and mild sensitivity to light.",
+        "timestamp": "2026-07-26T08:32:50.878Z"
+      },
+      {
+        "id": "msg-1785054770878-ai",
+        "sender": "ai",
+        "message": "🤝 **Don't worry Test User, I'm here for you.**\n\nThis could be related to Tension Headache or Migraine or Stress / Fatigue or Dehydration. Rest in a quiet room, drink water, apply cool compress.\n\n❓ Arey! Sar me dard ho raha hai? Tension mat lijiye. Yeh kab se ho raha hai, aur kya bukhar ya sardi bhi hai?\n\n💡 *Recommended Specialist*: Consult a **Neurologist** for thorough checkup.",
+        "riskBadge": "LOW TO MODERATE",
+        "recommendedSpecialty": {
+          "name": "Neurologist",
+          "icon": "🧠",
+          "description": "Brain & Nervous System Specialist"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T08:32:50.878Z"
+      },
+      {
+        "id": "msg-1785054805605-user",
+        "sender": "user",
+        "message": "Maza doka khup dukhtay ani taap ahe.",
+        "timestamp": "2026-07-26T08:33:25.605Z"
+      },
+      {
+        "id": "msg-1785054805605-ai",
+        "sender": "ai",
+        "message": "🤝 **Don't worry Test User, I'm here for you.**\n\nThis could be related to Tension Headache or Migraine or Stress / Fatigue or Dehydration. Rest in a quiet room, drink water, apply cool compress.\n\n❓ Arey! Dokadukhi hotey ka? Kalaji karu naka. Dokadukhi kadhapasun ahe, ani taap kinva sardi suddha ahe ka?\n\n💡 *Recommended Specialist*: Consult a **Neurologist** for thorough checkup.",
+        "riskBadge": "LOW TO MODERATE",
+        "recommendedSpecialty": {
+          "name": "Neurologist",
+          "icon": "🧠",
+          "description": "Brain & Nervous System Specialist"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T08:33:25.605Z"
+      },
+      {
+        "id": "msg-1785054857020-user",
+        "sender": "user",
+        "message": "I have severe chest pain spreading to my left arm.",
+        "timestamp": "2026-07-26T08:34:17.020Z"
+      },
+      {
+        "id": "msg-1785054857020-ai",
+        "sender": "ai",
+        "message": "🤝 **Don't worry Test User, I'm here for you.**\n\nThis could be related to Angina or Myocardial Infarction or Acid Reflux or Anxiety. Sit quietly, stay calm. Seek immediate emergency medical care if severe or radiating to arm/jaw.\n\n❓ Seene me dard ho raha hai? Kripya shanti se baithiye. Kya yeh dard haath ya gardan tak ja raha hai?\n\n💡 *Recommended Specialist*: Consult a **Cardiologist** for thorough checkup.",
+        "riskBadge": "EMERGENCY",
+        "recommendedSpecialty": {
+          "name": "General Physician",
+          "icon": "👨‍⚕️",
+          "description": "Primary Care & General Medicine"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T08:34:17.020Z"
+      }
+    ]
+  },
+  {
+    "_id": "4",
+    "name": "Kishan",
+    "email": "kishan@example.com",
+    "password": "$2b$10$n4/938mGPz02NtGts8p/D.KU7krJ6kECclT/FX8a3M5waTW2ZjB0S",
+    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAADwCAYAAAA+VemSAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAB3RJTUUH6AcXEjQXRMNrCQAAAAxpVFh0Q29tbWVudAAAAAAAvK6ymQAAABF0RVh0U29mdHdhcmUAU25pcGFzdGUuTmV0V29sZqUAAAAldEVYdENyZWF0aW9uIFRpbWUAMjAyNC0wNy0yM1QxMjoxMjoxMFoK6G0+AAAFxklEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAMBuAABHgAAAABJRU5ErkJggg==",
+    "phone": "000000000",
+    "address": {
+      "line1": "",
+      "line2": ""
+    },
+    "gender": "Not Selected",
+    "dob": "Not Selected",
+    "role": "patient",
+    "hasCompletedOnboarding": true,
+    "healthProfile": {
+      "preferredLanguage": "English",
+      "ageGender": "28 years old, Male",
+      "ageCategory": "adult",
+      "ageLabel": "Adults (18 - 59 years)",
+      "healthHistory": "No major health issues till now",
+      "medicationsAllergies": "None",
+      "familyHistory": "No family sub-profiles added during onboarding",
+      "lifestyleGoals": "Goals: Weight loss & fitness",
+      "learnedInsights": [],
+      "completedAt": "2026-07-26T08:52:25.934Z",
+      "activeSession": {
+        "turn": 0,
+        "status": "none",
+        "responses": []
+      }
+    },
+    "familyMembers": [],
+    "subscription": {
+      "plan": "patient_100",
+      "status": "trial",
+      "trialStartDate": 1785055692818,
+      "trialEndDate": 1785660492818,
+      "price": 100
+    },
+    "emergencyCard": {
+      "bloodType": "O+",
+      "allergies": "None",
+      "chronicConditions": "No major health issues till now",
+      "emergencyContact": "000000000",
+      "shareToken": "EMG-3GHP00B"
+    },
+    "vitalsLog": [],
+    "vaccineSchedules": [],
+    "scannedMedicines": [],
+    "aiChatHistory": []
+  },
+  {
+    "_id": "5",
+    "name": "Test User",
+    "email": "testuser_new@example.com",
+    "password": "$2b$10$10cQwfRSzBR8amAdsR0WFeqIi1MbbAbomsUj9CvT.TqaJZRt.zfYa",
+    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAADwCAYAAAA+VemSAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAB3RJTUUH6AcXEjQXRMNrCQAAAAxpVFh0Q29tbWVudAAAAAAAvK6ymQAAABF0RVh0U29mdHdhcmUAU25pcGFzdGUuTmV0V29sZqUAAAAldEVYdENyZWF0aW9uIFRpbWUAMjAyNC0wNy0yM1QxMjoxMjoxMFoK6G0+AAAFxklEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAMBuAABHgAAAABJRU5ErkJggg==",
+    "phone": "000000000",
+    "address": {
+      "line1": "",
+      "line2": ""
+    },
+    "gender": "Not Selected",
+    "dob": "Not Selected",
+    "role": "patient",
+    "hasCompletedOnboarding": true,
+    "healthProfile": {
+      "preferredLanguage": "English",
+      "ageGender": "28 years old, Male",
+      "ageCategory": "adult",
+      "ageLabel": "Adults (18 - 59 years)",
+      "healthHistory": "No major health issues till now",
+      "medicationsAllergies": "None",
+      "familyHistory": "No family sub-profiles added during onboarding",
+      "lifestyleGoals": "Goals: Weight loss & fitness",
+      "learnedInsights": [],
+      "completedAt": "2026-07-26T08:55:50.300Z",
+      "activeSession": {
+        "turn": 0,
+        "status": "completed"
+      }
+    },
+    "familyMembers": [],
+    "subscription": {
+      "plan": "patient_100",
+      "status": "trial",
+      "trialStartDate": 1785056069098,
+      "trialEndDate": 1785660869098,
+      "price": 100
+    },
+    "emergencyCard": {
+      "bloodType": "O+",
+      "allergies": "None",
+      "chronicConditions": "No major health issues till now",
+      "emergencyContact": "000000000",
+      "shareToken": "EMG-31AB5TK"
+    },
+    "vitalsLog": [],
+    "vaccineSchedules": [],
+    "scannedMedicines": [],
+    "aiChatHistory": [
+      {
+        "id": "msg-1785056257198-user",
+        "sender": "user",
+        "message": "I have a headache and mild fever since morning",
+        "timestamp": "2026-07-26T08:57:37.198Z"
+      },
+      {
+        "id": "msg-1785056257198-ai",
+        "sender": "ai",
+        "message": "🤝 **Don't worry Test User, I'm here to help you.** (Diagnostic Checkup: Step 1/3)\n\nCould you tell me: **How long have you been experiencing this** (hours/days) and **where exactly is the discomfort located**?",
+        "riskBadge": "STEP 1 OF 3",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T08:57:37.198Z"
+      },
+      {
+        "id": "msg-1785056280529-user",
+        "sender": "user",
+        "message": "2 day",
+        "timestamp": "2026-07-26T08:58:00.529Z"
+      },
+      {
+        "id": "msg-1785056280529-ai",
+        "sender": "ai",
+        "message": "👍 **Got it, thank you for clarifying Test User.** (Diagnostic Checkup: Step 2/3)\n\nOne more important clinical detail: Are you also noticing any **nausea, dizziness, fever, or sensitivity to light/sound**? Does anything specific trigger or worsen it?",
+        "riskBadge": "STEP 2 OF 3",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T08:58:00.529Z"
+      },
+      {
+        "id": "msg-1785056287767-user",
+        "sender": "user",
+        "message": "yes",
+        "timestamp": "2026-07-26T08:58:07.767Z"
+      },
+      {
+        "id": "msg-1785056287767-ai",
+        "sender": "ai",
+        "message": "📋 **FULL CLINICAL ASSESSMENT SUMMARY** (Test User)\n\n• **Primary Concern**: Reported discomfort (I have a headache and mild fever since morning)\n• **Duration & Location**: 2 day\n• **Associated Symptoms**: yes\n• **Clinical Impression**: Potential Neurologist-related condition. Home care: Rest, stay hydrated, avoid heavy physical strain.\n\n👨‍⚕️ **DOCTOR CONSULTATION RECOMMENDATION**:\nBased on your symptoms across our 3-step diagnostic checkup, I strongly recommend consulting a **Neurologist** for a physical checkup.\n\n👇 Click the button below to book an appointment with our available **Neurologists**!",
+        "riskBadge": "CLINICAL ANALYSIS COMPLETE",
+        "recommendedSpecialty": {
+          "name": "Neurologist",
+          "icon": "🧠",
+          "description": "Brain & Nervous System Specialist"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T08:58:07.767Z"
+      }
+    ]
+  },
+  {
+    "_id": "6",
+    "name": "Test User",
+    "email": "test_random_123@gmail.com",
+    "password": "$2b$10$cyObHSopIfQgXc3Nmch4gu.E39y010.VznC5V7V356SJ2ZQSxtA0q",
+    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAADwCAYAAAA+VemSAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAB3RJTUUH6AcXEjQXRMNrCQAAAAxpVFh0Q29tbWVudAAAAAAAvK6ymQAAABF0RVh0U29mdHdhcmUAU25pcGFzdGUuTmV0V29sZqUAAAAldEVYdENyZWF0aW9uIFRpbWUAMjAyNC0wNy0yM1QxMjoxMjoxMFoK6G0+AAAFxklEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAMBuAABHgAAAABJRU5ErkJggg==",
+    "phone": "000000000",
+    "address": {
+      "line1": "",
+      "line2": ""
+    },
+    "gender": "Not Selected",
+    "dob": "Not Selected",
+    "role": "patient",
+    "hasCompletedOnboarding": true,
+    "healthProfile": {
+      "preferredLanguage": "English",
+      "ageGender": "25 years old, Male",
+      "ageCategory": "adult",
+      "ageLabel": "Adults (18 - 59 years)",
+      "healthHistory": "No major health issues till now",
+      "medicationsAllergies": "None",
+      "familyHistory": "No family sub-profiles added during onboarding",
+      "lifestyleGoals": "Healthy lifestyle",
+      "learnedInsights": [],
+      "completedAt": "2026-07-26T09:10:27.629Z",
+      "activeSession": {
+        "turn": 0,
+        "status": "completed",
+        "responses": []
+      }
+    },
+    "familyMembers": [],
+    "subscription": {
+      "plan": "patient_100",
+      "status": "trial",
+      "trialStartDate": 1785056920664,
+      "trialEndDate": 1785661720664,
+      "price": 100
+    },
+    "emergencyCard": {
+      "bloodType": "O+",
+      "allergies": "None",
+      "chronicConditions": "No major health issues till now",
+      "emergencyContact": "000000000",
+      "shareToken": "EMG-L79I9P7"
+    },
+    "vitalsLog": [],
+    "vaccineSchedules": [],
+    "scannedMedicines": [],
+    "aiChatHistory": [
+      {
+        "id": "msg-1785057048593-user",
+        "sender": "user",
+        "message": "I have a headache and mild fever since morning",
+        "timestamp": "2026-07-26T09:10:48.593Z"
+      },
+      {
+        "id": "msg-1785057048593-ai",
+        "sender": "ai",
+        "message": "🤝 **Don't worry Test User, I'm here to help you.** (Diagnostic Checkup: Step 1/3)\n\nCould you tell me: **How long have you been experiencing this** (hours/days) and **where exactly is the discomfort located**?",
+        "riskBadge": "STEP 1 OF 3",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T09:10:48.593Z"
+      },
+      {
+        "id": "msg-1785057055454-user",
+        "sender": "user",
+        "message": "2 days",
+        "timestamp": "2026-07-26T09:10:55.454Z"
+      },
+      {
+        "id": "msg-1785057055454-ai",
+        "sender": "ai",
+        "message": "👍 **Got it, thank you for clarifying Test User.** (Diagnostic Checkup: Step 2/3)\n\nOne more important clinical detail: Are you also noticing any **nausea, dizziness, fever, or sensitivity to light/sound**? Does anything specific trigger or worsen it?",
+        "riskBadge": "STEP 2 OF 3",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T09:10:55.454Z"
+      },
+      {
+        "id": "msg-1785057061679-user",
+        "sender": "user",
+        "message": "no",
+        "timestamp": "2026-07-26T09:11:01.679Z"
+      },
+      {
+        "id": "msg-1785057061679-ai",
+        "sender": "ai",
+        "message": "📋 **FULL CLINICAL ASSESSMENT SUMMARY** (Test User)\n\n• **Primary Concern**: Reported discomfort (I have a headache and mild fever since morning)\n• **Duration & Location**: 2 days\n• **Associated Symptoms**: no\n• **Clinical Impression**: Potential Neurologist-related condition. Home care: Rest, stay hydrated, avoid heavy physical strain.\n\n👨‍⚕️ **DOCTOR CONSULTATION RECOMMENDATION**:\nBased on your symptoms across our 3-step diagnostic checkup, I strongly recommend consulting a **Neurologist** for a physical checkup.\n\n👇 Click the button below to book an appointment with our available **Neurologists**!",
+        "riskBadge": "CLINICAL ANALYSIS COMPLETE",
+        "recommendedSpecialty": {
+          "name": "Neurologist",
+          "icon": "🧠",
+          "description": "Brain & Nervous System Specialist"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T09:11:01.679Z"
+      },
+      {
+        "id": "msg-1785057788853-user",
+        "sender": "user",
+        "message": "hello",
+        "timestamp": "2026-07-26T09:23:08.853Z"
+      },
+      {
+        "id": "msg-1785057788853-ai",
+        "sender": "ai",
+        "message": "Hello Test User! 😊 I am your Personal AI Family Doctor Assistant. How are you feeling today? Describe any symptom to start your diagnostic checkup!",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T09:23:08.853Z"
+      },
+      {
+        "id": "msg-1785057967740-user",
+        "sender": "user",
+        "message": "i am having seviour headach",
+        "timestamp": "2026-07-26T09:26:07.740Z"
+      },
+      {
+        "id": "msg-1785057967740-ai",
+        "sender": "ai",
+        "message": "🤝 **Tension mat lijiye Test User, main hu na.** (Diagnostic Checkup: Step 1/3)\n\nKya aap bata sakte hain: Yeh dikkat **kab se shuru hui hai** (kitne din/ghante) aur **exact kis jagah** pe dard/feel ho raha hai?",
+        "riskBadge": "STEP 1 OF 3",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T09:26:07.740Z"
+      },
+      {
+        "id": "msg-1785058115369-user",
+        "sender": "user",
+        "message": "I have a headache and mild fever since morning",
+        "timestamp": "2026-07-26T09:28:35.369Z"
+      },
+      {
+        "id": "msg-1785058115369-ai",
+        "sender": "ai",
+        "message": "👍 Got it, Test User — thank you.\n\nOne more thing: Are you also experiencing any **nausea, dizziness, fever, or sensitivity to light or sound**? And does anything seem to make it worse — like stress, eating, or movement?",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T09:28:35.369Z"
+      },
+      {
+        "id": "msg-1785058191033-user",
+        "sender": "user",
+        "message": "2 days",
+        "timestamp": "2026-07-26T09:29:51.033Z"
+      },
+      {
+        "id": "msg-1785058191033-ai",
+        "sender": "ai",
+        "message": "📋 **FULL CLINICAL ASSESSMENT SUMMARY** (Test User)\n\n• **Primary Concern**: Reported discomfort (i am having seviour headach)\n• **Duration & Location**: I have a headache and mild fever since morning\n• **Associated Symptoms**: 2 days\n• **Clinical Impression**: Potential Neurologist-related condition. Home care: Rest, stay hydrated, avoid heavy physical strain.\n\n👨‍⚕️ **DOCTOR CONSULTATION RECOMMENDATION**:\nBased on your symptoms across our 3-step diagnostic checkup, I strongly recommend consulting a **Neurologist** for a physical checkup.\n\n👇 Click the button below to book an appointment with our available **Neurologists**!",
+        "riskBadge": "CLINICAL ANALYSIS COMPLETE",
+        "recommendedSpecialty": {
+          "name": "Neurologist",
+          "icon": "🧠",
+          "description": "Brain & Nervous System Specialist"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T09:29:51.033Z"
+      },
+      {
+        "id": "msg-1785064523642-user",
+        "sender": "user",
+        "message": "Hello, good afternoon",
+        "timestamp": "2026-07-26T11:15:23.642Z"
+      },
+      {
+        "id": "msg-1785064523642-ai",
+        "sender": "ai",
+        "message": "Good afternoon, Test User! 😊 How are you doing today? Tell me what's on your mind — I'm right here for you.",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T11:15:23.642Z"
+      },
+      {
+        "id": "msg-1785064545425-user",
+        "sender": "user",
+        "message": "I am having a severe headache since morning",
+        "timestamp": "2026-07-26T11:15:45.425Z"
+      },
+      {
+        "id": "msg-1785064545425-ai",
+        "sender": "ai",
+        "message": "🤝 Tension mat lijiye Test User, main hoon na.\n\nKya aap bata sakte hain: Yeh dikkat **kab se shuru hui hai** aur **exact kis jagah** pe dard ya discomfort feel ho raha hai?",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T11:15:45.425Z"
+      },
+      {
+        "id": "msg-1785064571449-user",
+        "sender": "user",
+        "message": "It started this morning and it hurts on the sides of my head.",
+        "timestamp": "2026-07-26T11:16:11.449Z"
+      },
+      {
+        "id": "msg-1785064571450-ai",
+        "sender": "ai",
+        "message": "👍 Got it, Test User — thank you.\n\nOne more thing: Are you also experiencing any **nausea, dizziness, fever, or sensitivity to light or sound**? And does anything seem to make it worse — like stress, eating, or movement?",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T11:16:11.450Z"
+      },
+      {
+        "id": "msg-1785064586109-user",
+        "sender": "user",
+        "message": "mujhe pet me dard hai",
+        "timestamp": "2026-07-26T11:16:26.109Z"
+      },
+      {
+        "id": "msg-1785064586109-ai",
+        "sender": "ai",
+        "message": "📋 **FULL CLINICAL ASSESSMENT SUMMARY** (Test User)\n\n• **Primary Concern**: Reported discomfort (I am having a severe headache since morning)\n• **Duration & Location**: It started this morning and it hurts on the sides of my head.\n• **Associated Symptoms**: mujhe pet me dard hai\n• **Clinical Impression**: Potential Neurologist-related condition. Home care: Rest, stay hydrated, avoid heavy physical strain.\n\n👨‍⚕️ **DOCTOR CONSULTATION RECOMMENDATION**:\nBased on your symptoms across our 3-step diagnostic checkup, I strongly recommend consulting a **Neurologist** for a physical checkup.\n\n👇 Click the button below to book an appointment with our available **Neurologists**!",
+        "riskBadge": "CLINICAL ANALYSIS COMPLETE",
+        "recommendedSpecialty": {
+          "name": "Neurologist",
+          "icon": "🧠",
+          "description": "Brain & Nervous System Specialist"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T11:16:26.109Z"
+      },
+      {
+        "id": "msg-1785064609510-user",
+        "sender": "user",
+        "message": "mujhe pet me dard hai",
+        "timestamp": "2026-07-26T11:16:49.510Z"
+      },
+      {
+        "id": "msg-1785064609511-ai",
+        "sender": "ai",
+        "message": "🤝 Tension mat lijiye Test User, main hoon na.\n\nKya aap bata sakte hain: Yeh dikkat **kab se shuru hui hai** aur **exact kis jagah** pe dard ya discomfort feel ho raha hai?",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T11:16:49.511Z"
+      },
+      {
+        "id": "msg-1785064666680-user",
+        "sender": "user",
+        "message": "I am having a severe headache since morning",
+        "timestamp": "2026-07-26T11:17:46.680Z"
+      },
+      {
+        "id": "msg-1785064666680-ai",
+        "sender": "ai",
+        "message": "👍 Samajh gaya Test User.\n\nEk aur baat: Kya aapko iske saath **chakkar / nausea / bukhar / light sensitivity** bhi ho raha hai? Aur yeh discomfort kab zyada badhta hai?",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T11:17:46.680Z"
+      },
+      {
+        "id": "msg-1785064734084-user",
+        "sender": "user",
+        "message": "I am having a severe headache since morning",
+        "timestamp": "2026-07-26T11:18:54.084Z"
+      },
+      {
+        "id": "msg-1785064734084-ai",
+        "sender": "ai",
+        "message": "📋 **FULL CLINICAL ASSESSMENT SUMMARY** (Test User)\n\n• **Primary Concern**: Reported discomfort (mujhe pet me dard hai)\n• **Duration & Location**: I am having a severe headache since morning\n• **Associated Symptoms**: I am having a severe headache since morning\n• **Clinical Impression**: Potential Neurologist-related condition. Home care: Rest, stay hydrated, avoid heavy physical strain.\n\n👨‍⚕️ **DOCTOR CONSULTATION RECOMMENDATION**:\nBased on your symptoms across our 3-step diagnostic checkup, I strongly recommend consulting a **Neurologist** for a physical checkup.\n\n👇 Click the button below to book an appointment with our available **Neurologists**!",
+        "riskBadge": "CLINICAL ANALYSIS COMPLETE",
+        "recommendedSpecialty": {
+          "name": "Neurologist",
+          "icon": "🧠",
+          "description": "Brain & Nervous System Specialist"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T11:18:54.084Z"
+      },
+      {
+        "id": "msg-1785064772548-user",
+        "sender": "user",
+        "message": "I am having a severe headache since morning",
+        "timestamp": "2026-07-26T11:19:32.548Z"
+      },
+      {
+        "id": "msg-1785064772548-ai",
+        "sender": "ai",
+        "message": "🤝 Don't worry Test User, I'm here with you.\n\nCould you tell me: **How long have you been feeling this** (a few hours / since yesterday / days?) and **where exactly** is the discomfort — is it on one side, in the center, or all over?",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T11:19:32.548Z"
+      },
+      {
+        "id": "msg-1785064794591-user",
+        "sender": "user",
+        "message": "mujhe pet me dard hai",
+        "timestamp": "2026-07-26T11:19:54.591Z"
+      },
+      {
+        "id": "msg-1785064794591-ai",
+        "sender": "ai",
+        "message": "👍 Samajh gaya Test User.\n\nEk aur baat: Kya aapko iske saath **chakkar / nausea / bukhar / light sensitivity** bhi ho raha hai? Aur yeh discomfort kab zyada badhta hai?",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T11:19:54.591Z"
+      },
+      {
+        "id": "msg-1785065461896-user",
+        "sender": "user",
+        "message": "Hello, good afternoon",
+        "timestamp": "2026-07-26T11:31:01.896Z"
+      },
+      {
+        "id": "msg-1785065461896-ai",
+        "sender": "ai",
+        "message": "📋 **FULL CLINICAL ASSESSMENT SUMMARY** (Test User)\n\n• **Primary Concern**: Reported discomfort (I am having a severe headache since morning)\n• **Duration & Location**: mujhe pet me dard hai\n• **Associated Symptoms**: Hello, good afternoon\n• **Clinical Impression**: Potential Neurologist-related condition. Home care: Rest, stay hydrated, avoid heavy physical strain.\n\n👨‍⚕️ **DOCTOR CONSULTATION RECOMMENDATION**:\nBased on your symptoms across our 3-step diagnostic checkup, I strongly recommend consulting a **Neurologist** for a physical checkup.\n\n👇 Click the button below to book an appointment with our available **Neurologists**!",
+        "riskBadge": "CLINICAL ANALYSIS COMPLETE",
+        "recommendedSpecialty": {
+          "name": "Neurologist",
+          "icon": "🧠",
+          "description": "Brain & Nervous System Specialist"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T11:31:01.896Z"
+      },
+      {
+        "id": "msg-1785065516889-user",
+        "sender": "user",
+        "message": "Hello, good afternoon",
+        "timestamp": "2026-07-26T11:31:56.889Z"
+      },
+      {
+        "id": "msg-1785065516889-ai",
+        "sender": "ai",
+        "message": "Good evening, Test User! 😊 How are you doing today? Tell me what's on your mind — I'm right here for you.",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T11:31:56.889Z"
+      },
+      {
+        "id": "msg-1785065546892-user",
+        "sender": "user",
+        "message": "I am having a severe headache since morning",
+        "timestamp": "2026-07-26T11:32:26.892Z"
+      },
+      {
+        "id": "msg-1785065546892-ai",
+        "sender": "ai",
+        "message": "🤝 Don't worry Test User, I'm here with you.\n\nCould you tell me: **How long have you been feeling this** (a few hours / since yesterday / days?) and **where exactly** is the discomfort — is it on one side, in the center, or all over?",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T11:32:26.892Z"
+      },
+      {
+        "id": "msg-1785065951216-user",
+        "sender": "user",
+        "message": "I am having severe headache",
+        "timestamp": "2026-07-26T11:39:11.216Z"
+      },
+      {
+        "id": "msg-1785065951216-ai",
+        "sender": "ai",
+        "message": "👍 Got it, Test User — thank you.\n\nOne more thing: Are you also experiencing any nausea, dizziness, fever, or sensitivity to light or sound? And does anything seem to make it worse — like stress, eating, or movement?",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T11:39:11.216Z"
+      },
+      {
+        "id": "msg-1785065963838-user",
+        "sender": "user",
+        "message": "since 2 days in the front of my head",
+        "timestamp": "2026-07-26T11:39:23.838Z"
+      },
+      {
+        "id": "msg-1785065963838-ai",
+        "sender": "ai",
+        "message": "📋 CLINICAL ASSESSMENT SUMMARY (Test User)\n\n• Primary Concern: Reported discomfort (I am having a severe headache since morning)\n• Duration & Location: I am having severe headache\n• Associated Symptoms: since 2 days in the front of my head\n• Clinical Impression: Potential Neurologist-related condition. Home care: Rest, stay hydrated, avoid heavy physical strain.\n\n👨‍⚕️ DOCTOR CONSULTATION RECOMMENDATION:\nBased on your symptoms across our 3-step diagnostic checkup, I strongly recommend consulting a Neurologist for a physical checkup.\n\n👇 Click the button below to book an appointment with our available Neurologists!",
+        "riskBadge": "CLINICAL ANALYSIS COMPLETE",
+        "recommendedSpecialty": {
+          "name": "Neurologist",
+          "icon": "🧠",
+          "description": "Brain & Nervous System Specialist"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T11:39:23.838Z"
+      },
+      {
+        "id": "msg-1785065977768-user",
+        "sender": "user",
+        "message": "light sensitivity and nausea",
+        "timestamp": "2026-07-26T11:39:37.768Z"
+      },
+      {
+        "id": "msg-1785065977768-ai",
+        "sender": "ai",
+        "message": "🤝 Don't worry Test User, I'm here with you.\n\nCould you tell me: How long have you been feeling this (a few hours / since yesterday / days?) and where exactly is the discomfort — is it on one side, in the center, or all over?",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T11:39:37.768Z"
+      },
+      {
+        "id": "msg-1785065999772-user",
+        "sender": "user",
+        "message": "I am having severe headache",
+        "timestamp": "2026-07-26T11:39:59.772Z"
+      },
+      {
+        "id": "msg-1785065999772-ai",
+        "sender": "ai",
+        "message": "👍 Got it, Test User — thank you.\n\nOne more thing: Are you also experiencing any nausea, dizziness, fever, or sensitivity to light or sound? And does anything seem to make it worse — like stress, eating, or movement?",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T11:39:59.772Z"
+      },
+      {
+        "id": "msg-1785066012551-user",
+        "sender": "user",
+        "message": "since 2 days in the front of my head",
+        "timestamp": "2026-07-26T11:40:12.551Z"
+      },
+      {
+        "id": "msg-1785066012551-ai",
+        "sender": "ai",
+        "message": "📋 CLINICAL ASSESSMENT SUMMARY (Test User)\n\n• Primary Concern: Reported discomfort (light sensitivity and nausea)\n• Duration & Location: I am having severe headache\n• Associated Symptoms: since 2 days in the front of my head\n• Clinical Impression: Potential Neurologist-related condition. Home care: Rest, stay hydrated, avoid heavy physical strain.\n\n👨‍⚕️ DOCTOR CONSULTATION RECOMMENDATION:\nBased on your symptoms across our 3-step diagnostic checkup, I strongly recommend consulting a Neurologist for a physical checkup.\n\n👇 Click the button below to book an appointment with our available Neurologists!",
+        "riskBadge": "CLINICAL ANALYSIS COMPLETE",
+        "recommendedSpecialty": {
+          "name": "Neurologist",
+          "icon": "🧠",
+          "description": "Brain & Nervous System Specialist"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T11:40:12.551Z"
+      },
+      {
+        "id": "msg-1785066029149-user",
+        "sender": "user",
+        "message": "since 2 days in the front of my head",
+        "timestamp": "2026-07-26T11:40:29.149Z"
+      },
+      {
+        "id": "msg-1785066029149-ai",
+        "sender": "ai",
+        "message": "🤝 Don't worry Test User, I'm here with you.\n\nCould you tell me: How long have you been feeling this (a few hours / since yesterday / days?) and where exactly is the discomfort — is it on one side, in the center, or all over?",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T11:40:29.149Z"
+      },
+      {
+        "id": "msg-1785066060419-user",
+        "sender": "user",
+        "message": "I am having severe headache",
+        "timestamp": "2026-07-26T11:41:00.419Z"
+      },
+      {
+        "id": "msg-1785066060419-ai",
+        "sender": "ai",
+        "message": "👍 Got it, Test User — thank you.\n\nOne more thing: Are you also experiencing any nausea, dizziness, fever, or sensitivity to light or sound? And does anything seem to make it worse — like stress, eating, or movement?",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T11:41:00.419Z"
+      },
+      {
+        "id": "msg-1785066072952-user",
+        "sender": "user",
+        "message": "since 2 days in the front of my head",
+        "timestamp": "2026-07-26T11:41:12.952Z"
+      },
+      {
+        "id": "msg-1785066072952-ai",
+        "sender": "ai",
+        "message": "📋 CLINICAL ASSESSMENT SUMMARY (Test User)\n\n• Primary Concern: Reported discomfort (since 2 days in the front of my head)\n• Duration & Location: I am having severe headache\n• Associated Symptoms: since 2 days in the front of my head\n• Clinical Impression: Potential Neurologist-related condition. Home care: Rest, stay hydrated, avoid heavy physical strain.\n\n👨‍⚕️ DOCTOR CONSULTATION RECOMMENDATION:\nBased on your symptoms across our 3-step diagnostic checkup, I strongly recommend consulting a Neurologist for a physical checkup.\n\n👇 Click the button below to book an appointment with our available Neurologists!",
+        "riskBadge": "CLINICAL ANALYSIS COMPLETE",
+        "recommendedSpecialty": {
+          "name": "Neurologist",
+          "icon": "🧠",
+          "description": "Brain & Nervous System Specialist"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T11:41:12.952Z"
+      },
+      {
+        "id": "msg-1785066094746-user",
+        "sender": "user",
+        "message": "I am having severe headache",
+        "timestamp": "2026-07-26T11:41:34.746Z"
+      },
+      {
+        "id": "msg-1785066094746-ai",
+        "sender": "ai",
+        "message": "🤝 Don't worry Test User, I'm here with you.\n\nCould you tell me: How long have you been feeling this (a few hours / since yesterday / days?) and where exactly is the discomfort — is it on one side, in the center, or all over?",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T11:41:34.746Z"
+      },
+      {
+        "id": "msg-1785066107771-user",
+        "sender": "user",
+        "message": "since 2 days in the front of my head",
+        "timestamp": "2026-07-26T11:41:47.771Z"
+      },
+      {
+        "id": "msg-1785066107771-ai",
+        "sender": "ai",
+        "message": "👍 Got it, Test User — thank you.\n\nOne more thing: Are you also experiencing any nausea, dizziness, fever, or sensitivity to light or sound? And does anything seem to make it worse — like stress, eating, or movement?",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T11:41:47.771Z"
+      },
+      {
+        "id": "msg-1785066120667-user",
+        "sender": "user",
+        "message": "light sensitivity and nausea",
+        "timestamp": "2026-07-26T11:42:00.667Z"
+      },
+      {
+        "id": "msg-1785066120667-ai",
+        "sender": "ai",
+        "message": "📋 CLINICAL ASSESSMENT SUMMARY (Test User)\n\n• Primary Concern: Reported discomfort (I am having severe headache)\n• Duration & Location: since 2 days in the front of my head\n• Associated Symptoms: light sensitivity and nausea\n• Clinical Impression: Potential Neurologist-related condition. Home care: Rest, stay hydrated, avoid heavy physical strain.\n\n👨‍⚕️ DOCTOR CONSULTATION RECOMMENDATION:\nBased on your symptoms across our 3-step diagnostic checkup, I strongly recommend consulting a Neurologist for a physical checkup.\n\n👇 Click the button below to book an appointment with our available Neurologists!",
+        "riskBadge": "CLINICAL ANALYSIS COMPLETE",
+        "recommendedSpecialty": {
+          "name": "Neurologist",
+          "icon": "🧠",
+          "description": "Brain & Nervous System Specialist"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T11:42:00.667Z"
+      },
+      {
+        "id": "msg-1785066368495-user",
+        "sender": "user",
+        "message": "I am having severe joint pain in knee",
+        "timestamp": "2026-07-26T11:46:08.495Z"
+      },
+      {
+        "id": "msg-1785066368495-ai",
+        "sender": "ai",
+        "message": "🤝 Don't worry Test User, I'm here with you.\n\nCould you tell me: How long have you been feeling this (a few hours / since yesterday / days?) and where exactly is the discomfort — is it on one side, in the center, or all over?",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T11:46:08.495Z"
+      },
+      {
+        "id": "msg-1785066638483-user",
+        "sender": "user",
+        "message": "3",
+        "timestamp": "2026-07-26T11:50:38.484Z"
+      },
+      {
+        "id": "msg-1785066638484-ai",
+        "sender": "ai",
+        "message": "👍 Got it, Test User — thank you.\n\nOne more thing: Are you also experiencing any nausea, dizziness, fever, or sensitivity to light or sound? And does anything seem to make it worse — like stress, eating, or movement?",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T11:50:38.484Z"
+      },
+      {
+        "id": "msg-1785066644066-user",
+        "sender": "user",
+        "message": "yes",
+        "timestamp": "2026-07-26T11:50:44.066Z"
+      },
+      {
+        "id": "msg-1785066644066-ai",
+        "sender": "ai",
+        "message": "📋 CLINICAL ASSESSMENT SUMMARY (Test User)\n\n• Primary Concern: Reported discomfort (I am having severe joint pain in knee)\n• Duration & Location: 3\n• Associated Symptoms: yes\n• Clinical Impression: Potential Orthopedic-related condition. Home care: Rest, stay hydrated, avoid heavy physical strain.\n\n👨‍⚕️ DOCTOR CONSULTATION RECOMMENDATION:\nBased on your symptoms across our 3-step diagnostic checkup, I strongly recommend consulting a Orthopedic for a physical checkup.\n\n👇 Click the button below to book an appointment with our available Orthopedics!",
+        "riskBadge": "CLINICAL ANALYSIS COMPLETE",
+        "recommendedSpecialty": {
+          "name": "Orthopedic",
+          "icon": "🦴",
+          "description": "Bone & Joint Specialist"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T11:50:44.066Z"
+      },
+      {
+        "id": "msg-1785066658699-user",
+        "sender": "user",
+        "message": "I have a headache and mild fever since morning",
+        "timestamp": "2026-07-26T11:50:58.699Z"
+      },
+      {
+        "id": "msg-1785066658699-ai",
+        "sender": "ai",
+        "message": "🤝 Don't worry Test User, I'm here with you.\n\nCould you tell me: How long have you been feeling this (a few hours / since yesterday / days?) and where exactly is the discomfort — is it on one side, in the center, or all over?",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T11:50:58.699Z"
+      },
+      {
+        "id": "msg-1785066668814-user",
+        "sender": "user",
+        "message": "1 hr",
+        "timestamp": "2026-07-26T11:51:08.814Z"
+      },
+      {
+        "id": "msg-1785066668814-ai",
+        "sender": "ai",
+        "message": "👍 Got it, Test User — thank you.\n\nOne more thing: Are you also experiencing any nausea, dizziness, fever, or sensitivity to light or sound? And does anything seem to make it worse — like stress, eating, or movement?",
+        "riskBadge": "LOW RISK",
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T11:51:08.814Z"
+      },
+      {
+        "id": "msg-1785066672564-user",
+        "sender": "user",
+        "message": "yes",
+        "timestamp": "2026-07-26T11:51:12.564Z"
+      },
+      {
+        "id": "msg-1785066672564-ai",
+        "sender": "ai",
+        "message": "📋 CLINICAL ASSESSMENT SUMMARY (Test User)\n\n• Primary Concern: Reported discomfort (I have a headache and mild fever since morning)\n• Duration & Location: 1 hr\n• Associated Symptoms: yes\n• Clinical Impression: Potential Neurologist-related condition. Home care: Rest, stay hydrated, avoid heavy physical strain.\n\n👨‍⚕️ DOCTOR CONSULTATION RECOMMENDATION:\nBased on your symptoms across our 3-step diagnostic checkup, I strongly recommend consulting a Neurologist for a physical checkup.\n\n👇 Click the button below to book an appointment with our available Neurologists!",
+        "riskBadge": "CLINICAL ANALYSIS COMPLETE",
+        "recommendedSpecialty": {
+          "name": "Neurologist",
+          "icon": "🧠",
+          "description": "Brain & Nervous System Specialist"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T11:51:12.564Z"
+      }
+    ]
+  },
+  {
+    "_id": "7",
+    "name": "Test User",
+    "email": "test_user_new@example.com",
+    "password": "$2b$10$m5aMkTjP1F7hr1lJzVp7vO.xtWTVTvNgtOORGGaiJqDHWSSxTTWFK",
+    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAADwCAYAAAA+VemSAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAB3RJTUUH6AcXEjQXRMNrCQAAAAxpVFh0Q29tbWVudAAAAAAAvK6ymQAAABF0RVh0U29mdHdhcmUAU25pcGFzdGUuTmV0V29sZqUAAAAldEVYdENyZWF0aW9uIFRpbWUAMjAyNC0wNy0yM1QxMjoxMjoxMFoK6G0+AAAFxklEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAMBuAABHgAAAABJRU5ErkJggg==",
+    "phone": "000000000",
+    "address": {
+      "line1": "",
+      "line2": ""
+    },
+    "gender": "Not Selected",
+    "dob": "Not Selected",
+    "role": "patient",
+    "hasCompletedOnboarding": true,
+    "healthProfile": {
+      "preferredLanguage": "English",
+      "ageGender": "25 years old, Male",
+      "ageCategory": "adult",
+      "ageLabel": "Adults (18 - 59 years)",
+      "healthHistory": "No major health issues till now",
+      "medicationsAllergies": "None",
+      "familyHistory": "No family sub-profiles added during onboarding",
+      "lifestyleGoals": "Healthy lifestyle",
+      "learnedInsights": [],
+      "completedAt": "2026-07-26T12:15:15.161Z",
+      "activeSession": {
+        "turn": 0,
+        "status": "completed",
+        "responses": []
+      }
+    },
+    "familyMembers": [
+      {
+        "id": "FAM-1785067770446",
+        "name": "Jane Doe",
+        "relation": "Parent",
+        "age": "30",
+        "bloodGroup": "A+",
+        "medicalNotes": "Penicillin Allergy",
+        "addedAt": "2026-07-26T12:09:30.446Z"
+      }
+    ],
+    "subscription": {
+      "plan": "patient_100",
+      "status": "active",
+      "activatedAt": 1785067342540,
+      "expiresAt": 1787659342540,
+      "price": 100,
+      "currency": "INR"
+    },
+    "emergencyCard": {
+      "bloodType": "O+",
+      "allergies": "None",
+      "chronicConditions": "No major health issues till now",
+      "emergencyContact": "000000000",
+      "shareToken": "EMG-0YQ2BUF"
+    },
+    "vitalsLog": [],
+    "vaccineSchedules": [],
+    "scannedMedicines": [],
+    "aiChatHistory": [
+      {
+        "id": "msg-1785068137937-user",
+        "sessionId": "session-1785068128263",
+        "sender": "user",
+        "message": "I have a headache and mild fever",
+        "timestamp": "2026-07-26T12:15:37.937Z"
+      },
+      {
+        "id": "msg-1785068137937-ai",
+        "sessionId": "session-1785068128263",
+        "sender": "ai",
+        "message": "🤝 Don't worry Test User, I'm here with you.\n\nCould you tell me: How long have you been feeling this (a few hours / since yesterday / days?) and where exactly is the discomfort — is it on one side, in the center, or all over?",
+        "riskBadge": null,
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T12:15:37.937Z"
+      },
+      {
+        "id": "msg-1785068154478-user",
+        "sessionId": "session-1785068128263",
+        "sender": "user",
+        "message": "1 hr",
+        "timestamp": "2026-07-26T12:15:54.478Z"
+      },
+      {
+        "id": "msg-1785068154478-ai",
+        "sessionId": "session-1785068128263",
+        "sender": "ai",
+        "message": "👍 Got it, Test User — thank you.\n\nOne more thing: Are you also experiencing any nausea, dizziness, fever, or sensitivity to light or sound? And does anything seem to make it worse — like stress, eating, or movement?",
+        "riskBadge": null,
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T12:15:54.478Z"
+      },
+      {
+        "id": "msg-1785068169821-user",
+        "sessionId": "session-1785068128263",
+        "sender": "user",
+        "message": "yes",
+        "timestamp": "2026-07-26T12:16:09.821Z"
+      },
+      {
+        "id": "msg-1785068169821-ai",
+        "sessionId": "session-1785068128263",
+        "sender": "ai",
+        "message": "📋 CLINICAL ASSESSMENT SUMMARY (Test User)\n\n• Primary Concern: Reported discomfort (I have a headache and mild fever)\n• Duration & Location: 1 hr\n• Associated Symptoms: yes\n• Clinical Impression: Potential Neurologist-related condition. Home care: Rest, stay hydrated, avoid heavy physical strain.\n\n👨‍⚕️ DOCTOR CONSULTATION RECOMMENDATION:\nBased on your symptoms across our 3-step diagnostic checkup, I strongly recommend consulting a Neurologist for a physical checkup.\n\n👇 Click the button below to book an appointment with our available Neurologists!",
+        "riskBadge": "CLINICAL ANALYSIS COMPLETE",
+        "recommendedSpecialty": {
+          "name": "Neurologist",
+          "icon": "🧠",
+          "description": "Brain & Nervous System Specialist"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T12:16:09.821Z"
+      },
+      {
+        "id": "msg-1785068194568-user",
+        "sessionId": "session-1785068185550",
+        "sender": "user",
+        "message": "I am having joint pain in knee",
+        "timestamp": "2026-07-26T12:16:34.568Z"
+      },
+      {
+        "id": "msg-1785068194568-ai",
+        "sessionId": "session-1785068185550",
+        "sender": "ai",
+        "message": "🤝 Don't worry Test User, I'm here with you.\n\nCould you tell me: How long have you been feeling this (a few hours / since yesterday / days?) and where exactly is the discomfort — is it on one side, in the center, or all over?",
+        "riskBadge": null,
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T12:16:34.568Z"
+      },
+      {
+        "id": "msg-1785068335479-user",
+        "sessionId": "session-1785068323827",
+        "sender": "user",
+        "message": "I have a stomach and mild fever since morning",
+        "timestamp": "2026-07-26T12:18:55.479Z"
+      },
+      {
+        "id": "msg-1785068335479-ai",
+        "sessionId": "session-1785068323827",
+        "sender": "ai",
+        "message": "👍 Got it, Test User — thank you.\n\nOne more thing: Are you also experiencing any nausea, dizziness, fever, or sensitivity to light or sound? And does anything seem to make it worse — like stress, eating, or movement?",
+        "riskBadge": null,
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T12:18:55.479Z"
+      },
+      {
+        "id": "msg-1785068349845-user",
+        "sessionId": "session-1785068323827",
+        "sender": "user",
+        "message": "stoamch is paining",
+        "timestamp": "2026-07-26T12:19:09.845Z"
+      },
+      {
+        "id": "msg-1785068349845-ai",
+        "sessionId": "session-1785068323827",
+        "sender": "ai",
+        "message": "📋 CLINICAL ASSESSMENT SUMMARY (Test User)\n\n• Primary Concern: Reported discomfort (I am having joint pain in knee)\n• Duration & Location: I have a stomach and mild fever since morning\n• Associated Symptoms: stoamch is paining\n• Clinical Impression: Potential Gastroenterologist-related condition. Home care: Rest, stay hydrated, avoid heavy physical strain.\n\n👨‍⚕️ DOCTOR CONSULTATION RECOMMENDATION:\nBased on your symptoms across our 3-step diagnostic checkup, I strongly recommend consulting a Gastroenterologist for a physical checkup.\n\n👇 Click the button below to book an appointment with our available Gastroenterologists!",
+        "riskBadge": "CLINICAL ANALYSIS COMPLETE",
+        "recommendedSpecialty": {
+          "name": "Gastroenterologist",
+          "icon": "🫄",
+          "description": "Digestive & Stomach Specialist"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T12:19:09.845Z"
+      },
+      {
+        "id": "msg-1785068375821-user",
+        "sessionId": "session-1785068367505",
+        "sender": "user",
+        "message": "my eyes are paining",
+        "timestamp": "2026-07-26T12:19:35.821Z"
+      },
+      {
+        "id": "msg-1785068375821-ai",
+        "sessionId": "session-1785068367505",
+        "sender": "ai",
+        "message": "🤝 Don't worry Test User, I'm here with you.\n\nCould you tell me: How long have you been feeling this (a few hours / since yesterday / days?) and where exactly is the discomfort — is it on one side, in the center, or all over?",
+        "riskBadge": null,
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T12:19:35.821Z"
+      },
+      {
+        "id": "msg-1785068393390-user",
+        "sessionId": "session-1785068367505",
+        "sender": "user",
+        "message": "few hours",
+        "timestamp": "2026-07-26T12:19:53.390Z"
+      },
+      {
+        "id": "msg-1785068393390-ai",
+        "sessionId": "session-1785068367505",
+        "sender": "ai",
+        "message": "👍 Got it, Test User — thank you.\n\nOne more thing: Are you also experiencing any nausea, dizziness, fever, or sensitivity to light or sound? And does anything seem to make it worse — like stress, eating, or movement?",
+        "riskBadge": null,
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T12:19:53.390Z"
+      },
+      {
+        "id": "msg-1785068407177-user",
+        "sessionId": "session-1785068367505",
+        "sender": "user",
+        "message": "wtf its not related to eyes pain",
+        "timestamp": "2026-07-26T12:20:07.177Z"
+      },
+      {
+        "id": "msg-1785068407177-ai",
+        "sessionId": "session-1785068367505",
+        "sender": "ai",
+        "message": "📋 CLINICAL ASSESSMENT SUMMARY (Test User)\n\n• Primary Concern: Reported discomfort (my eyes are paining)\n• Duration & Location: few hours\n• Associated Symptoms: wtf its not related to eyes pain\n• Clinical Impression: Potential General Physician-related condition. Home care: Rest, stay hydrated, avoid heavy physical strain.\n\n👨‍⚕️ DOCTOR CONSULTATION RECOMMENDATION:\nBased on your symptoms across our 3-step diagnostic checkup, I strongly recommend consulting a General Physician for a physical checkup.\n\n👇 Click the button below to book an appointment with our available General Physicians!",
+        "riskBadge": "CLINICAL ANALYSIS COMPLETE",
+        "recommendedSpecialty": {
+          "name": "General Physician",
+          "icon": "👨‍⚕️",
+          "description": "Primary Care & General Medicine"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T12:20:07.177Z"
+      },
+      {
+        "id": "msg-1785068616948-user",
+        "sessionId": "session-1785068606214",
+        "sender": "user",
+        "message": "I have a headache in my left temple with throbbing pain",
+        "timestamp": "2026-07-26T12:23:36.948Z"
+      },
+      {
+        "id": "msg-1785068616948-ai",
+        "sessionId": "session-1785068606214",
+        "sender": "ai",
+        "message": "🤝 Don't worry Test User, I am right here with you.\n\nTo evaluate your headache accurately, please share a few clinical details:\n1. **Nature of Pain**: Is it a throbbing/pulsating pain, a dull heavy pressure, or a sharp stabbing pain?\n2. **Location**: Is it focused on one side (left/right temple) or all over your head?\n3. **Duration**: How many hours or days has it been persisting?",
+        "riskBadge": null,
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T12:23:36.948Z"
+      },
+      {
+        "id": "msg-1785068636170-user",
+        "sessionId": "session-1785068606214",
+        "sender": "user",
+        "message": "It is throbbing on the left side with nausea and light sensitivity",
+        "timestamp": "2026-07-26T12:23:56.170Z"
+      },
+      {
+        "id": "msg-1785068636170-ai",
+        "sessionId": "session-1785068606214",
+        "sender": "ai",
+        "message": "👍 Thank you for clarifying, Test User.\n\nTwo critical clinical diagnostic checks:\n1. Are you experiencing any **sensitivity to light/sound, visual blurriness, or nausea**?\n2. Do you have any **neck stiffness or fever** along with the headache?",
+        "riskBadge": null,
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T12:23:56.170Z"
+      },
+      {
+        "id": "msg-1785068652311-user",
+        "sessionId": "session-1785068606214",
+        "sender": "user",
+        "message": "no neck stiffness, but having light sensitivity and nausea",
+        "timestamp": "2026-07-26T12:24:12.311Z"
+      },
+      {
+        "id": "msg-1785068652311-ai",
+        "sessionId": "session-1785068606214",
+        "sender": "ai",
+        "message": "📋 CLINICAL ASSESSMENT REPORT (Test User)\n\n• Primary Concern: I have a headache in my left temple with throbbing pain\n• Duration & Location Details: It is throbbing on the left side with nausea and light sensitivity\n• Associated Symptoms & Triggers: no neck stiffness, but having light sensitivity and nausea\n\n🔍 CLINICAL DIFFERENTIAL DIAGNOSES:\n1. Primary Suspected Condition: Migraine with/without Aura\n2. Secondary Differential: Stress & Cervicogenic Strain / Dehydration\n\n🧪 RECOMMENDED DIAGNOSTIC TESTS TO DISCUSS WITH DOCTOR:\n• MRI/CT Brain (if severe/persistent), Ophthalmic Vision Check, Blood Pressure Log\n\n🛡️ CLINICAL PRECAUTIONS & HOME CARE:\n• Rest in a dark quiet room, drink 2-3L water daily, apply cold forehead compress, limit screen exposure.\n\n💡 Clinical Medical Knowledge Note:\nHi there Acne has multifactorial etiology. Only acne soap does not improve if ypu have grade 2 or more grade acne. You need to have oral and topical medications. This before writing medicines i need to confirm your grade of acne. For mild grade topical clindamycin or retenoic acud derivative would suffice whereas for h...\n\n👨‍⚕️ DOCTOR CONSULTATION RECOMMENDATION:\nBased on your symptoms across our 3-step diagnostic checkup, I strongly recommend consulting a Neurologist for a physical checkup.\n\n👇 Click the button below to book an appointment with our available Neurologists!",
+        "riskBadge": null,
+        "recommendedSpecialty": {
+          "name": "Neurologist",
+          "icon": "🧠",
+          "description": "Brain & Nervous System Specialist"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T12:24:12.311Z"
+      },
+      {
+        "id": "msg-1785068791147-user",
+        "sessionId": "session-1785068782170",
+        "sender": "user",
+        "message": "my eyes are burning",
+        "timestamp": "2026-07-26T12:26:31.147Z"
+      },
+      {
+        "id": "msg-1785068791147-ai",
+        "sessionId": "session-1785068782170",
+        "sender": "ai",
+        "message": "🚨 EMERGENCY WARNING: THERMAL / HEAT BURNS\n\nDear Test User, please stay calm. Follow these immediate emergency steps:\n1. Cool burn under cool running tap water for at least 10–20 minutes.\n2. Remove clothing/jewelry near burn before swelling starts.\n3. Cover loosely with clean non-stick sterile cloth.\n\n⚠️ Do Not: Do NOT use ice, butter, oil, or toothpaste on the burn.\n\n📞 Call Emergency Ambulance (108 / 112) immediately!",
+        "riskBadge": "HIGH EMERGENCY",
+        "recommendedSpecialty": {
+          "name": "Cardiologist",
+          "icon": "🫀",
+          "description": "Immediate Medical & Cardiovascular Care"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T12:26:31.147Z"
+      },
+      {
+        "id": "msg-1785068807390-user",
+        "sessionId": "session-1785068782170",
+        "sender": "user",
+        "message": "my eyes are paining",
+        "timestamp": "2026-07-26T12:26:47.390Z"
+      },
+      {
+        "id": "msg-1785068807390-ai",
+        "sessionId": "session-1785068782170",
+        "sender": "ai",
+        "message": "🤝 Don't worry Test User, I'm here with you.\n\nCould you tell me: How long have you been feeling this (hours/days) and where exactly is the discomfort located?",
+        "riskBadge": null,
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T12:26:47.390Z"
+      },
+      {
+        "id": "msg-1785068818058-user",
+        "sessionId": "session-1785068782170",
+        "sender": "user",
+        "message": "last 1 hour",
+        "timestamp": "2026-07-26T12:26:58.058Z"
+      },
+      {
+        "id": "msg-1785068818058-ai",
+        "sessionId": "session-1785068782170",
+        "sender": "ai",
+        "message": "👍 Got it, Test User — thank you.\n\nOne more thing: Are you also experiencing any nausea, fever, or dizziness? And does anything seem to trigger or worsen it?",
+        "riskBadge": null,
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T12:26:58.058Z"
+      },
+      {
+        "id": "msg-1785068824218-user",
+        "sessionId": "session-1785068782170",
+        "sender": "user",
+        "message": "no",
+        "timestamp": "2026-07-26T12:27:04.218Z"
+      },
+      {
+        "id": "msg-1785068824218-ai",
+        "sessionId": "session-1785068782170",
+        "sender": "ai",
+        "message": "📋 CLINICAL ASSESSMENT REPORT (Test User)\n\n• Primary Concern: my eyes are paining\n• Duration & Location Details: last 1 hour\n• Associated Symptoms & Triggers: no\n\n🔍 CLINICAL DIFFERENTIAL DIAGNOSES:\n1. Primary Suspected Condition: General Medical Discomfort / Viral Syndrome\n2. Secondary Differential: Stress / Environmental Strain\n\n🧪 RECOMMENDED DIAGNOSTIC TESTS TO DISCUSS WITH DOCTOR:\n• Routine Complete Blood Count (CBC) & Vital Signs Log\n\n🛡️ CLINICAL PRECAUTIONS & HOME CARE:\n• Rest adequately, maintain liquid hydration (2L/day), monitor symptoms.\n\n👨‍⚕️ DOCTOR CONSULTATION RECOMMENDATION:\nBased on your symptoms across our 3-step diagnostic checkup, I strongly recommend consulting a General Physician for a physical checkup.\n\n👇 Click the button below to book an appointment with our available General Physicians!",
+        "riskBadge": null,
+        "recommendedSpecialty": {
+          "name": "General Physician",
+          "icon": "👨‍⚕️",
+          "description": "Primary Care & General Medicine"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T12:27:04.218Z"
+      },
+      {
+        "id": "msg-1785068869256-user",
+        "sessionId": "session-1785068852847",
+        "sender": "user",
+        "message": "i got slip on the starecase , my leg is paining a lot",
+        "timestamp": "2026-07-26T12:27:49.256Z"
+      },
+      {
+        "id": "msg-1785068869256-ai",
+        "sessionId": "session-1785068852847",
+        "sender": "ai",
+        "message": "🤝 Don't worry Test User, I'm here with you.\n\nCould you tell me: How long have you been feeling this (hours/days) and where exactly is the discomfort located?",
+        "riskBadge": null,
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T12:27:49.256Z"
+      },
+      {
+        "id": "msg-1785069018470-user",
+        "sessionId": "session-1785069008047",
+        "sender": "user",
+        "message": "My eyes are burning and watering when I read on screen",
+        "timestamp": "2026-07-26T12:30:18.470Z"
+      },
+      {
+        "id": "msg-1785069018470-ai",
+        "sessionId": "session-1785069008047",
+        "sender": "ai",
+        "message": "🚨 EMERGENCY WARNING: THERMAL / HEAT BURNS\n\nDear Test User, please stay calm. Follow these immediate emergency steps:\n1. Cool burn under cool running tap water for at least 10–20 minutes.\n2. Remove clothing/jewelry near burn before swelling starts.\n3. Cover loosely with clean non-stick sterile cloth.\n\n⚠️ Do Not: Do NOT use ice, butter, oil, or toothpaste on the burn.\n\n📞 Call Emergency Ambulance (108 / 112) immediately!",
+        "riskBadge": "HIGH EMERGENCY",
+        "recommendedSpecialty": {
+          "name": "Cardiologist",
+          "icon": "🫀",
+          "description": "Immediate Medical & Cardiovascular Care"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T12:30:18.470Z"
+      },
+      {
+        "id": "msg-1785069038265-user",
+        "sessionId": "session-1785069008047",
+        "sender": "user",
+        "message": "it started yesterday after 6 hours of laptop work",
+        "timestamp": "2026-07-26T12:30:38.265Z"
+      },
+      {
+        "id": "msg-1785069038265-ai",
+        "sessionId": "session-1785069008047",
+        "sender": "ai",
+        "message": "🤝 Don't worry Test User, I'm here with you.\n\nCould you tell me: How long have you been feeling this (hours/days) and where exactly is the discomfort located?",
+        "riskBadge": null,
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T12:30:38.265Z"
+      },
+      {
+        "id": "msg-1785069124789-user",
+        "sessionId": "session-1785069112006",
+        "sender": "user",
+        "message": "My eyes are burning and watering when I read on screen",
+        "timestamp": "2026-07-26T12:32:04.789Z"
+      },
+      {
+        "id": "msg-1785069124789-ai",
+        "sessionId": "session-1785069112006",
+        "sender": "ai",
+        "message": "👍 Got it, Test User — thank you.\n\nOne more thing: Are you also experiencing any nausea, fever, or dizziness? And does anything seem to trigger or worsen it?",
+        "riskBadge": null,
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T12:32:04.789Z"
+      },
+      {
+        "id": "msg-1785069141620-user",
+        "sessionId": "session-1785069112006",
+        "sender": "user",
+        "message": "it started yesterday after 6 hours of laptop work",
+        "timestamp": "2026-07-26T12:32:21.620Z"
+      },
+      {
+        "id": "msg-1785069141620-ai",
+        "sessionId": "session-1785069112006",
+        "sender": "ai",
+        "message": "📋 CLINICAL ASSESSMENT REPORT (Test User)\n\n• Primary Concern: it started yesterday after 6 hours of laptop work\n• Duration & Location Details: My eyes are burning and watering when I read on screen\n• Associated Symptoms & Triggers: it started yesterday after 6 hours of laptop work\n\n🔍 CLINICAL DIFFERENTIAL DIAGNOSES:\n1. Primary Suspected Condition: General Medical Discomfort / Viral Syndrome\n2. Secondary Differential: Stress / Environmental Strain\n\n🧪 RECOMMENDED DIAGNOSTIC TESTS TO DISCUSS WITH DOCTOR:\n• Routine Complete Blood Count (CBC) & Vital Signs Log\n\n🛡️ CLINICAL PRECAUTIONS & HOME CARE:\n• Rest adequately, maintain liquid hydration (2L/day), monitor symptoms.\n\n👨‍⚕️ DOCTOR CONSULTATION RECOMMENDATION:\nBased on your symptoms across our 3-step diagnostic checkup, I strongly recommend consulting a Ophthalmologist for a physical checkup.\n\n👇 Click the button below to book an appointment with our available Ophthalmologists!",
+        "riskBadge": null,
+        "recommendedSpecialty": {
+          "name": "Ophthalmologist",
+          "icon": "👁️",
+          "description": "Eye & Vision Specialist"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T12:32:21.620Z"
+      },
+      {
+        "id": "msg-1785069156509-user",
+        "sessionId": "session-1785069112006",
+        "sender": "user",
+        "message": "no yellow discharge",
+        "timestamp": "2026-07-26T12:32:36.509Z"
+      },
+      {
+        "id": "msg-1785069156509-ai",
+        "sessionId": "session-1785069112006",
+        "sender": "ai",
+        "message": "🤝 Don't worry Test User, I'm here with you.\n\nCould you tell me: How long have you been feeling this (hours/days) and where exactly is the discomfort located?",
+        "riskBadge": null,
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T12:32:36.509Z"
+      },
+      {
+        "id": "msg-1785069198217-user",
+        "sessionId": "session-1785069185246",
+        "sender": "user",
+        "message": "My eyes are burning and watering when I read on screen",
+        "timestamp": "2026-07-26T12:33:18.217Z"
+      },
+      {
+        "id": "msg-1785069198217-ai",
+        "sessionId": "session-1785069185246",
+        "sender": "ai",
+        "message": "👍 Got it, Test User — thank you.\n\nOne more thing: Are you also experiencing any nausea, fever, or dizziness? And does anything seem to trigger or worsen it?",
+        "riskBadge": null,
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T12:33:18.217Z"
+      },
+      {
+        "id": "msg-1785069212887-user",
+        "sessionId": "session-1785069185246",
+        "sender": "user",
+        "message": "it started yesterday after 6 hours of laptop work",
+        "timestamp": "2026-07-26T12:33:32.887Z"
+      },
+      {
+        "id": "msg-1785069212887-ai",
+        "sessionId": "session-1785069185246",
+        "sender": "ai",
+        "message": "📋 CLINICAL ASSESSMENT REPORT (Test User)\n\n• Primary Concern: no yellow discharge\n• Duration & Location Details: My eyes are burning and watering when I read on screen\n• Associated Symptoms & Triggers: it started yesterday after 6 hours of laptop work\n\n🔍 CLINICAL DIFFERENTIAL DIAGNOSES:\n1. Primary Suspected Condition: General Medical Discomfort / Viral Syndrome\n2. Secondary Differential: Stress / Environmental Strain\n\n🧪 RECOMMENDED DIAGNOSTIC TESTS TO DISCUSS WITH DOCTOR:\n• Routine Complete Blood Count (CBC) & Vital Signs Log\n\n🛡️ CLINICAL PRECAUTIONS & HOME CARE:\n• Rest adequately, maintain liquid hydration (2L/day), monitor symptoms.\n\n👨‍⚕️ DOCTOR CONSULTATION RECOMMENDATION:\nBased on your symptoms across our 3-step diagnostic checkup, I strongly recommend consulting a Ophthalmologist for a physical checkup.\n\n👇 Click the button below to book an appointment with our available Ophthalmologists!",
+        "riskBadge": null,
+        "recommendedSpecialty": {
+          "name": "Ophthalmologist",
+          "icon": "👁️",
+          "description": "Eye & Vision Specialist"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T12:33:32.887Z"
+      }
+    ]
+  },
+  {
+    "_id": "8",
+    "name": "Test User 2",
+    "email": "test2@test.com",
+    "password": "$2b$10$qFfvKYJ5JQr91461Yv3raemjginxb4BH9H/gxNxkeevUrKyJnA2M.",
+    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAADwCAYAAAA+VemSAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAB3RJTUUH6AcXEjQXRMNrCQAAAAxpVFh0Q29tbWVudAAAAAAAvK6ymQAAABF0RVh0U29mdHdhcmUAU25pcGFzdGUuTmV0V29sZqUAAAAldEVYdENyZWF0aW9uIFRpbWUAMjAyNC0wNy0yM1QxMjoxMjoxMFoK6G0+AAAFxklEQVR4nO3BMQEAAADCoPVP7WsIoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAMBuAABHgAAAABJRU5ErkJggg==",
+    "phone": "000000000",
+    "address": {
+      "line1": "",
+      "line2": ""
+    },
+    "gender": "Not Selected",
+    "dob": "Not Selected",
+    "role": "patient",
+    "hasCompletedOnboarding": true,
+    "healthProfile": {
+      "preferredLanguage": "English",
+      "ageGender": "28 years old, Male",
+      "ageCategory": "adult",
+      "ageLabel": "Adults (18 - 59 years)",
+      "healthHistory": "No major health issues till now",
+      "medicationsAllergies": "None",
+      "familyHistory": "No family sub-profiles added during onboarding",
+      "lifestyleGoals": "Stay healthy",
+      "learnedInsights": [],
+      "completedAt": "2026-07-26T13:57:39.264Z",
+      "activeSession": {
+        "turn": 0,
+        "status": "completed",
+        "responses": []
+      }
+    },
+    "familyMembers": [],
+    "subscription": {
+      "plan": "patient_100",
+      "status": "trial",
+      "trialStartDate": 1785069268642,
+      "trialEndDate": 1785674068642,
+      "price": 100
+    },
+    "emergencyCard": {
+      "bloodType": "O+",
+      "allergies": "None",
+      "chronicConditions": "No major health issues till now",
+      "emergencyContact": "000000000",
+      "shareToken": "EMG-PJKK27V"
+    },
+    "vitalsLog": [
+      {
+        "id": "vitals-1785074712401",
+        "bp": "120/80 mmHg",
+        "glucose": "95 mg/dL",
+        "heartRate": "72 bpm",
+        "spo2": "98 %",
+        "loggedAt": "2026-07-26T14:05:12.401Z"
+      },
+      {
+        "id": "vitals-1785074652908",
+        "bp": "120135/8085 mmHg",
+        "glucose": "95110 mg/dL",
+        "heartRate": "7278 bpm",
+        "spo2": "9897 %",
+        "loggedAt": "2026-07-26T14:04:12.908Z"
+      }
+    ],
+    "vaccineSchedules": [],
+    "scannedMedicines": [
+      {
+        "id": "scan-1785074743106",
+        "medicineName": "Paracetamol / Acetaminophen (500mg)",
+        "category": "Analgesic & Antipyretic",
+        "scannedAt": "2026-07-26T14:05:43.106Z"
+      }
+    ],
+    "aiChatHistory": [
+      {
+        "id": "msg-1785074275621-user",
+        "sessionId": "session-default",
+        "sender": "user",
+        "message": "mujhe fever aur cough ho raha hai yesterday se",
+        "timestamp": "2026-07-26T13:57:55.621Z"
+      },
+      {
+        "id": "msg-1785074275621-ai",
+        "sessionId": "session-default",
+        "sender": "ai",
+        "message": "🤝 Tension mat lijiye Test User 2, main hoon na.\n\nBukhar ke baare me bataiye:\n1. Highest **temperature kitna** record hua hai (e.g. 100°F, 102°F)?\n2. Kya saath me **khansi (cough), sardi, gale me dard, ya body pain** hai?\n3. Thand/Chills lag ke bukhar aata hai?",
+        "riskBadge": null,
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T13:57:55.621Z"
+      },
+      {
+        "id": "msg-1785074294787-user",
+        "sessionId": "session-default",
+        "sender": "user",
+        "message": "I feel very depressed and want to end my life",
+        "timestamp": "2026-07-26T13:58:14.787Z"
+      },
+      {
+        "id": "msg-1785074294787-ai",
+        "sessionId": "session-default",
+        "sender": "ai",
+        "message": "🚨 SAFETY ALERT: Please reach out for support immediately.\n\nDear Test User 2, your life is extremely valuable. If you are experiencing thoughts of self-harm or emotional distress, please contact these free, confidential professional helplines immediately:\n\n• NIMHANS Mental Health Helpline: 080-46110007 (Available 24/7)\n• AASRA Suicide Prevention: +91-9820466726\n• Vandrevala Foundation: +91 9999 666 555 / +91 8999 003 003\n• National Emergency Services: 112 / 100\n\nPlease talk to a family member, trusted friend, or healthcare provider right away. You are not alone.",
+        "riskBadge": "SAFETY CRITICAL CRISIS",
+        "recommendedSpecialty": {
+          "name": "General Physician",
+          "icon": "👨‍⚕️",
+          "description": "Mental & Physical Health Support"
+        },
+        "bookingAction": false,
+        "timestamp": "2026-07-26T13:58:14.787Z"
+      },
+      {
+        "id": "msg-1785074568107-user",
+        "sessionId": "session-1785074557580",
+        "sender": "user",
+        "message": "I have severe joint pain in my knee and lower back",
+        "timestamp": "2026-07-26T14:02:48.107Z"
+      },
+      {
+        "id": "msg-1785074568107-ai",
+        "sessionId": "session-1785074557580",
+        "sender": "ai",
+        "message": "🤝 Don't worry Test User 2, I am right here.\n\nTo evaluate your joint discomfort:\n1. **Affected Joint**: Which joint is hurting (knee, lower back, shoulder, ankle)?\n2. **Swelling & Mobility**: Is there visible swelling, warmth, or difficulty walking/climbing stairs?\n3. **Duration**: How long have you been experiencing this pain or stiffness?",
+        "riskBadge": null,
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T14:02:48.107Z"
+      },
+      {
+        "id": "msg-1785074586701-user",
+        "sessionId": "session-1785074557580",
+        "sender": "user",
+        "message": "It started 3 days ago after running, pain is worse in the morning",
+        "timestamp": "2026-07-26T14:03:06.701Z"
+      },
+      {
+        "id": "msg-1785074586701-ai",
+        "sessionId": "session-1785074557580",
+        "sender": "ai",
+        "message": "👍 Thank you, Test User 2.\n\nTwo diagnostic checks:\n1. Do you experience **morning joint stiffness lasting over 30 minutes** after waking up?\n2. Have you noticed any **clicking sounds or joint locking** when bending?",
+        "riskBadge": null,
+        "recommendedSpecialty": null,
+        "bookingAction": false,
+        "timestamp": "2026-07-26T14:03:06.701Z"
+      },
+      {
+        "id": "msg-1785074600614-user",
+        "sessionId": "session-1785074557580",
+        "sender": "user",
+        "message": "Yes, I have some stiffness, no fever, no swelling",
+        "timestamp": "2026-07-26T14:03:20.614Z"
+      },
+      {
+        "id": "msg-1785074600614-ai",
+        "sessionId": "session-1785074557580",
+        "sender": "ai",
+        "message": "📋 CLINICAL ASSESSMENT REPORT (Test User 2) [Stage 2]\n\n• Primary Concern: I have severe joint pain in my knee and lower back\n• Duration & Location Details: It started 3 days ago after running, pain is worse in the morning\n• Associated Symptoms & Triggers: Yes, I have some stiffness, no fever, no swelling\n\n🔍 CLINICAL DIFFERENTIAL DIAGNOSES:\n1. Primary Suspected Condition: Early Osteoarthritis / Inflammatory Arthropathy\n2. Secondary Differential: Ligamentous Strain / Cartilage Wear\n\n🧪 RECOMMENDED DIAGNOSTIC TESTS TO DISCUSS WITH DOCTOR:\n• Weight-Bearing X-Ray of Joint, Serum Uric Acid, Vitamin D3 & Calcium Panel, ESR/CRP\n\n🛡️ CLINICAL PRECAUTIONS & HOME CARE:\n• Apply ice for acute swelling or warm compress for chronic stiffness; avoid twisting/high-impact jumps; do gentle quadriceps exercises.\n• 🌱 Ayurvedic Natural Remedy: Massage the affected joint gently with warm sesame (til) oil; drink warm organic turmeric (haldi) milk daily.\n\n💡 Clinical Medical Knowledge Note:\nHello. The popping and discomfort what you felt is either because of improper scapulothoracic mobility or may be due to facet joint irritation in the neck with intervertebral hypermobility. Which could have caused due to stiffness in the chest muscles, shoulder stiffness, etc.  I would recommend you to do a lot of icin...\n\n👨‍⚕️ DOCTOR CONSULTATION RECOMMENDATION:\nIf symptoms do not improve or get worse after 48 hours, we recommend consulting a Orthopedic for a physical examination.\n\n💊 Medication Safety: Always check packaging for correct dosage, cross-reference with your active allergies, and consult a pharmacist or doctor before taking new medication.\n\n⚖️ Disclaimer: I am an AI Family Doctor assistant, not a licensed medical physician. This analysis is for educational and triage guidance. If you are experiencing severe symptoms, consult a doctor physically or visit the nearest emergency room immediately.",
+        "riskBadge": null,
+        "recommendedSpecialty": {
+          "name": "Orthopedic",
+          "icon": "🦴",
+          "description": "Bone & Joint Specialist"
+        },
+        "bookingAction": true,
+        "timestamp": "2026-07-26T14:03:20.614Z"
+      }
+    ]
+  }
+]

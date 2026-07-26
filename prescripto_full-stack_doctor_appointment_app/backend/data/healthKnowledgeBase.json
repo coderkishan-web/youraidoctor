@@ -1,0 +1,130 @@
+{
+  "source": "World Health Organization (WHO) & Ministry of Health Guidelines",
+  "lastUpdated": "2026-07-25",
+  "ageGroups": {
+    "child_teen": {
+      "label": "Children & Adolescents (0 - 17 years)",
+      "focus": ["Growth & Development", "Vaccination Schedules", "Pediatric Nutrition", "Screen Time & Mental Health", "Immunity Building"],
+      "commonConcerns": ["Seasonal Flu", "High Fever", "Allergies", "Asthma", "Digestive Upset", "Skin Rashes"]
+    },
+    "adult": {
+      "label": "Adults (18 - 59 years)",
+      "focus": ["Preventive Health Screenings", "Cardiovascular Fitness", "Stress & Work Life Balance", "Metabolic Health", "Reproductive & Family Health"],
+      "commonConcerns": ["Hypertension", "Diabetes Risk", "Acid Reflux", "Back & Joint Pain", "Migraine", "Sleep Disorders"]
+    },
+    "senior": {
+      "label": "Seniors (60+ years)",
+      "focus": ["Geriatric Care", "Bone & Joint Health", "Memory & Cognitive Wellness", "Polypharmacy Management", "Fall Prevention"],
+      "commonConcerns": ["Osteoarthritis", "Cardiovascular Disease", "Cognitive Decline", "Vision/Hearing Changes", "Hypertension management"]
+    }
+  },
+  "firstAidGuides": [
+    {
+      "id": "cpr",
+      "title": "CPR (Cardiopulmonary Resuscitation)",
+      "triggerWords": ["cpr", "unresponsive", "stopped breathing", "no pulse", "cardiac arrest", "dhadkan band", "shwas band"],
+      "urgency": "CRITICAL EMERGENCY",
+      "steps": [
+        "Call emergency medical services immediately (108 / 112 / 911).",
+        "Place the person on their back on a firm, flat surface.",
+        "Position your hands in the center of the chest and perform hard, fast compressions (100-120 bpm)."
+      ],
+      "doNot": ["Do not stop compressions until emergency help arrives."]
+    },
+    {
+      "id": "burns",
+      "title": "Thermal / Heat Burns",
+      "triggerWords": ["skin burn", "fire burn", "scald", "hot water burn", "chemical burn", "jal gaya", "bhajla", "bhajlay"],
+      "urgency": "MODERATE TO SEVERE",
+      "steps": [
+        "Cool burn under cool running tap water for at least 10–20 minutes.",
+        "Remove clothing/jewelry near burn before swelling starts.",
+        "Cover loosely with clean non-stick sterile cloth."
+      ],
+      "doNot": ["Do NOT use ice, butter, oil, or toothpaste on the burn."]
+    },
+    {
+      "id": "choking",
+      "title": "Choking (Heimlich Maneuver)",
+      "triggerWords": ["choking", "cannot breathe", "food stuck", "airway blocked", "gasping", "khana atak gaya", "shwas ghutlay"],
+      "urgency": "HIGH EMERGENCY",
+      "steps": [
+        "Stand behind the person and wrap arms around waist.",
+        "Place fist above navel and perform quick upward abdominal thrusts."
+      ],
+      "doNot": ["Do not perform abdominal thrusts on infants under 1 year."]
+    }
+  ],
+  "symptomsMatrix": [
+    {
+      "category": "headache",
+      "keywords": [
+        "headache", "doka", "doke", "dokadukhi", "duktai", "dukhtay", "dukhte", "dukhataay", "majha doka", "maza doka", "dok", "sar dard", "sirdard", "sar me dard", "head hurting", "head pain"
+      ],
+      "possibleConditions": ["Tension Headache", "Migraine", "Stress / Fatigue", "Dehydration"],
+      "urgency": "LOW TO MODERATE",
+      "precaution": "Rest in a quiet room, drink water, apply cool compress.",
+      "specialty": "Neurologist",
+      "marathiglishQuestion": "Arey! Dokadukhi hotey ka? Kalaji karu naka. Dokadukhi kadhapasun ahe, ani taap kinva sardi suddha ahe ka?",
+      "hinglishQuestion": "Arey! Sar me dard ho raha hai? Tension mat lijiye. Yeh kab se ho raha hai, aur kya bukhar ya sardi bhi hai?",
+      "englishQuestion": "Oh, sorry to hear your head is hurting! How long have you had this headache, and do you also have a fever or cold?"
+    },
+    {
+      "category": "fever",
+      "keywords": [
+        "fever", "feverish", "taap", "tap", "jhalay", "alha", "bukhar", "bukhaar", "body heat", "chills", "garam lag raha hai"
+      ],
+      "possibleConditions": ["Viral Fever", "Flu", "Infection"],
+      "urgency": "MODERATE",
+      "precaution": "Drink plenty of fluids, rest, monitor temperature.",
+      "specialty": "General Physician",
+      "marathiglishQuestion": "Taap aala ahe ka? Kiti taap ahe ani अंगदुखी (body pain) kinva khokla ahe ka?",
+      "hinglishQuestion": "Bukhar aao gaya hai? Temperature kitna hai, aur kya body pain ya khansi bhi hai?",
+      "englishQuestion": "Do you have a fever? How high is your temperature, and are you also experiencing body pain or cough?"
+    },
+    {
+      "category": "stomach",
+      "keywords": [
+        "stomach pain", "stomach ache", "potat", "pot", "dukhtay", "dukhate", "bochtiye", "pet dard", "pet me dard", "acidity", "gas", "indigestion"
+      ],
+      "possibleConditions": ["Gastritis", "Acidity", "Indigestion", "IBS"],
+      "urgency": "LOW TO MODERATE",
+      "precaution": "Avoid spicy foods, drink warm water, sit upright after meals.",
+      "specialty": "Gastroenterologist",
+      "marathiglishQuestion": "Potat dukhat ahe ka? Jevanantarch tras chalu jhala ka, kinva acidity sarakh vattay?",
+      "hinglishQuestion": "Pet me dard ho raha hai? Kya khana khane ke baad chalu hua, ya acidity jaisa lag raha hai?",
+      "englishQuestion": "Is your stomach hurting? Did it start after eating, or does it feel like acidity/gas?"
+    },
+    {
+      "category": "chest",
+      "keywords": [
+        "chest pain", "tightness in chest", "chhati", "chatit", "seene me dard", "chhati me dard", "shortness of breath"
+      ],
+      "possibleConditions": ["Angina", "Myocardial Infarction", "Acid Reflux", "Anxiety"],
+      "urgency": "EMERGENCY",
+      "precaution": "Sit quietly, stay calm. Seek immediate emergency medical care if severe or radiating to arm/jaw.",
+      "specialty": "Cardiologist",
+      "marathiglishQuestion": "Chatit dukhat ahe ka? Plz shant basa. Ha tras hatala kinva manala jatoy ka?",
+      "hinglishQuestion": "Seene me dard ho raha hai? Kripya shanti se baithiye. Kya yeh dard haath ya gardan tak ja raha hai?",
+      "englishQuestion": "Is your chest hurting? Please sit calmly. Does the pain spread to your arm or neck?"
+    }
+  ],
+  "whoHealthGuidelines": [
+    {
+      "category": "Cardiovascular Health",
+      "recommendations": [
+        "Aim for at least 150 minutes of moderate-intensity physical activity weekly.",
+        "Keep dietary sodium intake under 2,000 mg (approx. 5g salt) per day.",
+        "Regularly monitor blood pressure (target below 120/80 mmHg)."
+      ]
+    },
+    {
+      "category": "Diabetes & Metabolic Care",
+      "recommendations": [
+        "Maintain a balanced diet rich in whole grains, legumes, vegetables, and lean proteins.",
+        "Perform routine fasting blood glucose checks annually for adults over 30.",
+        "Limit refined sugars and processed beverages."
+      ]
+    }
+  ]
+}

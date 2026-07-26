@@ -1,0 +1,610 @@
+{
+  "metadata": {
+    "datasetName": "ruslanmv/ai-medical-chatbot",
+    "extractedAt": "2026-07-26T06:36:37.234Z",
+    "totalRecords": 100,
+    "description": "Cleaned patient doctor dialogue sample for fast local retrieval in dr.appointmentai"
+  },
+  "qaPairs": [
+    {
+      "id": 1,
+      "patientQuery": "Q. What does abutment of the nerve root mean?",
+      "doctorResponse": "Hi. I have gone through your query with diligence and would like you to know that I am here to help you. For further information consult a neurologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 2,
+      "patientQuery": "Q. What should I do to reduce my weight gained due to genetic hypothyroidism?",
+      "doctorResponse": "Hi. You have really done well with the hypothyroidism problem. Your levels are normal with less medications which are very good. As it is genetically induced, it is very difficult to lose weight. My advice to you is, you should focus on maintaining normal levels of TSH (thyroid-stimulating hormone) and try to remain active, having a positive outlook in life. Or else, it will become very difficult to balance your life with the symptoms of hypothyroidism. Even though your weight has not reduced, be very careful in not putting on weight here afterward. Everyday brisk walking for 1 hour. If you have body pain, alternate with exercises and walking. Avoid all kinds of junk foods, processed, bakery products, rich sweets, fatty foods, sodas, alcohol, and smoking. Avoid partying and binge eating. Follow the food timings properly. Have small frequent meals. In between snacks should be strictly fruits or any kind of low-calorie foods. Have unsalted nuts around five daily. It can give a glow to your dry skin. Everyday water intake should be around 1.5-2 liters. You can use flax seeds. Powder it and mix it in your food. It is a fiber which will give you fullness. Use turmeric, fenugreek seeds, or powder every day. It is a good antioxidant and fenugreek helps in reducing cholesterol levels. Include low-fat milk, curd every day. Egg white, lean chicken, or fish can be taken daily in moderation (anyone). Organ meats need to be avoided. Is your menstrual cycle normal? Please get back if you have any other complaints. Follow up after 15 days.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 3,
+      "patientQuery": "Q. I have started to get lots of acne on my face, particularly on my forehead. Please help me.",
+      "doctorResponse": "Hi there Acne has multifactorial etiology. Only acne soap does not improve if ypu have grade 2 or more grade acne. You need to have oral and topical medications. This before writing medicines i need to confirm your grade of acne. For mild grade topical clindamycin or retenoic acud derivative would suffice whereas for higher grade acne you need oral medicines aluke doxycycline azithromycin or isotretinoin. Acne vulgaris Cleansing face with antiacne face wash",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 4,
+      "patientQuery": "Q. Why do I have uncomfortable feeling between the middle of my spine and left shoulder blade?",
+      "doctorResponse": "Hello. The popping and discomfort what you felt is either because of improper scapulothoracic mobility or may be due to facet joint irritation in the neck with intervertebral hypermobility. Which could have caused due to stiffness in the chest muscles, shoulder stiffness, etc.  I would recommend you to do a lot of icing in the chest and back muscles. Maintain your neck and upper back posture by doing some back retraction work. Gently stretch your neck and chest. Gently massage your chest and shoulders to relieve tension in the muscles. I hope this is helpful for now. Kindly revert in case you need any help in this regard.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 5,
+      "patientQuery": "Q. My symptoms after intercourse threatns me even after having negative HIV result. Kindly help.",
+      "doctorResponse": "Hello. The HIV test uses a finger prick blood sample, with results given within 20 minutes, and is 99 % accurate at detecting any HIV exposure that may have occurred more than 12 weeks ago. However, it can potentially pick up HIV infection from as little as four weeks ago. There is nothing to worry nothing will happen, and please repeat your test after 12 weeks. If you want accurate results to get, it has done RNA PCR which will give actual results within 10days. Antigen detection like P24 gives best results with in two to four weeks. Probably your suffering from a simple viral upper respiratory infection. After 12 weeks, please consult your doctor he will examine and treat you accordingly.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 6,
+      "patientQuery": "Q. I had a surgery which ended up with some failures. What can I do to fix it?",
+      "doctorResponse": "Hello. If you are saying it is already six months since the surgery and if you are doing regular physiotherapy, still has not gained much of the actions, then it is not worth waiting anymore. There are many muscle transfer surgeries which can give you the desired movements and help you in day today activities. But you have to remember that post such operations you will require time to train the brain and get the full use of such movements. That will take time. Do not want to demotivate you, but tremendous training and hard work might be required to reach the pre trauma stage of your boxing.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 7,
+      "patientQuery": "Q. Kindly explain about Beta Strep.",
+      "doctorResponse": "Hello. There are lots of bacteria and other organisms that colonize healthy skin. Yeast a fungus also is a commensal in our body. Just the presence of these organisms is of no significance. The colony count is needed, which is high, will need a course of antibiotics, which can be decided by culture and sensitivity. But after a surgery like what you had, or any significant stress or use of lots of antibiotics (as would have happened after surgery) or use of steroids or diabetes, all infections show an altered balance between good and bad bacteria. You do not need any treatment for this. Just wait for your body to develop those good bacteria, and gradually, all tests will come negative. If you have any symptoms, treat as per need. Avoid unnecessary antibiotics use. They will further delay the recovery. I hope I have clarified your query, do write back if any more questions.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 8,
+      "patientQuery": "Q. Kindly suggest a homeopathic medicine to stop hairfall and promote hair growth.",
+      "doctorResponse": "Hello. I checked the attached photo (attachment removed to protect patient identity) and read your description. It seems you have been suffering from hair loss problem for a longtime. Do you eat healthy food like vegetables and fruits every day? Sometimes lack of nutrition is also the reason for hair loss. Do you know if your father also differed from hair loss issue at this young age? Did you suffer from severe health issues or chronic illnesses? If you do not think above mentioned is the cause for your hair fall, then the only reason I can think is that you have been going through severe stress which has taken a toll on your health. Homeopathy would be a good option in this case as it will cure our problem from the root cause, and there will be no side effects. So to prescribe you a correct homeopathic remedy I need to understand your mental, emotional, and physical state. He ce I need detail case history which can be done either through face to face consultation or online consultation. I would advise you to visit a good homeopath for consultation. For the time being, you can apply arnica hair oil twice a week on your hair. Just mix one spoon of Arnica oil with five spoons of coconut oil and apply all over your scalp. You can gently massage your ear with this mixture. Try this for 15 days and then let me know how you feel. I hope you start feeling better. Let me know if you have any questions.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 9,
+      "patientQuery": "Q. What does abutment of the nerve root mean?",
+      "doctorResponse": "Hi. I have gone through your query with diligence and would like you to know that I am here to help you. For further information consult a neurologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 10,
+      "patientQuery": "Q. Will Nano-Leo give permanent solution for erection problem?",
+      "doctorResponse": "Hi. For further doubts consult a sexologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 11,
+      "patientQuery": "Q. Every time I eat spicy food, I poop blood. Why?",
+      "doctorResponse": "Hello. I have gone through your information and test reports (attachment removed to protect patient identity). So, in view of that, there are a couple of things that I can opine upon: Hope that helps. For more information consult a general surgeon online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 12,
+      "patientQuery": "Q. Will Kalarchikai cure multiple ovarian cysts in PCOD?",
+      "doctorResponse": "Hello. I just read your query. See Kalarachi Kai choornam is helpful in amenorrhea. As far as small cysts are concerned they are unmatured eggs which failed to induce menstrual cycle previously, as a result, they got collected in the ovary and they will remain in the ovary. Now, you have got your periods you can start trying for conception. But I advise you to do it under the supervision of a nearby gynecologist because egg size is important while conception and that you can know by ovulation study. Ovulation study is performed under the supervision of a gynecologist. For gall stones, surgical intervention is required generally. Medicine is not of much help.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 13,
+      "patientQuery": "Q. I masturbate only by rubbing the tip of the penis. Is it a wrong way?",
+      "doctorResponse": "Hi. For further doubts consult a sexologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 14,
+      "patientQuery": "Q. I have stomach pain and bloating after taking Augmentin 625. Why?",
+      "doctorResponse": "Hello. I welcome you to icliniq. Well it is not uncommon to have Gastric upsets after a course of antibiotic. And antibiotic like augmentin are notorious to cause this. This occur secondary to effect of augmentin on decreasing the amount of lactobacillus microorganism which are normally present in the human gut and help digest the food. You should take yougurt, Kefir (fermented yougurt), Kefir. and there are certain diets with probiotic activity you can start taking it. Plus take Tab Ecotec twice daily for 4 weeks, and Tab Levosulpiride 75 mg once daily half hour before meals.for 2 weeks. You can continue with acinil O syp. while rest of your current medication can be stopped. I hope this will correct your microbiota and will bring the same healthiness as before. good day Antibiotic induced dysbiosis Small intestinal bacterial overgrowth Antibiotic induced dysbiosis Let me know in one week time how you respond to above regimen, if persistent of symptoms I would consider testing and giving some safe antibiotic therapy for 2 weeks.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 15,
+      "patientQuery": "Q. Can a painless tooth be extracted since it has a hole in it?",
+      "doctorResponse": "Hello. I had gone through your question, and I can understand your concern. If the pain occurs only when you eat food and it gets stuck into it, it is reversible pulpitis. For that, you do not need to get it extracted. You need to get it filled, and it will cost you less than that of pulling (extraction). Second, you will save your tooth too. My suggestion is to get dental filling done as soon as possible. If you want to get it removed, you need to visit a doctor (dentist), and there will be no pain because during extraction local anesthesia is given.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 16,
+      "patientQuery": "Q. What does the darker pigmentation at the armpits indicate?",
+      "doctorResponse": "Hello. I understand your concern. The pictures are a bit hazy. But from the given images, it looks like a fungal infection by the name of pityriasis versicolor. I would also need to see your chest, upper back, and shoulders to be sure. Kindly send clear photos of the same to make a conclusive diagnosis. Meanwhile, you can start using the following medicines. 1. Tab Fluconazole 400 mg start and repeat once after a week. 2. 2 % Ketoconazole lotion apply for 5-7 mins and wash off once a day.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 17,
+      "patientQuery": "Q. I get fever during rainy and winter season. Why?",
+      "doctorResponse": "Hello. I need to know a few things, 1. Do you feel feverish, or does the thermometer record a temperature? 2. What other symptoms do you get? Runny or blocked nose, sore throat, throat pain with swallowing, headaches, body pains, etc. 3. Does anyone else around you (family members, co-workers, etc.) develop similar symptoms before or after you do? 4. Do you get any tests done like blood tests or X-rays during those episodes? From your description, it appears that you are getting frequent viral upper respiratory tract infections. These are acquired from other patients through the air (coughing, sneezing, etc.). They are usually short-lived and last no more than five to seven days. Since more than 300 different viruses can cause similar symptoms, you can get infected multiple times each time with a different virus. The same virus cannot affect you again. Unfortunately, antibiotics do not work against viruses. They are meant for bacterial infections only. However, doctors continue to prescribe antibiotics unnecessarily, and this has led to the emergence of widespread bacterial resistance.  Other than symptomatic treatment, no medicine can cure or prevent these infections. They are self-limited, and you will get better even if you do not take any medication. The older you get, the less frequently you will get these infections as your body will be building up defenses with every disease. No household tips or vitamin supplements have been proven to work. Premature birth can lead to increased frequency of infections, but unless the infections are bacterial, not much can be done about them. Please get back to me with answers to the above questions and also attach any test reports you may have.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 18,
+      "patientQuery": "Q. Why does one develop swelling after snake bite?",
+      "doctorResponse": "Hi. I could understand your crisis. For further information consult a toxicologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 19,
+      "patientQuery": "Q. Why is there a continuous rise in temperature despite taking antibiotics?",
+      "doctorResponse": "Hi. I went through your post and investigation (attachment removed to protect patient identity). Regards. For further queries consult an internal medicine physician online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 20,
+      "patientQuery": "Q. Can my 3 year old son lead a normal life after sepsis?",
+      "doctorResponse": "Hello. Regards. For more information consult a paediatrician online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 21,
+      "patientQuery": "Q. What is the main reason for sepsis in a newborn?",
+      "doctorResponse": "Hi. For further information consult a paediatrician online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 22,
+      "patientQuery": "Q. I have bulging eye problem for a year even after some treatment. Why?",
+      "doctorResponse": "Hello. The condition you have described is called proptosis. The most common cause of proptosis is thyroid abnormality (hyperthyroidism) and called thyroid eye disease (TED). In this condition, eye muscle gets enlarged due to GAG (glycosaminoglycans) material deposition. This condition usually resolves after active and quiet phase that takes up to five to seven years. During this time the actual cause is treated (hyperthyroidism) and for proptosis steroids may be given (that you have already taken). Enlarged muscles can compress the optic nerve and can cause permanent vision loss. So you need to consult an endocrinologist for the treatment of thyroid abnormality. Quit smoking (if you are a smoker) and keep follow your eye doctor to avoid complication that can cause permanent vision loss. You are welcome for any queries.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 23,
+      "patientQuery": "Q. Why are my hands and feet cold and sweaty always?",
+      "doctorResponse": "Hello. Cold and sweaty hands and feet can happen in heart failure, anxiety, hyperthyroidism and shock. Numb feet, which are painful while walking can be due to neuropathy, nerve root compression at lumbosacral spine, or arterial occlusion in legs. The half closed eyelids can be ptosis, or something else. I suggest you get the following tests done: Since when you are having these problems? Do you have any impending doom, palpitation, breathlessness? I suggest you meet a neurologist in-person for proper clinical examination and better judgment. Revert with more information to a neurologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 24,
+      "patientQuery": "Q. Can thyroid problem cause excessive hair fall?",
+      "doctorResponse": "Hi. For further doubts consult an obstetrician and gynaecologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 25,
+      "patientQuery": "Q. Why do I face difficulty in losing weight?",
+      "doctorResponse": "Hello. I have gone through the reports (attachment removed to protect patient identity). For further information consult an obstetrician and gynaecologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 26,
+      "patientQuery": "Q. What does abutment of the nerve root mean?",
+      "doctorResponse": "Hi. I have gone through your query with diligence and would like you to know that I am here to help you. For further information consult a neurologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 27,
+      "patientQuery": "Q. Will Nano-Leo give permanent solution for erection problem?",
+      "doctorResponse": "Hi. For further doubts consult a sexologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 28,
+      "patientQuery": "Q. Every time I eat spicy food, I poop blood. Why?",
+      "doctorResponse": "Hello. I have gone through your information and test reports (attachment removed to protect patient identity). So, in view of that, there are a couple of things that I can opine upon: Hope that helps. For more information consult a general surgeon online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 29,
+      "patientQuery": "Q. Will Kalarchikai cure multiple ovarian cysts in PCOD?",
+      "doctorResponse": "Hello. I just read your query. See Kalarachi Kai choornam is helpful in amenorrhea. As far as small cysts are concerned they are unmatured eggs which failed to induce menstrual cycle previously, as a result, they got collected in the ovary and they will remain in the ovary. Now, you have got your periods you can start trying for conception. But I advise you to do it under the supervision of a nearby gynecologist because egg size is important while conception and that you can know by ovulation study. Ovulation study is performed under the supervision of a gynecologist. For gall stones, surgical intervention is required generally. Medicine is not of much help.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 30,
+      "patientQuery": "Q. I masturbate only by rubbing the tip of the penis. Is it a wrong way?",
+      "doctorResponse": "Hi. For further doubts consult a sexologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 31,
+      "patientQuery": "Q. Suffering from subclinical hyperthyroidism with anxiety and palpitations.",
+      "doctorResponse": "Hi, It is really sad to know about your daughter. 1. As a matter of fact your daughter seems to have acute thyroiditis. Though the thyroid profile has not shown full blown thyrotoxic state, she has subclinical hyperthyroidism with TSH being suppressed. Since how long has she been like this? Thyroiditis might take 8-12 weeks to settle. How old are the reports? Thyroiditis might leave the patient hypothyroid. 2. Secondly she is 15, puberty is another phase of major hormonal and emotional change over. How are her periods? Has she put on weight? or lost some? You have supplemented with multivitamins, please see if B12 upto 1500 mcg is being given and Vitamin D 1000 IU daily or 60,000 IU once a week is going. Also supplement her with calcium and magnesium and check these levels as well. Treat her with Propranolol 10mg twice a day to beat the anxiety and palpitations. Get back to an endocrinologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 32,
+      "patientQuery": "Q. Is PAP test valid for screening prostatitis symptoms?",
+      "doctorResponse": "Hi. I have gone through your query. Prostatic acid phosphatase (PAP) has been replaced by PSA (prostate-specific antigen test). It is better in the detection of prostate cancer compared to PAP. The elevation of PAP levels alone is not a cause for concern. I hope your treating doctor has done a rectal exam to find out any prostate nodules. If it is normal, then it is not necessary to repeat the tests. Hope this helps you. Feel free to revert back with any questions. For more information consult an urologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 33,
+      "patientQuery": "Q. Why is my free PSA abnormal?",
+      "doctorResponse": "Hi. Free PSA should be more than 15 % to rule out prostate cancer. Free PSA is an additional tool used when PSA is above 2.5 and we want to check whether high PSA is due to benign prostate growth or due to prostate cancer. Some laboratories use 25 % cutoff, but most have 15 % cutoff value. Since your total PSA is quite low and free PSA is above 15 %, you should not worry. If in doubt, repeat after a few months.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 34,
+      "patientQuery": "Q. I have frequent urination and minimal calcification. Does it mean prostate cancer?",
+      "doctorResponse": "Hi. I have gone through your query. It is extremely unlikely for you to develop prostate cancer at your age. Even in families with hereditary prostate cancer, the usual age people develop cancer is above 40 years of age at the lowest, though it is usually between 50 to 60 years. That said, in your case, it is too early to jump to conclusions of having prostate cancer in your family. The most likely explanation for your symptoms could be a mild urinary tract infection or even your increased fluid intake. Prostatic calcification is commonly seen and does not imply anything significant to worry now. If you are concerned, you can do a PSA (prostate-specific antigen) test and a prostate exam at 40 years. If normal, then you can repeat it after three years interval. For more information consult an urologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 35,
+      "patientQuery": "Q. Please enlighten me on non-invasive procedures to detect prostate cancer.",
+      "doctorResponse": "Hi. I have gone through your query. I concur with your urologist in the need for a biopsy. Any PSA (prostate-specific antigen) more than 4 or abnormal findings on DRE (digital rectal examination) needs evaluation to rule out prostate cancer. None of the non-invasive techniques are sufficiently accurate as a biopsy at present. The closest is an MRI which, if positive, needs to be confirmed by a biopsy, and if negative does not exactly rule out a malignancy, you will need a biopsy nevertheless. Many blood tests are available but those are only if the DRE is normal and will not be applicable in your situation. Hope this was helpful, feel free to revert back with any other questions. For more information consult a urologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 36,
+      "patientQuery": "Q. What is the reason for continuous eye allergy and irritation?",
+      "doctorResponse": "Hi. For further information consult an eye care ophthalmologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 37,
+      "patientQuery": "Q. When should I stop Clexane and Ecosprin should before delivery?",
+      "doctorResponse": "Hello.  I feel that it would be the best if you do not stop these medicines without the advice of your doctor who recommended these and made a plan for your pregnancy because self-treatment strategy will lead to no benefits. And both of these drugs are safe to use, so you do not have to worry. Furthermore, for your knowledge, aspirin is usually stopped at 35 to 36 weeks of pregnancy, and Clexane (Enoxaparin sodium) is being continued until delivery, and even after that. So I would again say that please take advice from your particular doctor before stopping any of these medications as your pregnancy is very precious. I hope it has helped you. If you require any further queries, please do not hesitate to contact me.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 38,
+      "patientQuery": "Q. Are my symptoms due to HIV infection? I had a high-risk exposure 15 months ago.",
+      "doctorResponse": "Hi. The test kits used to diagnose HIV are highly sensitive and specific and gives accurate results. The majority of the people who are infected with HIV (human immunodeficiency virus) develop antibodies by three months, and even in the rare instances of late seroconversions, they develop HIV antibodies by six months. You can rely on your HIV screening test results. If there had been no other exposure other than that, you do not require any further test. The symptoms which you mentioned could be due to various reasons and cannot be attributed to HIV. In fact, there are no specific symptoms or signs which can lead to the diagnosis of HIV. As per the above information, you are HIV negative. Just relax. Hope your query is answered, but if you have any other query, please do not hesitate to ask or call anytime. Best wishes. For more information consult an HIV AIDS specialist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 39,
+      "patientQuery": "Q. Is stretching exercise helpful for tight foreskin?",
+      "doctorResponse": "Hi. For further information consult a urologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 40,
+      "patientQuery": "Q. My husband is over-possessive and controlling. Please help me.",
+      "doctorResponse": "Hi. Most of the persons who are over-possessive of their partner show certain kinds of behavior that is uncommon in the general population. They feel less secure and this sense of insecurity is the driving force for the over-possessive nature. Someone who is insecure may doubt their partner's dedication and may, therefore, try to control them. In short, they feel vulnerable and will do anything to make sure they are not hurt. The sense of insecurity can stem from a number of situations including parents leaving a child, a past romantic partner who was unfaithful and many more. To control the possessiveness: Consult a psychiatrist online in case of further assistance in overcoming this situation -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 41,
+      "patientQuery": "Q. What can cause pimples near penis?",
+      "doctorResponse": "Hi. It is very difficult to say what disease you have, because pimple does not come over penile area. It could be molluscum which looks like a pimple. If you can send me the photos, then I can definitely diagnose it. Explain the lesion properly like itching, pain, duration, pus filled, etc? Are you sexually active? Revert back with the photos to a dermatologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 42,
+      "patientQuery": "Q. What does abutment of the nerve root mean?",
+      "doctorResponse": "Hi. I have gone through your query with diligence and would like you to know that I am here to help you. For further information consult a neurologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 43,
+      "patientQuery": "Q. Will Nano-Leo give permanent solution for erection problem?",
+      "doctorResponse": "Hi. For further doubts consult a sexologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 44,
+      "patientQuery": "Q. Every time I eat spicy food, I poop blood. Why?",
+      "doctorResponse": "Hello. I have gone through your information and test reports (attachment removed to protect patient identity). So, in view of that, there are a couple of things that I can opine upon: Hope that helps. For more information consult a general surgeon online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 45,
+      "patientQuery": "Q. Will Kalarchikai cure multiple ovarian cysts in PCOD?",
+      "doctorResponse": "Hello. I just read your query. See Kalarachi Kai choornam is helpful in amenorrhea. As far as small cysts are concerned they are unmatured eggs which failed to induce menstrual cycle previously, as a result, they got collected in the ovary and they will remain in the ovary. Now, you have got your periods you can start trying for conception. But I advise you to do it under the supervision of a nearby gynecologist because egg size is important while conception and that you can know by ovulation study. Ovulation study is performed under the supervision of a gynecologist. For gall stones, surgical intervention is required generally. Medicine is not of much help.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 46,
+      "patientQuery": "Q. I masturbate only by rubbing the tip of the penis. Is it a wrong way?",
+      "doctorResponse": "Hi. For further doubts consult a sexologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 47,
+      "patientQuery": "Q. How to calculate the number of days of pregnancy?",
+      "doctorResponse": "Hi. For further information consult an obstetrician and gynaecologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 48,
+      "patientQuery": "Q. As I am having a history of miscarriages, will taking hCG injections help me to continue pregnancy?",
+      "doctorResponse": "Hello. Unfortunately what your doctor has said is right. Spotting in early pregnancy is normal. But a fall or no rise beta HCG is a poor sign. Beta hCG is a hormone produced from fetal tissue. At a level of 25 mIU/mL urine test is positive it doubles in 48 hours. So if the result of 7th is 125, then on 9th it should have been around 250 or more. Only healthy fetal tissue can produce an adequate amount of this hormone, so indirectly we get to know the health of the embryo even without seeing it. So it just means the fetal tissue is not growing. There can be lab errors, so to be on a safer side doctor has asked you to come for scan, to confirm.  If you are worried about the repeated miscarriages, have yourself and your partner checked for any problem. Causes like blood sugar levels, thyroid hormone problems, or prolactin hormone abnormalities, any structural problems in the uterus or any problem in semen. Do not lose hope, if you are getting pregnant without much help, no matter what the outcome is, then you will surely have babies. I hope I have clarified your query, do write back if any more questions.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 49,
+      "patientQuery": "Q. How to increase my height?I am 23 years old.",
+      "doctorResponse": "Hello. Consult a nutritionist online for further follow up --->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 50,
+      "patientQuery": "Q. Is it safe to take Clenbuterol being overweight and asthmatic?",
+      "doctorResponse": "Hello. For further information consult an internal medicine physician online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 51,
+      "patientQuery": "Q. Shall I take Raw Bovine Ovary pills to increase breast size?",
+      "doctorResponse": "Hi. For further information consult an internal medicine physician online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 52,
+      "patientQuery": "Q. What can cause genital numbness?",
+      "doctorResponse": "Hello. For further information consult a neurologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 53,
+      "patientQuery": "Q. What causes warmness in the left side of chest?",
+      "doctorResponse": "Hello. This kind of chest pain occurs during stress and anxiety only. We label them nonspecific cardiac chest pain. But, we should always keep in consideration cardiac chest pain and acid reflux. It is important to differentiate between the all. However, the cardiac chest pain is severe and crushing in nature. It increases on activity like walking and exercising. It also gets radiated to left arm. Since your ECG and other cardiac workup are normal, the pain is not due to cardiac issues. For acid reflux, I would advise you to take a combination of Pantoprazole and Domperidone once a day. Your increase in heart rate might be possibly because of anxiety only. For anxiety, try to do meditation and if no relief, you would be treated with anti-anxiety drugs like Etizolam. For further clarifications consult a cardiologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 54,
+      "patientQuery": "Q. Why the absolute monocytes are low in my routine blood work?",
+      "doctorResponse": "Hi. Based on your query, my opinion is as follows (attachment removed to protect patient identity): For further information consult a hematologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 55,
+      "patientQuery": "Q. How to overcome sexual attraction towards my mother?",
+      "doctorResponse": "Hello. I can understand your problem. Sexual feelings in an adult towards a female are considered as normal and acceptable. But, such feelings towards any female with blood relationship are not acceptable in any society and this result in significant blow to reputation and respect. The feelings you have described towards your own mother are wrong and should be controlled. In future this might result in relationship problem in your case especially towards your wife. This might result in difficulty in maintaining relationship with any other female. To overcome the problem you have to work hard. One thing is that stop watching porn completely. If that is not possible at this moment then watch videos only and avoid going to forums or reading stories of incest online. Such things increase the perversions. Avoid watching any material that relates to incest. I am not saying that you should stop masturbating but stop thinking about incest. You are having guilty after incest ideas, so most likely these are intrusive ideas and should be treated also. If possible visit a psychiatrist for help. Medicines like Paroxetine or Fluoxetine can help to control your intrusive ideas and you will feel better. These are safe medicines. Spend your time in outdoor activities. Gym and sports will help to vent out your energy and you will feel better. Avoid spending more time on computer and if your work permits then stop using computer or internet for some days. This will help you to overcome the addiction. Psychological conflicts. For further information consult a psychiatrist online.--->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 56,
+      "patientQuery": "Q. Can Yasmin birth control pill be used as an emergency contraceptive pill?",
+      "doctorResponse": "Hi. How are you doing? Yes, as you have heard, Yasmin can be used as an emergency pill. Even if you have not ejaculated into her, she stands a chance of pregnancy if the pre-seminal fluid, the clear fluid that comes out before semen, which is rich in young healthy sperms, comes in contact with her genitals. As soon as possible, earlier the better, I suggest taking four tablets of Yasmin (combination of Ethinyl Estradiol and Drospirenone) at the time, repeat four more tablets after 12 hours. This being a high dose of hormones, it will suddenly increase the inner lining of the uterus. Then as it is a single dose, the inner lining will fall off. This makes it unfavorable for the possible embryo or baby to settle into the uterus. She will get her periods within 7 to 10 days of the last pill. But do not keep repeating this frequently, it can disturb the hormonal balance and can reduce the effectiveness of the pill. Consult your specialist doctor, discuss with him or her and start taking the medicines after their consent. This is an old method, but it is an effective emergency method. Just do not delay the pills. As time passes by, the effectiveness reduces. Hope I have clarified your query, do write back. All the best. For further queries consult an obstetrician and gynaecologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 57,
+      "patientQuery": "Q. What are the causes of brown discoloration of the skin around the fingertips?",
+      "doctorResponse": "Hi. Revert with more information to a cosmetologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 58,
+      "patientQuery": "Q. Please explain the reason for weight gain during pregnancy.",
+      "doctorResponse": "Hi. For further information consult an obstetrician and gynaecologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 59,
+      "patientQuery": "Q. What does abutment of the nerve root mean?",
+      "doctorResponse": "Hi. I have gone through your query with diligence and would like you to know that I am here to help you. For further information consult a neurologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 60,
+      "patientQuery": "Q. Will Nano-Leo give permanent solution for erection problem?",
+      "doctorResponse": "Hi. For further doubts consult a sexologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 61,
+      "patientQuery": "Q. Every time I eat spicy food, I poop blood. Why?",
+      "doctorResponse": "Hello. I have gone through your information and test reports (attachment removed to protect patient identity). So, in view of that, there are a couple of things that I can opine upon: Hope that helps. For more information consult a general surgeon online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 62,
+      "patientQuery": "Q. Will Kalarchikai cure multiple ovarian cysts in PCOD?",
+      "doctorResponse": "Hello. I just read your query. See Kalarachi Kai choornam is helpful in amenorrhea. As far as small cysts are concerned they are unmatured eggs which failed to induce menstrual cycle previously, as a result, they got collected in the ovary and they will remain in the ovary. Now, you have got your periods you can start trying for conception. But I advise you to do it under the supervision of a nearby gynecologist because egg size is important while conception and that you can know by ovulation study. Ovulation study is performed under the supervision of a gynecologist. For gall stones, surgical intervention is required generally. Medicine is not of much help.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 63,
+      "patientQuery": "Q. I masturbate only by rubbing the tip of the penis. Is it a wrong way?",
+      "doctorResponse": "Hi. For further doubts consult a sexologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 64,
+      "patientQuery": "Q. My gums behind the last tooth is swollen and painful. Is it due to food impaction?",
+      "doctorResponse": "Hi. Regards. For more information consult a dentist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 65,
+      "patientQuery": "Q. Is talking to myself in front of the mirror a symptom of schizophrenia?",
+      "doctorResponse": "Hi. I read your query with keen interest and understand your concerns. From the available description, I do not think you have crossed the limit of sanity or you developed schizophrenia. Schizophrenia is altogether very different disorder where people have abnormal perceptions such as hearing voices when no one is present and seeing objects when nothing is there. I do not see any of them with you. In my view, you need to put your worries at rest and do what your mind and heart considers right. It may be abnormal for your mother, but there is no pathology with this. If you feel more assistance is required or my answer to your query is far from setting down the worries, then it is better to see a psychiatrist in person. For further information consult a psychiatrist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 66,
+      "patientQuery": "Q. Why do I have a wet feeling inside the anus?",
+      "doctorResponse": "Hello. An anal leak is mostly due to underlying reasons, which need to be thoroughly investigated. Although we can together try reaching out on differential diagnosis. Regards. Revert with more information to a cosmetologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 67,
+      "patientQuery": "Q. Is Metmax injection the right one for head spinning?",
+      "doctorResponse": "Hi. Revert back with the answers to the above questions to a neurologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 68,
+      "patientQuery": "Q. Is it likely for HIV symptoms to show up after 5 to 6 weeks of possible exposure?",
+      "doctorResponse": "Hi. The answers to your queries are as follows: Hope your queries are answered, but please do not hesitate to ask or call anytime for any further query. Best wishes.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 69,
+      "patientQuery": "Q. What does abutment of the nerve root mean?",
+      "doctorResponse": "Hi. I have gone through your query with diligence and would like you to know that I am here to help you. For further information consult a neurologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 70,
+      "patientQuery": "Q. My period has been late by 13 days. What could be the reason?",
+      "doctorResponse": "Hello. The striking point in your history is that you have taken morning after pill thrice in the last 4 months. It has to be understood that the most common side effect of an emergency contraceptive pill is delaying the next 2-3 menstrual cycles.  As your pregnancy test is negative even after 13 days post period, it clearly indicates that you are not pregnant . Hence, the delay in periods is likely to be due to ipill side effect. Or another possible reason for the delay could be stress induced hormonal imbalance during this menstrual cycle. Stress including emotional, psychological, physical or social disturbances, all have a bearing on the reproductive hormones and can easily delay your menses, once pregnancy is ruled out.  It is suggested that you can wait for another week to allow your menses to resume naturally , if not then you may opt for a withdrawal bleed with progesterone pills to resume your menses.  As pregnancy test is negative, you can rest assured and wait for another week safely. For further queries, consult an obstetrician and gynaecologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 71,
+      "patientQuery": "Q. Had blisters due to rough masturbation. How would they heal?",
+      "doctorResponse": "Hi. Revert back with the answers to a dermatologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 72,
+      "patientQuery": "Q. Can I get pregnant with fingering after he touched his penis?",
+      "doctorResponse": "Hi. In your case, there is a chance that semen might have entered into the vagina. As you have not done any sexual intercourse, there is less chance of getting pregnant. You have to rule out pregnancy by urine hCG (human chorionic gonadotropin) test. You can do this test at home. If pregnancy is not present, then thyroid problem and diabetes should be ruled out. Excess stress, obesity, prolonged fasting can also lead to a delayed period. You can consult a gynecologist for examination if needed. For more information consult a family physician online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 73,
+      "patientQuery": "Q. What is the treatment for inguinal lymphadenopathy?",
+      "doctorResponse": "Hi. I assure you not to worry as all things may get settled with proper care and follow-up. 1. Inguinal lymph nodes usually get prominent due to some infection (that you say have been ruled out) or some primary pathology of the nodes themselves.  2. The knots you are talking about also warrants to rule out if that is a vein pathology or lymph nodes can be benign or cancerous changes. Biopsy of the nodes is mandatory especially when there we see changes on ultrasound.  3. Weakness can be due to hemoglobin or red blood cell deficiency. Other causes of weakness may be hypothyroidism or fluid and electrolyte imbalances.  4. Your low sedimentation rate may be due to red blood cell, white blood cell changes and protein abnormality. Sickle cell disease also may cause it. But clinical correlation is the key and for that your physician needs to go for physical examination and if suspicion arises, he may refer you to hematologist.  5. Pain in the lymphatic region can be due to lymph nodes being pressed on or it is possibly from lipomatous changes.  6. I also prefer you to get a detailed heart evaluation from cardiologist as weakness, shoulder and arm issues warrant that too. This kind of symptoms also needs screening for hypertension and diabetes mellitus. Your physician can help you for that too.  7. If you have got tested the above in past 8 weeks, you may upload the reports here for my review and diagnosis. If more than 8 weeks old, please go for repeat fresh tests. Biopsy and histopathology of the lymph nodes. Can be decided on investigations and diagnosis. Revert back with the investigation reports to an internal medicine physician online.--->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 74,
+      "patientQuery": "Q. Is it normal to have cobblestone appearance at the back of throat after tonsillectomy?",
+      "doctorResponse": "Hi. All these are normal after tonsillectomy surgery. I will suggest some steps to relieve some of the symptoms you are facing. Gargles with Benzydamine mouth wash diluted in water few times daily will help soothe the area and relieve pain. You may also take Tylenol for a few days for the pain relief. To relieve inflammation (the engorged blood vessels and cobblestone formation) you can take a combination of Trypsin Chymotrypsin Bromelain Rutopside. This medicine will relieve inflammatory cells and products from the area. Cobblestone formation is normal after the surgery. Regarding the reduced length of the uvula and the scarring on the palate, I would say, they are due to bad surgical technique. We carefully dissect the tonsil out of the pillars so that there is nil scarring of pillars and change to the uvula. We use a coblator for the purpose that minimizes bleeding and postoperative pain.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 75,
+      "patientQuery": "Q. What does abutment of the nerve root mean?",
+      "doctorResponse": "Hi. I have gone through your query with diligence and would like you to know that I am here to help you. For further information consult a neurologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 76,
+      "patientQuery": "Q. Will Nano-Leo give permanent solution for erection problem?",
+      "doctorResponse": "Hi. For further doubts consult a sexologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 77,
+      "patientQuery": "Q. Every time I eat spicy food, I poop blood. Why?",
+      "doctorResponse": "Hello. I have gone through your information and test reports (attachment removed to protect patient identity). So, in view of that, there are a couple of things that I can opine upon: Hope that helps. For more information consult a general surgeon online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 78,
+      "patientQuery": "Q. Will Kalarchikai cure multiple ovarian cysts in PCOD?",
+      "doctorResponse": "Hello. I just read your query. See Kalarachi Kai choornam is helpful in amenorrhea. As far as small cysts are concerned they are unmatured eggs which failed to induce menstrual cycle previously, as a result, they got collected in the ovary and they will remain in the ovary. Now, you have got your periods you can start trying for conception. But I advise you to do it under the supervision of a nearby gynecologist because egg size is important while conception and that you can know by ovulation study. Ovulation study is performed under the supervision of a gynecologist. For gall stones, surgical intervention is required generally. Medicine is not of much help.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 79,
+      "patientQuery": "Q. I masturbate only by rubbing the tip of the penis. Is it a wrong way?",
+      "doctorResponse": "Hi. For further doubts consult a sexologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 80,
+      "patientQuery": "Q. Will Nano-Leo give permanent solution for erection problem?",
+      "doctorResponse": "Hi. For further doubts consult a sexologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 81,
+      "patientQuery": "Q. Despite negative pregnancy test, I did not get my periods. What to do?",
+      "doctorResponse": "Hi. Revert back after a week to an obstetrician and gynaecologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 82,
+      "patientQuery": "Q. After oil massage, my lower back is full of acne. Any suggestions?",
+      "doctorResponse": "Hello. Apply Adapalene and Benzoyl peroxide 2.5 % combination gel at bedtime over the back. Do not apply Cortisone cream (steroid). It can lead to worsening of the condition. Clinical photographs would have helped. For more information consult a dermatologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 83,
+      "patientQuery": "Q. A 10-year-old girl obsess spanking frequently. Is this due to Asperger's syndrome?",
+      "doctorResponse": "Hello. Your daughter is into the screen most of the time, and hence, it will be her primary advisor. She is just modeling what she sees and is quite common at this age. Try to minimize her interaction with the screen. She requires more human interaction. Put her in extracurricular activities to the maximum. Spend time with the child talking to her, and she will like it. Do not punish her, as it will have a negative impact, and the behavior can increase because of scolding. She will slowly get out of it. You can review with me for further follow-up.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 84,
+      "patientQuery": "Q. We are trying to get pregnant but we lack high libido. Please help.",
+      "doctorResponse": "Hello. By saying that all tests were normal, I hope you mean 1. Blood sugars, thyroid profile, and prolactin hormone levels. 2. Husband's semen analysis. 3. Wife's scan of uterus and ovaries. 4. Fallopian tube patency tested with HSG (hysterosalpingography) or laparoscopy. Now for loss of libido, the following reasons are to be addressed. 1. Above mentioned blood tests. 2. Kindly seriously think of shedding few kgs. Your expected body weight is 52 to 57 kgs. 3. Try to reduce any physical or mental stress. Diabetes has to be ruled out with HbA1c. If all these are normal, there is no reason for you to worry, and you will surely get pregnant. I hope I have clarified your query, do write back if any more questions.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 85,
+      "patientQuery": "Q. How to diagnose celiac disease from deamidated gliadin IgG level?",
+      "doctorResponse": "Hi. Deamidated gliadin IgG antibody level of more than 30 is diagnostic of celiac disease. Since the number mentioned by you is 152, it indicates that the person is having celiac disease.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 86,
+      "patientQuery": "Q. Can sound from a loudspeaker cause any effect on my eardrum?",
+      "doctorResponse": "Hello. From your history of noise exposure and symptoms, it is suggestive of acoustic trauma. It occurs after a single exposure to very intense sound which cause damage to the organ of corti or damage the hair cells. Symptoms include ringing sensation in ear known as tinnitus and hearing loss. Treatment depends on severity of symptoms. If only tinnitus is present, protect the ear from further damage and also take some neuroprotective drugs. But, first you need to do a pure tone audiometry (PTA) to assess the severity. 1. PTA. 2. Tympanometry. Acoustic trauma. 1. Capsule Zincosule-4G (Multivitamin) once daily. 2. Tablet Defcort (Deflazacort) 12 mg once daily for seven days. Avoid loud sounds.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 87,
+      "patientQuery": "Q. I had unprotected sex during my infertile days. Can I be pregnant?",
+      "doctorResponse": "Hi. Please wait for a week for your period to start. If it does not start by then, you will have to do urine pregnancy test to rule out pregnancy. Period could have been delayed due to stress. Another rare possibility is that of pregnancy. Though you mentioned the days you had sex as your infertile days, sometimes occasionally ovulation could be delayed making the days fertile. Still you had taken emergency pill (though it is highly effective in preventing pregnancy, protection offered is not absolute). So, there can be little chance of pregnancy which you need to rule out first. If you want to rule out pregnancy earlier, you can do blood beta-hCG test, negative result of which will rule out pregnancy. Other option as I told is to wait for a week. If pregnancy test comes negative and still period does not start, you can induce period by taking tablet Medroxyprogesterone acetate 10 mg twice daily for five days. Period generally starts within a week of last dose of tablet. It will not induce period if you are pregnant.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 88,
+      "patientQuery": "Q. I am bleeding with clots after using MTP kit. Is this normal?",
+      "doctorResponse": "Hi. I understand your situation. This much of bleeding is considered unusual. Either the process of abortion has been incomplete, because of which the uterus is still trying to expel out the products of conception. Or you have some blood problem. Are you still passing clots? Or is it plain blood that is coming? Also, if you could tell me exactly how you proceeded to take the medicine it would give an idea of the cause of bleeding. For the time being, take tablet Tranexamic acid 500 mg, thrice a day. This will stop the bleeding, but not cure the problem. So, till the time we know exactly what is wrong, you can take this tablet. Incomplete abortion. Ultrasound pelvis for retained products of conception (RPOC) and CBC (complete blood count).",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 89,
+      "patientQuery": "Q. How do I fade the acne marks without laser treatment?",
+      "doctorResponse": "Hi. There is redness and some pus filled acne too (attachment removed to protect patient identity).",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 90,
+      "patientQuery": "Q. I am 13 weeks pregnant. Kindly explain about subseptate uterus.",
+      "doctorResponse": "Hello. Let me start with a few basic facts and further clinical correlates and effects. Every lady has two uterine tubes, which fuse at birth, and over time, the wall between the two tubes disappear. Now the uterus is converted into a single cavity uterus. The upper ends of tubes remain separate as two fallopian tubes. Sometimes the fusion is complete, but the partition does not disappear. If the tubes do not touch others or do not fuse at all, then you get bicornuate uterus. But if only the wall is partially removed, it forms subseptate uterus. If the wall does not disappear at all, then the septate uterus is formed. Now in both the last two conditions, the main problem is that the space inside the uterus is compromised. The best option was to have a hysteroscopic resection of septa then get pregnant. Having rest makes no difference. At 14 to 16 the week, she can undergo an elective cervical cerclage. Due to septa, uterus loses its polarity, and she is prone to cervical insufficiency. As space inside the uterus is compromised, she can have preterm pains, preterm labor. Due to septate, the baby presentation may not be head down. I hope I have clarified your query, do write back if any more questions.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 91,
+      "patientQuery": "Q. Every time I eat spicy food, I poop blood. Why?",
+      "doctorResponse": "Hello. I have gone through your information and test reports (attachment removed to protect patient identity). So, in view of that, there are a couple of things that I can opine upon: Hope that helps. For more information consult a general surgeon online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 92,
+      "patientQuery": "Q. What does abutment of the nerve root mean?",
+      "doctorResponse": "Hi. I have gone through your query with diligence and would like you to know that I am here to help you. For further information consult a neurologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 93,
+      "patientQuery": "Q. Will Nano-Leo give permanent solution for erection problem?",
+      "doctorResponse": "Hi. For further doubts consult a sexologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 94,
+      "patientQuery": "Q. Every time I eat spicy food, I poop blood. Why?",
+      "doctorResponse": "Hello. I have gone through your information and test reports (attachment removed to protect patient identity). So, in view of that, there are a couple of things that I can opine upon: Hope that helps. For more information consult a general surgeon online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 95,
+      "patientQuery": "Q. Will Kalarchikai cure multiple ovarian cysts in PCOD?",
+      "doctorResponse": "Hello. I just read your query. See Kalarachi Kai choornam is helpful in amenorrhea. As far as small cysts are concerned they are unmatured eggs which failed to induce menstrual cycle previously, as a result, they got collected in the ovary and they will remain in the ovary. Now, you have got your periods you can start trying for conception. But I advise you to do it under the supervision of a nearby gynecologist because egg size is important while conception and that you can know by ovulation study. Ovulation study is performed under the supervision of a gynecologist. For gall stones, surgical intervention is required generally. Medicine is not of much help.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 96,
+      "patientQuery": "Q. I masturbate only by rubbing the tip of the penis. Is it a wrong way?",
+      "doctorResponse": "Hi. For further doubts consult a sexologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 97,
+      "patientQuery": "Q. What causes respiratory problem in a 36-year-old?",
+      "doctorResponse": "Hello. I have read through your question and would like to tell you that respiratory problems can be due to allergic or due to infection. Her Haemoglobin could be due to dietary deficiency. Give her iron-rich diet like dates, banana, and green leafy vegetables. If the respiratory problem is due to infection, then she may need an antibiotic course. For now, steam inhalation will help to relieve her. Steam inhalation with menthol twice daily. If her condition does not improve in two days, get her checked by a physician. If her Hemoglobin does not improve in one month, get a complete blood profile done to know the cause of anemia. I hope that answers your question. If you have any further questions, please feel free to write.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 98,
+      "patientQuery": "Q. During orthodontic treatment, when will they remove the blue fillings?",
+      "doctorResponse": "Hello. Blue fillings or bites are removed when your teeth are better aligned, and deep bite (if present) is improved or corrected enough to prevent interference of upper teeth to lower braces. It takes a while to get used to the blue bites, usually 7 to 14 days. However, chewing continues to be less effective for longer. It is advisable to eat soft foods and supplement with nutritious juices and smoothies.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 99,
+      "patientQuery": "Q. Current dose of Synthyroid is 150 mg. What is the recommended dose to get normal thyroid level?",
+      "doctorResponse": "Hello. It is better to increase the dose by 25 mcg, i.e. 175 mcg if she was using 150 mcg till date escalating the dose or thyroid medication will be like 25 to 50 mcg at a time. Not double the dose causes severe sickness. As you mentioned, she was Synthroid (Levothyroxine). It is better to continue the medication to maintain a normal thyroid level for a long time. After using this medication 175 mcg, it is better to repeat the thyroid profile after six weeks to check for that thyroid level.",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    },
+    {
+      "id": 100,
+      "patientQuery": "Q. Is it too risky for me to marry someone with sickle cell trait if I have beta thalassemia trait?",
+      "doctorResponse": "Hello. I have seen the reports (attachment removed to protect patient identity). Take care. Hope this will help you. For more information consult a hematologist online -->",
+      "source": "ruslanmv/ai-medical-chatbot (HuggingFace)"
+    }
+  ]
+}
