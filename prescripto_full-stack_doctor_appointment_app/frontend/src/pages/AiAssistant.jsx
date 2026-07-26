@@ -19,7 +19,8 @@ const AiAssistant = () => {
     const [activeTab, setActiveTab] = useState('chat');
     const [selectedSpecialty, setSelectedSpecialty] = useState('All');
     const [selectedLanguage, setSelectedLanguage] = useState('English');
-    const [sidebarOpen, setSidebarOpen] = useState(true);
+    // Mobile: sidebar closed by default; Desktop: open by default
+    const [sidebarOpen, setSidebarOpen] = useState(typeof window !== 'undefined' ? window.innerWidth >= 768 : true);
 
     // Sessions State Management: Each conversation is a full multi-turn session
     const [sessions, setSessions] = useState([
@@ -265,11 +266,22 @@ const AiAssistant = () => {
     const userName = userData?.name || 'Friend';
 
     return (
-        <div className="flex h-screen w-screen bg-[#171717] text-white font-sans overflow-hidden">
+        <div className="flex h-screen w-screen bg-[#171717] text-white font-sans overflow-hidden relative">
             {/* ════════════════════════════════════════════════════════════════ */}
             {/* LEFT SIDEBAR (ChatGPT Style Layout)                            */}
             {/* ════════════════════════════════════════════════════════════════ */}
-            <div className={`${sidebarOpen ? 'w-64' : 'w-0 sm:w-16'} transition-all duration-300 bg-[#202123] border-r border-[#303030] flex flex-col justify-between z-20 shrink-0`}>
+            {/* Mobile overlay backdrop */}
+            {sidebarOpen && (
+                <div
+                    className="fixed inset-0 bg-black/60 z-30 md:hidden"
+                    onClick={() => setSidebarOpen(false)}
+                />
+            )}
+            <div className={`${
+                sidebarOpen
+                    ? 'w-64 translate-x-0'
+                    : 'w-0 -translate-x-full md:translate-x-0 md:w-16'
+            } fixed md:relative top-0 left-0 h-full transition-all duration-300 bg-[#202123] border-r border-[#303030] flex flex-col justify-between z-40 shrink-0 overflow-hidden`}>
                 <div className="p-3 flex flex-col gap-2 overflow-y-auto max-h-[calc(100vh-80px)]">
                     {/* Top Sidebar Header */}
                     <div className="flex items-center justify-between px-2 py-1 mb-1">
@@ -412,27 +424,27 @@ const AiAssistant = () => {
             {/* ════════════════════════════════════════════════════════════════ */}
             {/* MAIN WORKSPACE STAGE                                           */}
             {/* ════════════════════════════════════════════════════════════════ */}
-            <div className="flex-1 flex flex-col bg-[#212121] relative h-full">
+            <div className="flex-1 flex flex-col bg-[#212121] relative h-full min-w-0">
                 {/* Header bar */}
-                <div className="h-14 border-b border-[#303030] flex items-center justify-between px-6 bg-[#171717]/80 backdrop-blur shrink-0">
-                    <div className="flex items-center gap-3">
-                        {!sidebarOpen && (
-                            <button onClick={() => setSidebarOpen(true)} className="p-1 text-gray-400 hover:text-white">
-                                ☰
-                            </button>
-                        )}
-                        <span className="font-bold text-sm text-gray-200 flex items-center gap-2">
-                            <span>👨‍⚕️ Personal AI Family Doctor</span>
-                            <span className="text-xs font-normal text-gray-400">(Encrypted User Isolated Session)</span>
+                <div className="h-14 border-b border-[#303030] flex items-center justify-between px-3 md:px-6 bg-[#171717]/80 backdrop-blur shrink-0 gap-2">
+                    <div className="flex items-center gap-2 min-w-0 flex-1">
+                        <button onClick={() => setSidebarOpen(!sidebarOpen)} className="p-1.5 text-gray-400 hover:text-white hover:bg-[#2A2B32] rounded-lg shrink-0">
+                            ☰
+                        </button>
+                        <span className="font-bold text-sm text-gray-200 flex items-center gap-1 min-w-0">
+                            <span className="shrink-0">👨‍⚕️</span>
+                            <span className="truncate hidden sm:block">Personal AI Family Doctor</span>
+                            <span className="truncate sm:hidden">AI Doctor</span>
+                            <span className="text-xs font-normal text-gray-500 hidden md:block">(Encrypted Session)</span>
                         </span>
                     </div>
 
-                    <div className="flex items-center gap-2 bg-[#2A2B32] px-3 py-1.5 rounded-lg border border-[#3E3F4B] text-xs">
-                        <span className="text-gray-400">🌐 Language:</span>
+                    <div className="flex items-center gap-1 bg-[#2A2B32] px-2 py-1.5 rounded-lg border border-[#3E3F4B] text-xs shrink-0">
+                        <span className="text-gray-400 hidden sm:block">🌐</span>
                         <select
                             value={selectedLanguage}
                             onChange={(e) => setSelectedLanguage(e.target.value)}
-                            className="bg-transparent font-semibold text-white focus:outline-none cursor-pointer"
+                            className="bg-transparent font-semibold text-white focus:outline-none cursor-pointer text-xs max-w-[80px] sm:max-w-[120px]"
                         >
                             {languages.map(l => (
                                 <option key={l} value={l} className="bg-[#212121] text-white">{l}</option>
@@ -463,46 +475,46 @@ const AiAssistant = () => {
                 {activeTab === 'chat' && (
                     <div className="flex-1 flex flex-col justify-between overflow-hidden">
                         {messages.length === 0 ? (
-                            <div className="flex-1 flex flex-col items-center justify-center p-6 text-center max-w-3xl mx-auto space-y-8">
+                            <div className="flex-1 flex flex-col items-center justify-center px-4 py-6 text-center max-w-3xl mx-auto w-full space-y-6">
                                 <div>
-                                    <div className="w-16 h-16 rounded-2xl bg-blue-600 flex items-center justify-center text-3xl mx-auto mb-4 shadow-lg">
+                                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-blue-600 flex items-center justify-center text-2xl md:text-3xl mx-auto mb-3 shadow-lg">
                                         👨‍⚕️
                                     </div>
-                                    <h2 className="text-3xl font-bold text-white mb-2">What's on your mind today, {userName}?</h2>
-                                    <p className="text-sm text-gray-400">Describe any symptom or health question. I am your 24/7 Personal Family Doctor Assistant.</p>
+                                    <h2 className="text-xl md:text-3xl font-bold text-white mb-2 leading-tight">What's on your mind today, {userName.split(' ')[0]}?</h2>
+                                    <p className="text-xs md:text-sm text-gray-400 max-w-xs md:max-w-full mx-auto">Describe any symptom or health question. I am your 24/7 Personal Family Doctor.</p>
                                 </div>
 
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full text-left">
+                                <div className="grid grid-cols-2 gap-2 md:gap-3 w-full text-left">
                                     <button
                                         onClick={() => { setChatInput("I have a headache and mild fever since morning"); }}
-                                        className="p-4 bg-[#2A2B32] hover:bg-[#343541] border border-[#3E3F4B] rounded-2xl transition group"
+                                        className="p-3 md:p-4 bg-[#2A2B32] hover:bg-[#343541] border border-[#3E3F4B] rounded-xl transition group text-left"
                                     >
-                                        <p className="text-sm font-bold text-white mb-1 group-hover:text-blue-400">🩺 Symptom Diagnostic Checkup</p>
-                                        <p className="text-xs text-gray-400">"I have a headache and mild fever since morning"</p>
+                                        <p className="text-xs md:text-sm font-bold text-white mb-1 group-hover:text-blue-400">🩺 Symptom Checkup</p>
+                                        <p className="text-[10px] md:text-xs text-gray-400 line-clamp-2">"I have a headache and mild fever since morning"</p>
                                     </button>
 
                                     <button
                                         onClick={() => { setActiveTab('scanner'); }}
-                                        className="p-4 bg-[#2A2B32] hover:bg-[#343541] border border-[#3E3F4B] rounded-2xl transition group"
+                                        className="p-3 md:p-4 bg-[#2A2B32] hover:bg-[#343541] border border-[#3E3F4B] rounded-xl transition group text-left"
                                     >
-                                        <p className="text-sm font-bold text-white mb-1 group-hover:text-blue-400">📷 Scan Medicine or Pill Box</p>
-                                        <p className="text-xs text-gray-400">Check dosage, active ingredients & precautions</p>
+                                        <p className="text-xs md:text-sm font-bold text-white mb-1 group-hover:text-blue-400">📷 Scan Medicine</p>
+                                        <p className="text-[10px] md:text-xs text-gray-400 line-clamp-2">Check dosage, active ingredients & precautions</p>
                                     </button>
 
                                     <button
                                         onClick={() => { setActiveTab('vitals'); }}
-                                        className="p-4 bg-[#2A2B32] hover:bg-[#343541] border border-[#3E3F4B] rounded-2xl transition group"
+                                        className="p-3 md:p-4 bg-[#2A2B32] hover:bg-[#343541] border border-[#3E3F4B] rounded-xl transition group text-left"
                                     >
-                                        <p className="text-sm font-bold text-white mb-1 group-hover:text-emerald-400">📊 Log Daily BP & Glucose Vitals</p>
-                                        <p className="text-xs text-gray-400">Record daily health readings and view history</p>
+                                        <p className="text-xs md:text-sm font-bold text-white mb-1 group-hover:text-emerald-400">📊 Log Vitals</p>
+                                        <p className="text-[10px] md:text-xs text-gray-400 line-clamp-2">Record daily health readings and view history</p>
                                     </button>
 
                                     <button
                                         onClick={() => { setActiveTab('emergency'); }}
-                                        className="p-4 bg-[#2A2B32] hover:bg-[#343541] border border-[#3E3F4B] rounded-2xl transition group"
+                                        className="p-3 md:p-4 bg-[#2A2B32] hover:bg-[#343541] border border-[#3E3F4B] rounded-xl transition group text-left"
                                     >
-                                        <p className="text-sm font-bold text-white mb-1 group-hover:text-red-400">🚨 Emergency First-Aid & ER Map</p>
-                                        <p className="text-xs text-gray-400">Find nearby 24/7 ERs, ambulances & share health ID</p>
+                                        <p className="text-xs md:text-sm font-bold text-white mb-1 group-hover:text-red-400">🚨 Emergency & ER</p>
+                                        <p className="text-[10px] md:text-xs text-gray-400 line-clamp-2">Find nearby 24/7 ERs, ambulances & share health ID</p>
                                     </button>
                                 </div>
                             </div>
