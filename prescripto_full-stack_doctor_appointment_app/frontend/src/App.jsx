@@ -27,7 +27,7 @@ const App = () => {
     return (
       <div className='w-full min-h-screen bg-[#0d0d0d] text-white font-sans overflow-hidden'>
         <ToastContainer
-          position="bottom-center"
+          position="top-center"
           autoClose={2500}
           hideProgressBar={true}
           newestOnTop

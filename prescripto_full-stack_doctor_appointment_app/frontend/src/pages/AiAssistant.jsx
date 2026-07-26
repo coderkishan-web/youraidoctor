@@ -456,8 +456,7 @@ const AiAssistant = () => {
                         </button>
                         <span className="font-bold text-sm text-gray-200 flex items-center gap-1 min-w-0">
                             <span className="shrink-0">👨‍⚕️</span>
-                            <span className="truncate hidden sm:block">Personal AI Family Doctor</span>
-                            <span className="truncate sm:hidden">AI Doctor</span>
+                            <span className="truncate">Personal AI Family Doctor</span>
                             <span className="text-xs font-normal text-gray-500 hidden md:block">(Encrypted Session)</span>
                         </span>
                     </div>
