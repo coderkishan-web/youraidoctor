@@ -1,6 +1,7 @@
 /**
- * Memory Engine for AI Medical Companion
- * Maintains structured health context, tracks unanswered questions, and calculates information confidence levels.
+ * Memory Engine for AI Medical Companion (Phase 5 Enhanced)
+ * Maintains structured health context, tracks topic stacks, unanswered questions,
+ * and calculates information confidence levels.
  */
 
 export function createInitialMemory() {
@@ -20,8 +21,14 @@ export function createInitialMemory() {
         conversationStage: 'Greeting',
         lastQuestionAsked: '',
         lastIntent: 'Greeting',
+        previousIntent: null,
+        currentIntent: 'Greeting',
+        topicStack: ['GREETING'],
+        temporaryTopic: null,
+        activeMedicalAssessment: false,
         pendingInformation: ['duration', 'severity', 'painLocation', 'associatedSymptoms'],
         completedQuestions: [],
+        answeredQuestions: [],
         unansweredQuestions: [],
         confidenceLevel: 0.0 // 0.0 to 1.0 scale
     };
@@ -36,7 +43,10 @@ export function updateMemory(message = '', existingMemory = {}, userProfile = {}
         ...existingMemory
     };
 
+    memory.previousIntent = memory.lastIntent || null;
     memory.lastIntent = intent;
+    memory.currentIntent = intent;
+
     const text = message.toLowerCase();
 
     // 1. Symptom Extraction
@@ -52,6 +62,13 @@ export function updateMemory(message = '', existingMemory = {}, userProfile = {}
         }
     });
 
+    if (memory.currentSymptoms.length > 0) {
+        memory.activeMedicalAssessment = true;
+        if (!memory.topicStack.includes('MEDICAL_SYMPTOMS')) {
+            memory.topicStack.push('MEDICAL_SYMPTOMS');
+        }
+    }
+
     // 2. Duration / Timeline Extraction
     const durationRegex = /\b(\d+\s*(days?|hours?|weeks?|months?)|since yesterday|since morning|few days|for a week)\b/i;
     const durationMatch = text.match(durationRegex);
@@ -60,6 +77,7 @@ export function updateMemory(message = '', existingMemory = {}, userProfile = {}
         memory.duration = durationMatch[0];
         memory.pendingInformation = memory.pendingInformation.filter(p => p !== 'duration');
         if (!memory.completedQuestions.includes('duration')) memory.completedQuestions.push('duration');
+        if (!memory.answeredQuestions.includes('duration')) memory.answeredQuestions.push('duration');
     }
 
     // 3. Pain Location
@@ -69,6 +87,7 @@ export function updateMemory(message = '', existingMemory = {}, userProfile = {}
             memory.painLocation = memory.painLocation ? `${memory.painLocation}, ${part}` : part;
             memory.pendingInformation = memory.pendingInformation.filter(p => p !== 'painLocation');
             if (!memory.completedQuestions.includes('painLocation')) memory.completedQuestions.push('painLocation');
+            if (!memory.answeredQuestions.includes('painLocation')) memory.answeredQuestions.push('painLocation');
         }
     });
 
@@ -79,12 +98,14 @@ export function updateMemory(message = '', existingMemory = {}, userProfile = {}
         memory.severity = severityMatch[0];
         memory.pendingInformation = memory.pendingInformation.filter(p => p !== 'severity');
         if (!memory.completedQuestions.includes('severity')) memory.completedQuestions.push('severity');
+        if (!memory.answeredQuestions.includes('severity')) memory.answeredQuestions.push('severity');
     }
 
     // 5. Fever Detection
     if (/\b(fever|tap|taap|temperature|chills|high temp|101|102|100|99)\b/i.test(text)) {
         memory.fever = true;
         if (!memory.completedQuestions.includes('fever')) memory.completedQuestions.push('fever');
+        if (!memory.answeredQuestions.includes('fever')) memory.answeredQuestions.push('fever');
     }
 
     // 6. User Profile Sync
