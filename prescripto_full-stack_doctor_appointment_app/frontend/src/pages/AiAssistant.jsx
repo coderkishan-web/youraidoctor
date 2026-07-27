@@ -50,6 +50,63 @@ const AiAssistant = () => {
     const [reportData, setReportData] = useState(null);
     const [reportModalOpen, setReportModalOpen] = useState(false);
 
+    // ── Emergency Follow-Up Protocol ──────────────────────────────────────
+    const [emergencyActive, setEmergencyActive] = useState(false);
+    const [emergencyType, setEmergencyType] = useState('');
+    const [followUpTurn, setFollowUpTurn] = useState(0);
+    const emergencyIntervalRef = useRef(null);
+    const followUpTurnRef = useRef(0); // ref so interval always reads latest value
+
+    // Safe-signal words — any of these cancel the follow-up loop
+    const SAFE_SIGNALS = /\b(yes|ok|okay|done|called|ambulance|help is coming|on the way|on my way|i'm fine|im fine|i am fine|safe|reached|arrived|admitted|hospital|fine now|all good|got help|they came)\b/i;
+
+    const FOLLOW_UP_MESSAGES = [
+        (type) => `🚨 Emergency Check-In: Are you okay? Have you called for help yet?\n\nIf the ambulance is on its way, please reply "yes" or "help is coming" so I stop checking in.\n\n📞 Emergency: 108 | 112`,
+        (type) => `🚑 I'm still here with you. Is the ambulance on its way?\n\nIf medical help has arrived or is coming, please let me know — reply "yes" or "ambulance called".\n\n💙 You're doing the right thing by staying calm.`,
+        (type) => `💙 Emergency Follow-Up: I haven't heard from you.\n\nIf you or the person affected has received medical attention, please reply "yes" or "I'm safe" so I can stop checking in.\n\nIf you still need help: 📞 108 (Ambulance) | 112 (Emergency)`,
+    ];
+
+    const startEmergencyFollowUp = (type) => {
+        // Clear any existing follow-up
+        if (emergencyIntervalRef.current) clearInterval(emergencyIntervalRef.current);
+        followUpTurnRef.current = 0;
+        setFollowUpTurn(0);
+        setEmergencyActive(true);
+        setEmergencyType(type || 'Emergency');
+
+        emergencyIntervalRef.current = setInterval(() => {
+            const turn = followUpTurnRef.current;
+            const msgFn = FOLLOW_UP_MESSAGES[Math.min(turn, FOLLOW_UP_MESSAGES.length - 1)];
+            const followUpMsg = { sender: 'ai', text: msgFn(type), isFollowUp: true };
+
+            // Inject follow-up message into current active session
+            setSessions(prev => prev.map((s, _i, arr) => {
+                // Inject into the most recent session (last one)
+                const lastSession = arr[arr.length - 1];
+                if (s.id === lastSession.id) {
+                    return { ...s, messages: [...s.messages, followUpMsg] };
+                }
+                return s;
+            }));
+
+            followUpTurnRef.current = turn + 1;
+            setFollowUpTurn(prev => prev + 1);
+        }, 5 * 60 * 1000); // 5 minutes
+    };
+
+    const dismissEmergencyFollowUp = () => {
+        if (emergencyIntervalRef.current) clearInterval(emergencyIntervalRef.current);
+        emergencyIntervalRef.current = null;
+        setEmergencyActive(false);
+        setFollowUpTurn(0);
+        followUpTurnRef.current = 0;
+    };
+
+    // Cleanup on unmount
+    useEffect(() => {
+        return () => { if (emergencyIntervalRef.current) clearInterval(emergencyIntervalRef.current); };
+    }, []);
+
     // Get active session messages
     const activeSession = useMemo(() => {
         return sessions.find(s => s.id === activeSessionId) || sessions[0] || { id: 'session-default', messages: [] };
@@ -205,6 +262,20 @@ const AiAssistant = () => {
         const userText = chatInput.trim();
         setChatInput('');
 
+        // ── Check if user is sending a safe-signal to cancel follow-up ──
+        if (emergencyActive && SAFE_SIGNALS.test(userText)) {
+            dismissEmergencyFollowUp();
+            // Inject a reassurance message
+            const reassurance = { sender: 'ai', text: `💙 So glad to hear you're getting help! I've stopped my check-ins. Please take care, and don't hesitate to come back if you need anything. Wishing you a speedy recovery. 🙏`, isFollowUp: false };
+            setSessions(prev => prev.map((s, _i, arr) => {
+                const last = arr[arr.length - 1];
+                if (s.id === last.id) return { ...s, messages: [...s.messages, reassurance] };
+                return s;
+            }));
+            toast.success('✅ Emergency protocol dismissed. Stay safe!');
+            return; // Don't send to backend for safe-signal dismissal
+        }
+
         const targetSessId = activeSessionId;
         const currentSession = sessions.find(s => s.id === targetSessId);
 
@@ -245,13 +316,19 @@ const AiAssistant = () => {
 
                 setSessions(prev => prev.map(s => {
                     if (s.id === targetSessId) {
-                        return {
-                            ...s,
-                            messages: [...s.messages, aiMsgObj]
-                        };
+                        return { ...s, messages: [...s.messages, aiMsgObj] };
                     }
                     return s;
                 }));
+
+                // ── Emergency Follow-Up Protocol ──
+                const isEmergencyIntent = aiResp.intent === 'EMERGENCY' ||
+                    (aiResp.riskBadge && (aiResp.riskBadge.includes('EMERGENCY') || aiResp.riskBadge.includes('CRITICAL')));
+
+                if (isEmergencyIntent && !emergencyActive) {
+                    startEmergencyFollowUp(aiResp.riskBadge || 'Emergency');
+                    toast.error('🚨 Emergency protocol active — I will check in every 5 minutes until you confirm you\'re safe.', { autoClose: 6000 });
+                }
 
                 if (aiResp.newInsights && aiResp.newInsights.length > 0) {
                     setLearnedInsights(prev => Array.from(new Set([...prev, ...aiResp.newInsights])));
@@ -637,9 +714,28 @@ const AiAssistant = () => {
                     </div>
                 )}
 
-                {/* ───────────────────────────────────────────────────────────── */}
-                {/* WORKSPACE TAB STAGES                                         */}
-                {/* ───────────────────────────────────────────────────────────── */}
+                {/* ── STICKY EMERGENCY PROTOCOL BANNER ── */}
+                {emergencyActive && (
+                    <div className="shrink-0 flex items-center justify-between gap-2 px-3 py-2 bg-red-950/80 border-b-2 border-red-600/70 backdrop-blur animate-pulse-slow">
+                        <div className="flex items-center gap-2 min-w-0">
+                            <span className="w-7 h-7 rounded-lg bg-red-600 flex items-center justify-center text-sm shadow shrink-0 animate-pulse">🚨</span>
+                            <div className="min-w-0">
+                                <p className="text-red-200 font-extrabold text-xs leading-tight truncate">
+                                    Emergency Protocol Active — Check-in #{followUpTurn + 1} in {5 - (followUpTurn % 5)} min
+                                </p>
+                                <p className="text-red-400 text-[10px] truncate">
+                                    Reply "yes", "safe", or "help is coming" to stop follow-ups · 📞 108 | 112
+                                </p>
+                            </div>
+                        </div>
+                        <button
+                            onClick={dismissEmergencyFollowUp}
+                            className="shrink-0 flex items-center gap-1 px-2.5 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-[10px] rounded-lg shadow transition"
+                        >
+                            ✅ I'm Safe
+                        </button>
+                    </div>
+                )}
 
                 {/* STAGE 1: MAIN DIAGNOSTIC CHAT */}
                 {activeTab === 'chat' && (
