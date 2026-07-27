@@ -47,6 +47,8 @@ const AiAssistant = () => {
     const [chatInput, setChatInput] = useState('');
     const [loading, setLoading] = useState(false);
     const [whoGuidelines, setWhoGuidelines] = useState([]);
+    const [reportData, setReportData] = useState(null);
+    const [reportModalOpen, setReportModalOpen] = useState(false);
 
     // Get active session messages
     const activeSession = useMemo(() => {
@@ -162,6 +164,24 @@ const AiAssistant = () => {
             }
         } catch (e) {
             console.error("Failed to load WHO guidelines", e);
+        }
+    };
+
+    const handleFetchReport = async () => {
+        try {
+            const { data } = await axios.post(
+                backendUrl + '/api/ai/generate-report',
+                { userId: userData?._id },
+                { headers: { token } }
+            );
+            if (data.success && data.report) {
+                setReportData(data.report);
+                setReportModalOpen(true);
+            } else {
+                toast.error(data.message || "Could not generate report");
+            }
+        } catch (e) {
+            toast.error("Failed to generate health report");
         }
     };
 
@@ -296,7 +316,7 @@ const AiAssistant = () => {
                     top: isMobile ? 0 : 'auto',
                     left: isMobile ? 0 : 'auto',
                     height: isMobile ? '100vh' : '100%',
-                    width: sidebarOpen ? '256px' : (isMobile ? '0' : '64px'),
+                    width: sidebarOpen ? '256px' : (isMobile ? '0' : '60px'),
                     transform: isMobile && !sidebarOpen ? 'translateX(-100%)' : 'translateX(0)',
                     zIndex: isMobile ? 9999 : 'auto',
                     flexShrink: 0,
@@ -305,26 +325,88 @@ const AiAssistant = () => {
                 }}
                 className="bg-[#202123] border-r border-[#303030] flex flex-col justify-between"
             >
-                <div className="p-3 flex flex-col gap-2 overflow-y-auto max-h-[calc(100vh-80px)]">
+                <div className={`flex flex-col gap-1 overflow-y-auto max-h-[calc(100vh-80px)] ${sidebarOpen ? 'p-3' : 'p-2'}`}>
+
+                    {/* ── Collapsed icon-rail (desktop only, sidebar closed) ── */}
+                    {!sidebarOpen && !isMobile && (
+                        <div className="flex flex-col items-center gap-1 pt-2">
+                            {/* Toggle button */}
+                            <button
+                                onClick={() => setSidebarOpen(true)}
+                                title="Open menu"
+                                className="w-10 h-10 flex items-center justify-center rounded-xl text-gray-400 hover:text-white hover:bg-[#2A2B32] transition mb-1"
+                            >
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                                    <line x1="3" y1="6" x2="21" y2="6"/>
+                                    <line x1="3" y1="12" x2="21" y2="12"/>
+                                    <line x1="3" y1="18" x2="21" y2="18"/>
+                                </svg>
+                            </button>
+
+                            {/* Logo */}
+                            <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow mb-2" title="AI Personal Doctor">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                            </div>
+
+                            {/* Icon nav items */}
+                            {[
+                                { tab: null, icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>, label: 'New Chat', action: handleNewChat, active: activeTab === 'chat' && messages.length === 0, activeClass: 'bg-blue-600 text-white' },
+                                { tab: 'memory', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>, label: 'Health Memory', activeClass: 'bg-indigo-600 text-white' },
+                                { tab: 'emergency', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>, label: 'Emergency', activeClass: 'bg-red-600 text-white', defaultClass: 'text-red-400' },
+                                { tab: 'plans', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>, label: 'Plans', activeClass: 'bg-amber-600 text-white' },
+                                { tab: 'doctors', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>, label: 'Doctors', activeClass: 'bg-blue-600 text-white', action: () => { setSelectedSpecialty('All'); setActiveTab('doctors'); } },
+                                { tab: 'scanner', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>, label: 'Pill Scanner', activeClass: 'bg-blue-600 text-white' },
+                                { tab: 'vitals', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>, label: 'Vital Log', activeClass: 'bg-emerald-600 text-white' },
+                                { tab: 'who', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>, label: 'WHO Data', activeClass: 'bg-indigo-600 text-white' },
+                            ].map(({ tab, icon, label, action, active, activeClass, defaultClass }) => {
+                                const isActive = active !== undefined ? active : (activeTab === tab);
+                                return (
+                                    <button
+                                        key={label}
+                                        onClick={action || (() => setActiveTab(tab))}
+                                        title={label}
+                                        className={`relative group w-10 h-10 flex items-center justify-center rounded-xl transition ${
+                                            isActive
+                                                ? activeClass
+                                                : `${defaultClass || 'text-gray-400'} hover:bg-[#2A2B32] hover:text-white`
+                                        }`}
+                                    >
+                                        {icon}
+                                        {/* Tooltip */}
+                                        <span className="pointer-events-none absolute left-[52px] top-1/2 -translate-y-1/2 bg-[#343541] text-white text-[11px] font-semibold px-2.5 py-1 rounded-lg shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity z-50 border border-[#3E3F4B]">
+                                            {label}
+                                        </span>
+                                    </button>
+                                );
+                            })}
+                        </div>
+                    )}
+
+                    {/* ── Expanded sidebar (open state) ── */}
+                    {sidebarOpen && (
+                        <>
                     {/* Top Sidebar Header */}
                     <div className="flex items-center justify-between px-2 py-1 mb-1">
                         <div className="flex items-center gap-2 font-bold text-sm text-white">
                             <span className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center text-xs shadow">👨‍⚕️</span>
-                            {sidebarOpen && <span className="tracking-wide">AI Personal Dr.</span>}
+                            <span className="tracking-wide">AI Personal Dr.</span>
                         </div>
-                        <button onClick={() => setSidebarOpen(!sidebarOpen)} className="p-1 text-gray-400 hover:text-white rounded-md hover:bg-[#2A2B32]">
-                            {sidebarOpen ? '◀' : '▶'}
+                        <button onClick={() => setSidebarOpen(false)} className="p-1 text-gray-400 hover:text-white rounded-md hover:bg-[#2A2B32]">
+                            ◀
                         </button>
                     </div>
 
-                    {/* TOP ACTION MENU (White Box Reference) */}
+                    {/* TOP ACTION MENU */}
                     <div className="bg-[#2A2B32]/70 rounded-xl p-2 border border-[#3E3F4B] flex flex-col gap-1 text-xs">
                         <button
                             onClick={handleNewChat}
                             className={`flex items-center gap-2.5 px-3 py-2 rounded-lg transition text-left ${activeTab === 'chat' && messages.length === 0 ? 'bg-blue-600 text-white font-bold' : 'bg-[#343541] hover:bg-[#40414F] text-white font-semibold'}`}
                         >
                             <span>📝</span>
-                            {sidebarOpen && <span>New chat</span>}
+                            <span>New chat</span>
                         </button>
 
                         <button
@@ -332,7 +414,7 @@ const AiAssistant = () => {
                             className={`flex items-center gap-2.5 px-3 py-2 rounded-lg transition text-left ${activeTab === 'memory' ? 'bg-indigo-600 text-white font-bold' : 'hover:bg-[#343541] text-gray-300'}`}
                         >
                             <span>🧠</span>
-                            {sidebarOpen && <span>Health Memory</span>}
+                            <span>Health Memory</span>
                         </button>
 
                         <button
@@ -340,7 +422,7 @@ const AiAssistant = () => {
                             className={`flex items-center gap-2.5 px-3 py-2 rounded-lg transition text-left ${activeTab === 'emergency' ? 'bg-red-600 text-white font-bold' : 'hover:bg-[#343541] text-red-400 font-semibold'}`}
                         >
                             <span>🚨</span>
-                            {sidebarOpen && <span>Emergency</span>}
+                            <span>Emergency</span>
                         </button>
 
                         <button
@@ -348,7 +430,7 @@ const AiAssistant = () => {
                             className={`flex items-center gap-2.5 px-3 py-2 rounded-lg transition text-left ${activeTab === 'plans' ? 'bg-amber-600 text-white font-bold' : 'hover:bg-[#343541] text-gray-300'}`}
                         >
                             <span>💳</span>
-                            {sidebarOpen && <span>Plans</span>}
+                            <span>Plans</span>
                         </button>
 
                         <button
@@ -356,7 +438,7 @@ const AiAssistant = () => {
                             className={`flex items-center gap-2.5 px-3 py-2 rounded-lg transition text-left ${activeTab === 'doctors' ? 'bg-blue-600 text-white font-bold' : 'hover:bg-[#343541] text-gray-300'}`}
                         >
                             <span>👨‍⚕️</span>
-                            {sidebarOpen && <span>Doctors</span>}
+                            <span>Doctors</span>
                         </button>
 
                         <button
@@ -364,7 +446,7 @@ const AiAssistant = () => {
                             className={`flex items-center gap-2.5 px-3 py-2 rounded-lg transition text-left ${activeTab === 'scanner' ? 'bg-blue-600 text-white font-bold' : 'hover:bg-[#343541] text-gray-300'}`}
                         >
                             <span>📷</span>
-                            {sidebarOpen && <span>Pill Scanner</span>}
+                            <span>Pill Scanner</span>
                         </button>
 
                         <button
@@ -372,7 +454,7 @@ const AiAssistant = () => {
                             className={`flex items-center gap-2.5 px-3 py-2 rounded-lg transition text-left ${activeTab === 'vitals' ? 'bg-emerald-600 text-white font-bold' : 'hover:bg-[#343541] text-gray-300'}`}
                         >
                             <span>📊</span>
-                            {sidebarOpen && <span>Vital Log</span>}
+                            <span>Vital Log</span>
                         </button>
 
                         <button
@@ -380,9 +462,11 @@ const AiAssistant = () => {
                             className={`flex items-center gap-2.5 px-3 py-2 rounded-lg transition text-left ${activeTab === 'who' ? 'bg-indigo-600 text-white font-bold' : 'hover:bg-[#343541] text-gray-300'}`}
                         >
                             <span>📌</span>
-                            {sidebarOpen && <span>WHO Data</span>}
+                            <span>WHO Data</span>
                         </button>
                     </div>
+                    </>
+                    )}
 
                     {/* RECENT DIAGNOSTIC CHATS */}
                     {sidebarOpen && (
@@ -442,6 +526,17 @@ const AiAssistant = () => {
                         </button>
                     </div>
                 )}
+                {/* Collapsed bottom: logout icon only */}
+                {!sidebarOpen && !isMobile && (
+                    <div className="p-2 border-t border-[#303030] flex flex-col items-center gap-2">
+                        <div className="w-8 h-8 rounded-full bg-blue-600 font-bold flex items-center justify-center text-xs text-white shadow" title={userName}>
+                            {userName.charAt(0).toUpperCase()}
+                        </div>
+                        <button onClick={handleLogout} title="Logout" className="w-8 h-8 flex items-center justify-center text-gray-500 hover:text-red-400 hover:bg-[#2A2B32] rounded-lg transition">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                        </button>
+                    </div>
+                )}
             </div>
 
             {/* ════════════════════════════════════════════════════════════════ */}
@@ -461,20 +556,72 @@ const AiAssistant = () => {
                         </span>
                     </div>
 
-                    <div className="relative flex items-center gap-1 bg-[#2A2B32] px-2 py-1.5 rounded-lg border border-[#3E3F4B] text-xs shrink-0">
-                        <span className="text-gray-400 hidden sm:block">🌐</span>
-                        <select
-                            value={selectedLanguage}
-                            onChange={(e) => setSelectedLanguage(e.target.value)}
-                            className="bg-transparent font-semibold text-white focus:outline-none cursor-pointer text-xs max-w-[72px] sm:max-w-[110px]"
-                            style={{ direction: 'ltr' }}
+                    <div className="flex items-center gap-2">
+                        <button
+                            onClick={handleFetchReport}
+                            className="flex items-center gap-1.5 bg-blue-600/90 hover:bg-blue-600 text-white font-bold px-3 py-1.5 rounded-lg border border-blue-500/50 text-xs shadow-sm transition"
+                            title="Generate Medical Assessment Report from Structured Memory"
                         >
-                            {languages.map(l => (
-                                <option key={l} value={l} className="bg-[#212121] text-white">{l}</option>
-                            ))}
-                        </select>
+                            <span>📋</span>
+                            <span className="hidden sm:inline">Health Report</span>
+                        </button>
+
+                        <div className="relative flex items-center gap-1 bg-[#2A2B32] px-2 py-1.5 rounded-lg border border-[#3E3F4B] text-xs shrink-0">
+                            <span className="text-gray-400 hidden sm:block">🌐</span>
+                            <select
+                                value={selectedLanguage}
+                                onChange={(e) => setSelectedLanguage(e.target.value)}
+                                className="bg-transparent font-semibold text-white focus:outline-none cursor-pointer text-xs max-w-[72px] sm:max-w-[110px]"
+                                style={{ direction: 'ltr' }}
+                            >
+                                {languages.map(l => (
+                                    <option key={l} value={l} className="bg-[#212121] text-white">{l}</option>
+                                ))}
+                            </select>
+                        </div>
                     </div>
                 </div>
+
+                {/* ── Mobile top toast notification bar ── */}
+                {isMobile && (
+                    <div
+                        className="flex items-center justify-between px-3 py-1.5 bg-[#1a1a2e] border-b border-[#303030] shrink-0"
+                        style={{ minHeight: '36px' }}
+                    >
+                        <div className="flex items-center gap-2">
+                            {/* Active tab pill */}
+                            {{
+                                chat: <span className="flex items-center gap-1.5 px-2.5 py-0.5 bg-blue-600/20 border border-blue-500/40 text-blue-300 text-[10px] font-bold rounded-full"><span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>AI Chat Active</span>,
+                                memory: <span className="flex items-center gap-1.5 px-2.5 py-0.5 bg-indigo-600/20 border border-indigo-500/40 text-indigo-300 text-[10px] font-bold rounded-full"><span className="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Health Memory</span>,
+                                emergency: <span className="flex items-center gap-1.5 px-2.5 py-0.5 bg-red-600/20 border border-red-500/40 text-red-300 text-[10px] font-bold rounded-full animate-pulse"><span className="w-1.5 h-1.5 rounded-full bg-red-400"></span>🚨 Emergency</span>,
+                                plans: <span className="flex items-center gap-1.5 px-2.5 py-0.5 bg-amber-600/20 border border-amber-500/40 text-amber-300 text-[10px] font-bold rounded-full"><span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Plans</span>,
+                                doctors: <span className="flex items-center gap-1.5 px-2.5 py-0.5 bg-blue-600/20 border border-blue-500/40 text-blue-300 text-[10px] font-bold rounded-full"><span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Find Doctors</span>,
+                                scanner: <span className="flex items-center gap-1.5 px-2.5 py-0.5 bg-purple-600/20 border border-purple-500/40 text-purple-300 text-[10px] font-bold rounded-full"><span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Pill Scanner</span>,
+                                vitals: <span className="flex items-center gap-1.5 px-2.5 py-0.5 bg-emerald-600/20 border border-emerald-500/40 text-emerald-300 text-[10px] font-bold rounded-full"><span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Vital Log</span>,
+                                who: <span className="flex items-center gap-1.5 px-2.5 py-0.5 bg-indigo-600/20 border border-indigo-500/40 text-indigo-300 text-[10px] font-bold rounded-full"><span className="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>WHO Data</span>,
+                            }[activeTab]}
+                        </div>
+                        {/* Quick nav pills for mobile */}
+                        <div className="flex items-center gap-1">
+                            {[
+                                { tab: 'chat', label: '💬' },
+                                { tab: 'emergency', label: '🚨' },
+                                { tab: 'vitals', label: '📊' },
+                                { tab: 'doctors', label: '🩺' },
+                            ].map(({ tab, label }) => (
+                                <button
+                                    key={tab}
+                                    onClick={() => setActiveTab(tab)}
+                                    className={`w-7 h-7 flex items-center justify-center rounded-lg text-xs transition ${
+                                        activeTab === tab ? 'bg-blue-600 text-white' : 'bg-[#2A2B32] text-gray-400 hover:text-white'
+                                    }`}
+                                >
+                                    {label}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                )}
 
                 {/* Learned Memory Tag Banner */}
                 {learnedInsights.length > 0 && activeTab === 'chat' && (
@@ -737,6 +884,43 @@ const AiAssistant = () => {
                     </div>
                 )}
             </div>
+
+            {/* STRUCTURED MEDICAL REPORT MODAL */}
+            {reportModalOpen && reportData && (
+                <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[99999] flex items-center justify-center p-4">
+                    <div className="bg-[#2A2B32] border border-[#3E3F4B] rounded-2xl max-w-2xl w-full p-6 text-white max-h-[85vh] overflow-y-auto shadow-2xl relative">
+                        <button
+                            onClick={() => setReportModalOpen(false)}
+                            className="absolute top-4 right-4 text-gray-400 hover:text-white text-lg font-bold p-1"
+                        >
+                            ✕
+                        </button>
+                        <h3 className="text-xl font-bold text-blue-400 mb-1 flex items-center gap-2">
+                            📋 Structured Medical Assessment Report
+                        </h3>
+                        <p className="text-xs text-gray-400 mb-4">Generated directly from your active Structured Health Memory</p>
+
+                        <pre className="bg-[#1E1F22] p-4 rounded-xl text-xs font-mono text-gray-200 whitespace-pre-wrap leading-relaxed border border-[#303030]">
+                            {reportData.reportText}
+                        </pre>
+
+                        <div className="mt-6 flex items-center justify-between">
+                            <button
+                                onClick={() => window.print()}
+                                className="px-4 py-2 bg-blue-600 hover:bg-blue-500 font-bold text-xs rounded-xl text-white shadow transition"
+                            >
+                                🖨️ Print / Save Report PDF
+                            </button>
+                            <button
+                                onClick={() => setReportModalOpen(false)}
+                                className="px-4 py-2 bg-[#3E3F4B] hover:bg-[#4E4F5B] text-xs font-bold rounded-xl text-white transition"
+                            >
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

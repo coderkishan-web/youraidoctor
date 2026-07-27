@@ -10,20 +10,23 @@ import aiRouter from "./routes/aiRoute.js"
 import familyRouter from "./routes/familyRoute.js"
 import reminderRouter from "./routes/reminderRoute.js"
 import subscriptionRouter from "./routes/subscriptionRoute.js"
+import v1Router from "./routes/v1Router.js"
+import { securityGuard } from "./middleware/securityMiddleware.js"
 
 // app config
 const app = express()
 const port = process.env.PORT || 4000
 
-// Connect to database (MySQL if configured, JSON fallback otherwise)
+// Connect to database
 connectDB()
 connectCloudinary()
 
-// middlewares
+// Security & Parsing Middlewares
 app.use(express.json())
+app.use(securityGuard)
+
 app.use(cors({
   origin: function (origin, callback) {
-    // Allow all vercel.app, localhost, and no-origin requests (like Render health checks)
     const allowed = [
       'http://localhost:5173',
       'http://localhost:5174',
@@ -47,7 +50,8 @@ app.use(cors({
   credentials: true
 }))
 
-// api endpoints
+// Versioned & Unversioned API endpoints (Full Backward Compatibility)
+app.use("/api/v1", v1Router)
 app.use("/api/user", userRouter)
 app.use("/api/admin", adminRouter)
 app.use("/api/doctor", doctorRouter)
@@ -57,7 +61,7 @@ app.use("/api/reminder", reminderRouter)
 app.use("/api/subscription", subscriptionRouter)
 
 app.get("/", (req, res) => {
-  res.send("API Working")
+  res.json({ message: "YourAiDoctor Enterprise API Working", version: "1.0.0" })
 });
 
 if (!process.env.VERCEL && !process.env.NETLIFY) {

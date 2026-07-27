@@ -1,5 +1,9 @@
 import userModel from '../models/userModel.js';
-import { processOnboardingStep, generateAIHealthResponse, fetchWhoData } from '../services/aiHealthEngine.js';
+import { processOnboardingStep, fetchWhoData } from '../services/aiHealthEngine.js';
+import { processMessage } from '../services/ai/ConversationDirector.js';
+import { generateHealthReport } from '../services/ai/ReportGenerator.js';
+import { evaluateClinicalEvidence } from '../services/ai/MedicalReasoning.js';
+import { createInitialMemory } from '../services/ai/MemoryEngine.js';
 
 // Controller: Process Onboarding Intake Step
 export const handleOnboard = async (req, res) => {
@@ -16,7 +20,11 @@ export const handleOnboard = async (req, res) => {
             const user = await userModel.findById(userId);
             await userModel.findByIdAndUpdate(userId, {
                 hasCompletedOnboarding: true,
-                healthProfile: { ...result.profileSummary, activeSession: { turn: 0, status: 'none', responses: [] } },
+                healthProfile: {
+                    ...result.profileSummary,
+                    activeSession: { turn: 0, status: 'none', responses: [] },
+                    structuredMemory: createInitialMemory()
+                },
                 emergencyCard: {
                     bloodType: 'O+',
                     allergies: result.profileSummary.medicationsAllergies || 'None',
@@ -34,7 +42,7 @@ export const handleOnboard = async (req, res) => {
     }
 };
 
-// Controller: AI Personal Family Doctor Companion Chat
+// Controller: AI Personal Companion Chat (Conversation Director)
 export const handleChat = async (req, res) => {
     try {
         const { userId, message, language, sessionId } = req.body;
@@ -45,65 +53,51 @@ export const handleChat = async (req, res) => {
             return res.json({ success: false, message: "Message is required" });
         }
 
-        const user = await userModel.findById(userId);
-        if (!user) {
-            return res.json({ success: false, message: "User account not found" });
-        }
-
-        const healthProfile = user.healthProfile || {};
-        if (language) {
-            healthProfile.preferredLanguage = language;
-        }
-
-        // Generate Multi-Turn Personalized Response from AI Health Engine
-        const aiResponse = await generateAIHealthResponse(message, user);
-
-        // Update Active Diagnostic Intake Session state
-        if (aiResponse.session) {
-            healthProfile.activeSession = aiResponse.session;
-        }
-
-        // Update Learned Personal Insights if new facts detected
-        if (aiResponse.newInsights && aiResponse.newInsights.length > 0) {
-            const existingInsights = healthProfile.learnedInsights || [];
-            const updatedInsights = Array.from(new Set([...existingInsights, ...aiResponse.newInsights]));
-            healthProfile.learnedInsights = updatedInsights;
-        }
-
-        // Append to User's Isolated Chat History with sessionId
-        const activeSessId = sessionId || 'session-default';
-        const chatHistory = user.aiChatHistory || [];
-        chatHistory.push({
-            id: 'msg-' + Date.now() + '-user',
-            sessionId: activeSessId,
-            sender: 'user',
-            message: message,
-            timestamp: new Date().toISOString()
-        });
-        chatHistory.push({
-            id: 'msg-' + Date.now() + '-ai',
-            sessionId: activeSessId,
-            sender: 'ai',
-            message: aiResponse.reply,
-            riskBadge: aiResponse.riskBadge || null,
-            recommendedSpecialty: aiResponse.recommendedSpecialty || null,
-            bookingAction: Boolean(aiResponse.bookingAction),
-            timestamp: new Date().toISOString()
+        // Delegate execution to Conversation Director
+        const aiResponse = await processMessage({
+            userId,
+            message,
+            sessionId: sessionId || 'session-default',
+            language
         });
 
-        // Save updated health profile and isolated chat history
-        await userModel.findByIdAndUpdate(userId, {
-            healthProfile,
-            aiChatHistory: chatHistory
-        });
+        // Retrieve fresh chat history to maintain exact contract
+        const updatedUser = await userModel.findById(userId).select('aiChatHistory');
 
         res.json({
             success: true,
             response: aiResponse,
-            chatHistory
+            chatHistory: updatedUser?.aiChatHistory || []
         });
     } catch (error) {
         console.error("AI Chat API Error:", error);
+        res.json({ success: false, message: error.message });
+    }
+};
+
+// Controller: Generate Structured Medical Report
+export const handleGenerateReport = async (req, res) => {
+    try {
+        const { userId } = req.body;
+        if (!userId) {
+            return res.json({ success: false, message: "User ID is required" });
+        }
+
+        const user = await userModel.findById(userId).select('-password');
+        if (!user) {
+            return res.json({ success: false, message: "User account not found" });
+        }
+
+        const memory = user.healthProfile?.structuredMemory || createInitialMemory();
+        const reasoning = evaluateClinicalEvidence(memory, '');
+        const report = generateHealthReport(memory, user, reasoning);
+
+        res.json({
+            success: true,
+            report
+        });
+    } catch (error) {
+        console.error("Generate Report API Error:", error);
         res.json({ success: false, message: error.message });
     }
 };
@@ -125,7 +119,7 @@ export const getChatHistory = async (req, res) => {
             success: true,
             chatHistory: user.aiChatHistory || [],
             learnedInsights: user.healthProfile?.learnedInsights || [],
-            activeSession: user.healthProfile?.activeSession || null
+            structuredMemory: user.healthProfile?.structuredMemory || null
         });
     } catch (error) {
         console.error("Get Chat History Error:", error);

@@ -33,7 +33,59 @@
       "familyHistory": "No family sub-profiles added during onboarding",
       "lifestyleGoals": "na",
       "completedAt": "2026-07-24T19:18:45.046Z",
-      "preferredLanguage": "Marathi (मराठी)"
+      "preferredLanguage": "Marathi (मराठी)",
+      "structuredMemory": {
+        "currentSymptoms": [
+          "Headache",
+          "headache"
+        ],
+        "symptomTimeline": "since yesterday",
+        "duration": "since yesterday",
+        "painLocation": "head",
+        "severity": "sharp",
+        "fever": false,
+        "medications": [],
+        "allergies": [],
+        "chronicDiseases": [],
+        "pastHistory": [],
+        "lifestyle": "",
+        "emergencyScore": 10,
+        "conversationStage": "ProvideGuidance",
+        "lastQuestionAsked": "Have you noticed any other symptoms accompanied with your Headache, such as fever or nausea?",
+        "lastIntent": "Medical Symptoms",
+        "pendingInformation": [
+          "painLocation",
+          "associatedSymptoms"
+        ],
+        "completedQuestions": [
+          "duration",
+          "severity"
+        ],
+        "unansweredQuestions": [],
+        "confidenceLevel": 1,
+        "clinicalDifferential": {
+          "primaryPossibility": {
+            "name": "Tension-Type Headache or Migraine",
+            "evidence": "Presentation of localized head pain without focal red flags."
+          },
+          "secondaryPossibilities": [
+            {
+              "name": "Sinus Congestion / Sinusitis",
+              "evidence": "If accompanied by nasal pressure or facial tenderness."
+            },
+            {
+              "name": "Stress / Dehydration Induced Headache",
+              "evidence": "Common with low fluid intake or high mental exertion."
+            }
+          ],
+          "missingDetails": [
+            "Light sensitivity (photophobia)",
+            "Nausea",
+            "Exact pain quality (throbbing vs dull pressure)"
+          ]
+        },
+        "urgencyTier": "Same-day Evaluation"
+      }
     },
     "emergencyCard": {
       "bloodType": "O+",
@@ -49,7 +101,463 @@
       "expiresAt": 1787513640736,
       "price": 100,
       "currency": "INR"
-    }
+    },
+    "aiChatHistory": [
+      {
+        "id": "msg-1785169645424-user",
+        "sessionId": "test-session-1785169645213",
+        "sender": "user",
+        "message": "Hello doctor",
+        "timestamp": "2026-07-27T16:27:25.424Z"
+      },
+      {
+        "id": "msg-1785169645424-ai",
+        "sessionId": "test-session-1785169645213",
+        "sender": "ai",
+        "message": "Hello Test Patient! 👋 I'm YourAiDoctor, your clinical triage and personal health companion. How are you feeling today? Are there any symptoms or wellness questions on your mind?",
+        "timestamp": "2026-07-27T16:27:25.424Z"
+      },
+      {
+        "id": "msg-1785169646083-user",
+        "sessionId": "test-session-1785169645213",
+        "sender": "user",
+        "message": "I have a severe headache since yesterday",
+        "timestamp": "2026-07-27T16:27:26.083Z"
+      },
+      {
+        "id": "msg-1785169646083-ai",
+        "sessionId": "test-session-1785169645213",
+        "sender": "ai",
+        "message": "I am paying close attention to your symptoms (Headache, headache). Based on your symptoms, we classify this as 🟡 Urgent Care Recommended.\n\nHave you noticed any other symptoms accompanied with your Headache, such as fever or nausea?",
+        "riskBadge": "🟡 Urgent Care Recommended",
+        "recommendedSpecialty": "General Physician",
+        "bookingAction": true,
+        "timestamp": "2026-07-27T16:27:26.083Z"
+      },
+      {
+        "id": "msg-1785169646481-user",
+        "sessionId": "test-session-1785169645213",
+        "sender": "user",
+        "message": "What is the price of a BMW M5?",
+        "timestamp": "2026-07-27T16:27:26.481Z"
+      },
+      {
+        "id": "msg-1785169646481-ai",
+        "sessionId": "test-session-1785169645213",
+        "sender": "ai",
+        "message": "That's an interesting question! While I can share insights on that, my main focus is your health and well-being. If you'd like, we can continue discussing your health whenever you're ready! 😊",
+        "timestamp": "2026-07-27T16:27:26.481Z"
+      },
+      {
+        "id": "msg-1785169646779-user",
+        "sessionId": "test-session-1785169645213",
+        "sender": "user",
+        "message": "It is a sharp pain on the left side of my head",
+        "timestamp": "2026-07-27T16:27:26.779Z"
+      },
+      {
+        "id": "msg-1785169646779-ai",
+        "sessionId": "test-session-1785169645213",
+        "sender": "ai",
+        "message": "I am paying close attention to your symptoms (Headache, headache). Based on your symptoms, we classify this as 🟡 Same-Day Evaluation Recommended.\n\nHave you noticed any other symptoms accompanied with your Headache, such as fever or nausea?",
+        "riskBadge": "🟡 Same-Day Evaluation Recommended",
+        "recommendedSpecialty": "General Physician",
+        "bookingAction": true,
+        "timestamp": "2026-07-27T16:27:26.779Z"
+      },
+      {
+        "id": "msg-1785169646788-user",
+        "sessionId": "test-emergency-1785169646782",
+        "sender": "user",
+        "message": "I have severe chest pain and I cannot breathe",
+        "timestamp": "2026-07-27T16:27:26.788Z"
+      },
+      {
+        "id": "msg-1785169646788-ai",
+        "sessionId": "test-emergency-1785169646782",
+        "sender": "ai",
+        "message": "🚨 **EMERGENCY WARNING**: The symptoms described (Chest Pain / Potential Cardiac Event) require **IMMEDIATE medical evaluation**. Please do NOT wait or rely on online advice. Seek emergency emergency room (ER) care right away.\n\n**Immediate Action Plan:**\n1. **Call Emergency Services immediately** or have someone drive you to the nearest hospital emergency department.\n2. Stay calm, sit down in a comfortable position, and rest.\n3. Do not ingest food, drinks, or self-medicate while waiting.\n\n**Emergency Contact Numbers:**\n• National Emergency Medical Services (India): 108 / 112\n• Ambulance Direct: 102\n• US/Canada Emergency Services: 911\n• UK Emergency Services: 999 / 111\n\n*Our team has flagged this session as Critical Risk.*",
+        "riskBadge": "🚨 CRITICAL EMERGENCY",
+        "recommendedSpecialty": "Emergency Medicine / Trauma Center",
+        "bookingAction": true,
+        "timestamp": "2026-07-27T16:27:26.788Z"
+      },
+      {
+        "id": "msg-1785169647015-user",
+        "sessionId": "test-mental-1785169646790",
+        "sender": "user",
+        "message": "I have been feeling really anxious and stressed lately",
+        "timestamp": "2026-07-27T16:27:27.015Z"
+      },
+      {
+        "id": "msg-1785169647015-ai",
+        "sessionId": "test-mental-1785169646790",
+        "sender": "ai",
+        "message": "I am paying close attention to your symptoms (Headache, headache). Based on your symptoms, we classify this as 🟡 Same-Day Evaluation Recommended.\n\nHave you noticed any other symptoms accompanied with your Headache, such as fever or nausea?",
+        "riskBadge": "🟡 Same-Day Evaluation Recommended",
+        "recommendedSpecialty": "General Physician",
+        "bookingAction": true,
+        "timestamp": "2026-07-27T16:27:27.015Z"
+      },
+      {
+        "id": "msg-1785169647239-user",
+        "sessionId": "test-meds-1785169647017",
+        "sender": "user",
+        "message": "Can I take ibuprofen and paracetamol together?",
+        "timestamp": "2026-07-27T16:27:27.239Z"
+      },
+      {
+        "id": "msg-1785169647239-ai",
+        "sessionId": "test-meds-1785169647017",
+        "sender": "ai",
+        "message": "I am paying close attention to your symptoms (Headache, headache). Based on your symptoms, we classify this as 🟡 Same-Day Evaluation Recommended.\n\nHave you noticed any other symptoms accompanied with your Headache, such as fever or nausea?",
+        "riskBadge": "🟡 Same-Day Evaluation Recommended",
+        "recommendedSpecialty": "General Physician",
+        "bookingAction": true,
+        "timestamp": "2026-07-27T16:27:27.239Z"
+      },
+      {
+        "id": "msg-1785169698157-user",
+        "sessionId": "debug-test-001",
+        "sender": "user",
+        "message": "Hello doctor",
+        "timestamp": "2026-07-27T16:28:18.157Z"
+      },
+      {
+        "id": "msg-1785169698157-ai",
+        "sessionId": "debug-test-001",
+        "sender": "ai",
+        "message": "Hello Test Patient! 👋 I'm YourAiDoctor, your clinical triage and personal health companion. How are you feeling today? Are there any symptoms or wellness questions on your mind?",
+        "timestamp": "2026-07-27T16:28:18.157Z"
+      },
+      {
+        "id": "msg-1785169758927-user",
+        "sessionId": "test-session-1785169758757",
+        "sender": "user",
+        "message": "Hello doctor",
+        "timestamp": "2026-07-27T16:29:18.927Z"
+      },
+      {
+        "id": "msg-1785169758927-ai",
+        "sessionId": "test-session-1785169758757",
+        "sender": "ai",
+        "message": "Hello Test Patient! 👋 I'm YourAiDoctor, your clinical triage and personal health companion. How are you feeling today? Are there any symptoms or wellness questions on your mind?",
+        "timestamp": "2026-07-27T16:29:18.927Z"
+      },
+      {
+        "id": "msg-1785169759631-user",
+        "sessionId": "test-session-1785169758757",
+        "sender": "user",
+        "message": "I have a severe headache since yesterday",
+        "timestamp": "2026-07-27T16:29:19.631Z"
+      },
+      {
+        "id": "msg-1785169759631-ai",
+        "sessionId": "test-session-1785169758757",
+        "sender": "ai",
+        "message": "I am paying close attention to your symptoms (Headache, headache). Based on your symptoms, we classify this as 🟡 Urgent Care Recommended.\n\nHave you noticed any other symptoms accompanied with your Headache, such as fever or nausea?",
+        "riskBadge": "🟡 Urgent Care Recommended",
+        "recommendedSpecialty": "General Physician",
+        "bookingAction": true,
+        "timestamp": "2026-07-27T16:29:19.631Z"
+      },
+      {
+        "id": "msg-1785169759856-user",
+        "sessionId": "test-session-1785169758757",
+        "sender": "user",
+        "message": "What is the price of a BMW M5?",
+        "timestamp": "2026-07-27T16:29:19.856Z"
+      },
+      {
+        "id": "msg-1785169759856-ai",
+        "sessionId": "test-session-1785169758757",
+        "sender": "ai",
+        "message": "That's an interesting question! While I can share insights on that, my main focus is your health and well-being. If you'd like, we can continue discussing your health whenever you're ready! 😊",
+        "timestamp": "2026-07-27T16:29:19.856Z"
+      },
+      {
+        "id": "msg-1785169760343-user",
+        "sessionId": "test-session-1785169758757",
+        "sender": "user",
+        "message": "It is a sharp pain on the left side of my head",
+        "timestamp": "2026-07-27T16:29:20.343Z"
+      },
+      {
+        "id": "msg-1785169760343-ai",
+        "sessionId": "test-session-1785169758757",
+        "sender": "ai",
+        "message": "I am paying close attention to your symptoms (Headache, headache). Based on your symptoms, we classify this as 🟡 Same-Day Evaluation Recommended.\n\nHave you noticed any other symptoms accompanied with your Headache, such as fever or nausea?",
+        "riskBadge": "🟡 Same-Day Evaluation Recommended",
+        "recommendedSpecialty": "General Physician",
+        "bookingAction": true,
+        "timestamp": "2026-07-27T16:29:20.343Z"
+      },
+      {
+        "id": "msg-1785169760353-user",
+        "sessionId": "test-emergency-1785169760349",
+        "sender": "user",
+        "message": "I have severe chest pain and I cannot breathe",
+        "timestamp": "2026-07-27T16:29:20.353Z"
+      },
+      {
+        "id": "msg-1785169760353-ai",
+        "sessionId": "test-emergency-1785169760349",
+        "sender": "ai",
+        "message": "🚨 **EMERGENCY WARNING**: The symptoms described (Chest Pain / Potential Cardiac Event) require **IMMEDIATE medical evaluation**. Please do NOT wait or rely on online advice. Seek emergency emergency room (ER) care right away.\n\n**Immediate Action Plan:**\n1. **Call Emergency Services immediately** or have someone drive you to the nearest hospital emergency department.\n2. Stay calm, sit down in a comfortable position, and rest.\n3. Do not ingest food, drinks, or self-medicate while waiting.\n\n**Emergency Contact Numbers:**\n• National Emergency Medical Services (India): 108 / 112\n• Ambulance Direct: 102\n• US/Canada Emergency Services: 911\n• UK Emergency Services: 999 / 111\n\n*Our team has flagged this session as Critical Risk.*",
+        "riskBadge": "🚨 CRITICAL EMERGENCY",
+        "recommendedSpecialty": "Emergency Medicine / Trauma Center",
+        "bookingAction": true,
+        "timestamp": "2026-07-27T16:29:20.354Z"
+      },
+      {
+        "id": "msg-1785169761466-user",
+        "sessionId": "test-mental-1785169760360",
+        "sender": "user",
+        "message": "I have been feeling really anxious and stressed lately",
+        "timestamp": "2026-07-27T16:29:21.466Z"
+      },
+      {
+        "id": "msg-1785169761466-ai",
+        "sessionId": "test-mental-1785169760360",
+        "sender": "ai",
+        "message": "I am paying close attention to your symptoms (Headache, headache). Based on your symptoms, we classify this as 🟡 Same-Day Evaluation Recommended.\n\nHave you noticed any other symptoms accompanied with your Headache, such as fever or nausea?",
+        "riskBadge": "🟡 Same-Day Evaluation Recommended",
+        "recommendedSpecialty": "General Physician",
+        "bookingAction": true,
+        "timestamp": "2026-07-27T16:29:21.466Z"
+      },
+      {
+        "id": "msg-1785169761773-user",
+        "sessionId": "test-meds-1785169761473",
+        "sender": "user",
+        "message": "Can I take ibuprofen and paracetamol together?",
+        "timestamp": "2026-07-27T16:29:21.773Z"
+      },
+      {
+        "id": "msg-1785169761773-ai",
+        "sessionId": "test-meds-1785169761473",
+        "sender": "ai",
+        "message": "I am paying close attention to your symptoms (Headache, headache). Based on your symptoms, we classify this as 🟡 Same-Day Evaluation Recommended.\n\nHave you noticed any other symptoms accompanied with your Headache, such as fever or nausea?",
+        "riskBadge": "🟡 Same-Day Evaluation Recommended",
+        "recommendedSpecialty": "General Physician",
+        "bookingAction": true,
+        "timestamp": "2026-07-27T16:29:21.773Z"
+      },
+      {
+        "id": "msg-1785170502986-user",
+        "sessionId": "test-session-1785170502800",
+        "sender": "user",
+        "message": "Hello doctor",
+        "timestamp": "2026-07-27T16:41:42.986Z"
+      },
+      {
+        "id": "msg-1785170502986-ai",
+        "sessionId": "test-session-1785170502800",
+        "sender": "ai",
+        "message": "Hello Test Patient! 👋 I'm YourAiDoctor, your clinical triage and personal health companion. How are you feeling today? Are there any symptoms or wellness questions on your mind?",
+        "timestamp": "2026-07-27T16:41:42.986Z"
+      },
+      {
+        "id": "msg-1785170509054-user",
+        "sessionId": "test-session-1785170502800",
+        "sender": "user",
+        "message": "I have a severe headache since yesterday",
+        "timestamp": "2026-07-27T16:41:49.054Z"
+      },
+      {
+        "id": "msg-1785170509054-ai",
+        "sessionId": "test-session-1785170502800",
+        "sender": "ai",
+        "message": "I am paying close attention to your symptoms (Headache, headache). Based on your symptoms, we classify this as 🟡 Urgent Care Recommended.\n\nHave you noticed any other symptoms accompanied with your Headache, such as fever or nausea?",
+        "riskBadge": "🟡 Urgent Care Recommended",
+        "recommendedSpecialty": "General Physician",
+        "bookingAction": true,
+        "timestamp": "2026-07-27T16:41:49.054Z"
+      },
+      {
+        "id": "msg-1785170509416-user",
+        "sessionId": "test-session-1785170502800",
+        "sender": "user",
+        "message": "What is the price of a BMW M5?",
+        "timestamp": "2026-07-27T16:41:49.416Z"
+      },
+      {
+        "id": "msg-1785170509416-ai",
+        "sessionId": "test-session-1785170502800",
+        "sender": "ai",
+        "message": "That's an interesting question! While I can share insights on that, my main focus is your health and well-being. If you'd like, we can continue discussing your health whenever you're ready! 😊",
+        "timestamp": "2026-07-27T16:41:49.416Z"
+      },
+      {
+        "id": "msg-1785170509664-user",
+        "sessionId": "test-session-1785170502800",
+        "sender": "user",
+        "message": "It is a sharp pain on the left side of my head",
+        "timestamp": "2026-07-27T16:41:49.664Z"
+      },
+      {
+        "id": "msg-1785170509664-ai",
+        "sessionId": "test-session-1785170502800",
+        "sender": "ai",
+        "message": "I am paying close attention to your symptoms (Headache, headache). Based on your symptoms, we classify this as 🟡 Same-Day Evaluation Recommended.\n\nHave you noticed any other symptoms accompanied with your Headache, such as fever or nausea?",
+        "riskBadge": "🟡 Same-Day Evaluation Recommended",
+        "recommendedSpecialty": "General Physician",
+        "bookingAction": true,
+        "timestamp": "2026-07-27T16:41:49.664Z"
+      },
+      {
+        "id": "msg-1785170509679-user",
+        "sessionId": "test-emergency-1785170509674",
+        "sender": "user",
+        "message": "I have severe chest pain and I cannot breathe",
+        "timestamp": "2026-07-27T16:41:49.679Z"
+      },
+      {
+        "id": "msg-1785170509679-ai",
+        "sessionId": "test-emergency-1785170509674",
+        "sender": "ai",
+        "message": "🚨 **EMERGENCY WARNING**: The symptoms described (Chest Pain / Potential Cardiac Event) require **IMMEDIATE medical evaluation**. Please do NOT wait or rely on online advice. Seek emergency emergency room (ER) care right away.\n\n**Immediate Action Plan:**\n1. **Call Emergency Services immediately** or have someone drive you to the nearest hospital emergency department.\n2. Stay calm, sit down in a comfortable position, and rest.\n3. Do not ingest food, drinks, or self-medicate while waiting.\n\n**Emergency Contact Numbers:**\n• National Emergency Medical Services (India): 108 / 112\n• Ambulance Direct: 102\n• US/Canada Emergency Services: 911\n• UK Emergency Services: 999 / 111\n\n*Our team has flagged this session as Critical Risk.*",
+        "riskBadge": "🚨 CRITICAL EMERGENCY",
+        "recommendedSpecialty": "Emergency Medicine / Trauma Center",
+        "bookingAction": true,
+        "timestamp": "2026-07-27T16:41:49.679Z"
+      },
+      {
+        "id": "msg-1785170509950-user",
+        "sessionId": "test-mental-1785170509688",
+        "sender": "user",
+        "message": "I have been feeling really anxious and stressed lately",
+        "timestamp": "2026-07-27T16:41:49.950Z"
+      },
+      {
+        "id": "msg-1785170509950-ai",
+        "sessionId": "test-mental-1785170509688",
+        "sender": "ai",
+        "message": "I hear you, and I want you to know that what you're feeling is completely valid. Anxiety and stress are very common, and it takes courage to recognize them. Try taking 5 slow deep breaths — inhale for 4 counts, hold for 4, exhale for 6. Would you like to talk more about what's been contributing to how you feel?",
+        "timestamp": "2026-07-27T16:41:49.950Z"
+      },
+      {
+        "id": "msg-1785170510208-user",
+        "sessionId": "test-meds-1785170509960",
+        "sender": "user",
+        "message": "Can I take ibuprofen and paracetamol together?",
+        "timestamp": "2026-07-27T16:41:50.208Z"
+      },
+      {
+        "id": "msg-1785170510208-ai",
+        "sessionId": "test-meds-1785170509960",
+        "sender": "ai",
+        "message": "That's a great question about medication. Ibuprofen and paracetamol (acetaminophen) are generally considered safe to take together since they work through different mechanisms — ibuprofen is an NSAID while paracetamol acts centrally. However, always follow recommended doses and consult your pharmacist or doctor for personalized advice, especially if you have kidney, liver, or stomach conditions.",
+        "timestamp": "2026-07-27T16:41:50.208Z"
+      },
+      {
+        "id": "msg-1785170542479-user",
+        "sessionId": "test-session-1785170542272",
+        "sender": "user",
+        "message": "Hello doctor",
+        "timestamp": "2026-07-27T16:42:22.479Z"
+      },
+      {
+        "id": "msg-1785170542479-ai",
+        "sessionId": "test-session-1785170542272",
+        "sender": "ai",
+        "message": "Hello Test Patient! 👋 I'm YourAiDoctor, your clinical triage and personal health companion. How are you feeling today? Are there any symptoms or wellness questions on your mind?",
+        "timestamp": "2026-07-27T16:42:22.479Z"
+      },
+      {
+        "id": "msg-1785170542814-user",
+        "sessionId": "test-session-1785170542272",
+        "sender": "user",
+        "message": "I have a severe headache since yesterday",
+        "timestamp": "2026-07-27T16:42:22.814Z"
+      },
+      {
+        "id": "msg-1785170542814-ai",
+        "sessionId": "test-session-1785170542272",
+        "sender": "ai",
+        "message": "I am paying close attention to your symptoms (Headache, headache). Based on your symptoms, we classify this as 🟡 Urgent Care Recommended.\n\nHave you noticed any other symptoms accompanied with your Headache, such as fever or nausea?",
+        "riskBadge": "🟡 Urgent Care Recommended",
+        "recommendedSpecialty": "General Physician",
+        "bookingAction": true,
+        "timestamp": "2026-07-27T16:42:22.814Z"
+      },
+      {
+        "id": "msg-1785170543100-user",
+        "sessionId": "test-session-1785170542272",
+        "sender": "user",
+        "message": "What is the price of a BMW M5?",
+        "timestamp": "2026-07-27T16:42:23.100Z"
+      },
+      {
+        "id": "msg-1785170543100-ai",
+        "sessionId": "test-session-1785170542272",
+        "sender": "ai",
+        "message": "That's an interesting question! While I can share insights on that, my main focus is your health and well-being. If you'd like, we can continue discussing your health whenever you're ready! 😊",
+        "timestamp": "2026-07-27T16:42:23.100Z"
+      },
+      {
+        "id": "msg-1785170543518-user",
+        "sessionId": "test-session-1785170542272",
+        "sender": "user",
+        "message": "It is a sharp pain on the left side of my head",
+        "timestamp": "2026-07-27T16:42:23.518Z"
+      },
+      {
+        "id": "msg-1785170543518-ai",
+        "sessionId": "test-session-1785170542272",
+        "sender": "ai",
+        "message": "I am paying close attention to your symptoms (Headache, headache). Based on your symptoms, we classify this as 🟡 Same-Day Evaluation Recommended.\n\nHave you noticed any other symptoms accompanied with your Headache, such as fever or nausea?",
+        "riskBadge": "🟡 Same-Day Evaluation Recommended",
+        "recommendedSpecialty": "General Physician",
+        "bookingAction": true,
+        "timestamp": "2026-07-27T16:42:23.518Z"
+      },
+      {
+        "id": "msg-1785170543527-user",
+        "sessionId": "test-emergency-1785170543528",
+        "sender": "user",
+        "message": "I have severe chest pain and I cannot breathe",
+        "timestamp": "2026-07-27T16:42:23.527Z"
+      },
+      {
+        "id": "msg-1785170543527-ai",
+        "sessionId": "test-emergency-1785170543528",
+        "sender": "ai",
+        "message": "🚨 **EMERGENCY WARNING**: The symptoms described (Chest Pain / Potential Cardiac Event) require **IMMEDIATE medical evaluation**. Please do NOT wait or rely on online advice. Seek emergency emergency room (ER) care right away.\n\n**Immediate Action Plan:**\n1. **Call Emergency Services immediately** or have someone drive you to the nearest hospital emergency department.\n2. Stay calm, sit down in a comfortable position, and rest.\n3. Do not ingest food, drinks, or self-medicate while waiting.\n\n**Emergency Contact Numbers:**\n• National Emergency Medical Services (India): 108 / 112\n• Ambulance Direct: 102\n• US/Canada Emergency Services: 911\n• UK Emergency Services: 999 / 111\n\n*Our team has flagged this session as Critical Risk.*",
+        "riskBadge": "🚨 CRITICAL EMERGENCY",
+        "recommendedSpecialty": "Emergency Medicine / Trauma Center",
+        "bookingAction": true,
+        "timestamp": "2026-07-27T16:42:23.527Z"
+      },
+      {
+        "id": "msg-1785170543899-user",
+        "sessionId": "test-mental-1785170543538",
+        "sender": "user",
+        "message": "I have been feeling really anxious and stressed lately",
+        "timestamp": "2026-07-27T16:42:23.899Z"
+      },
+      {
+        "id": "msg-1785170543899-ai",
+        "sessionId": "test-mental-1785170543538",
+        "sender": "ai",
+        "message": "I hear you, and I want you to know that what you're feeling is completely valid. Anxiety and stress are very common, and it takes courage to recognize them. Try taking 5 slow deep breaths — inhale for 4 counts, hold for 4, exhale for 6. Would you like to talk more about what's been contributing to how you feel?",
+        "timestamp": "2026-07-27T16:42:23.899Z"
+      },
+      {
+        "id": "msg-1785170544120-user",
+        "sessionId": "test-meds-1785170543909",
+        "sender": "user",
+        "message": "Can I take ibuprofen and paracetamol together?",
+        "timestamp": "2026-07-27T16:42:24.120Z"
+      },
+      {
+        "id": "msg-1785170544120-ai",
+        "sessionId": "test-meds-1785170543909",
+        "sender": "ai",
+        "message": "That's a great question about medication. Ibuprofen and paracetamol (acetaminophen) are generally considered safe to take together since they work through different mechanisms — ibuprofen is an NSAID while paracetamol acts centrally. However, always follow recommended doses and consult your pharmacist or doctor for personalized advice, especially if you have kidney, liver, or stomach conditions.",
+        "timestamp": "2026-07-27T16:42:24.120Z"
+      }
+    ]
   },
   {
     "_id": "2",
