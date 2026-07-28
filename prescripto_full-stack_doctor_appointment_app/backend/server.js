@@ -10,6 +10,7 @@ import aiRouter from "./routes/aiRoute.js"
 import familyRouter from "./routes/familyRoute.js"
 import reminderRouter from "./routes/reminderRoute.js"
 import subscriptionRouter from "./routes/subscriptionRoute.js"
+import mapRouter from "./routes/mapRoute.js"
 import v1Router from "./routes/v1Router.js"
 import { securityGuard } from "./middleware/securityMiddleware.js"
 
@@ -52,6 +53,7 @@ app.use(cors({
 
 // Versioned & Unversioned API endpoints (Full Backward Compatibility)
 app.use("/api/v1", v1Router)
+app.use("/api/map", mapRouter)
 app.use("/api/user", userRouter)
 app.use("/api/admin", adminRouter)
 app.use("/api/doctor", doctorRouter)

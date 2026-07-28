@@ -30,6 +30,7 @@ import { validateAIOutput } from './ValidationEngine.js';
 import { buildSystemPrompt } from './PromptBuilder.js';
 import { generateContent } from './GeminiService.js';
 import { loadUserSession, saveUserSession } from './SessionManager.js';
+import { mapIntelligenceEngine } from './MapIntelligenceEngine.js';
 import { logger } from './Logger.js';
 
 export async function processMessage({ userId, message, sessionId = 'session-default', language = 'English' }) {
@@ -67,6 +68,7 @@ export async function processMessage({ userId, message, sessionId = 'session-def
             riskBadge: '🚨 CRITICAL EMERGENCY',
             recommendedSpecialty: 'Emergency Medicine',
             bookingAction: true,
+            mapCommand: { action: 'SHOW_EMERGENCY' },
             timestamp: new Date().toISOString()
         });
 
@@ -76,7 +78,60 @@ export async function processMessage({ userId, message, sessionId = 'session-def
             intent: INTENTS.EMERGENCY,
             riskBadge: '🚨 CRITICAL EMERGENCY',
             recommendedSpecialty: 'Emergency Medicine',
-            bookingAction: true
+            bookingAction: true,
+            mapCommand: { action: 'SHOW_EMERGENCY' }
+        };
+    }
+
+    // 4b. AI Map Controller & Navigation Command Intercept
+    if (intentResult.intent === INTENTS.MAP_NAVIGATION || intentResult.intent === INTENTS.NEARBY_HOSPITAL) {
+        const category = intentResult.mapCategory || 'hospitals';
+        const specialty = intentResult.mapSpecialty || null;
+        const action = intentResult.mapAction || 'SEARCH_FACILITY';
+
+        const mapData = await mapIntelligenceEngine.searchNearbyFacilities({
+            lat: 19.0760,
+            lng: 72.8777,
+            category,
+            radiusKm: intentResult.maxRadiusKm || 5,
+            specialty
+        });
+
+        let reply = `🗺️ **Interactive Medical Map Activated**\n\nI have updated the map view to display nearby **${category.replace('_', ' ')}**${specialty ? ` specializing in **${specialty}**` : ''}.\n\nFound **${mapData.totalFound}** facilities near your current location.`;
+
+        if (action === 'START_NAVIGATION' && mapData.places.length > 0) {
+            const top = mapData.places[0];
+            reply = `🗺️ **Live Navigation Initialized**\n\nStarting in-app turn-by-turn guidance to **${top.name}** (${top.distanceKm} km away, ~${top.estimatedTimeMin} mins travel time).\n\nI am your active emergency companion and will stay with you until you safely arrive.`;
+        } else if (action === 'CANCEL_NAVIGATION') {
+            reply = `⏹️ **Navigation Cancelled**\n\nLive route navigation stopped. I'm right here if you need to find another medical facility or have health questions.`;
+        }
+
+        chatHistory.push({ id: 'msg-' + Date.now() + '-user', sessionId, sender: 'user', message, timestamp: new Date().toISOString() });
+        chatHistory.push({
+            id: 'msg-' + Date.now() + '-ai',
+            sessionId,
+            sender: 'ai',
+            message: reply,
+            mapCommand: {
+                action,
+                category,
+                specialty,
+                places: mapData.places
+            },
+            timestamp: new Date().toISOString()
+        });
+
+        await saveUserSession(userId, healthProfile, chatHistory);
+
+        return {
+            reply,
+            intent: intentResult.intent,
+            mapCommand: {
+                action,
+                category,
+                specialty,
+                places: mapData.places
+            }
         };
     }
 

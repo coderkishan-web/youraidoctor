@@ -9,16 +9,31 @@ import DoctorsEmbedded from '../components/DoctorsEmbedded';
 import EmergencyEmbedded from '../components/EmergencyEmbedded';
 import HealthMemoryEmbedded from '../components/HealthMemoryEmbedded';
 import SubscriptionEmbedded from '../components/SubscriptionEmbedded';
+import MedicalMapEngine from '../components/MedicalMapEngine';
+import DraggableBottomSheet from '../components/DraggableBottomSheet';
+import LiveNavigationOverlay from '../components/LiveNavigationOverlay';
+import EmergencyModePanel from '../components/EmergencyModePanel';
 
 const AiAssistant = () => {
     const { backendUrl, token, userData, setToken, setUserData } = useContext(AppContext);
     const navigate = useNavigate();
     const location = useLocation();
 
-    // Active Workspace Tab: 'chat' | 'doctors' | 'emergency' | 'memory' | 'plans' | 'scanner' | 'vitals' | 'who'
+    // Active Workspace Tab: 'chat' | 'doctors' | 'emergency' | 'map' | 'memory' | 'plans' | 'scanner' | 'vitals' | 'who'
     const [activeTab, setActiveTab] = useState('chat');
     const [selectedSpecialty, setSelectedSpecialty] = useState('All');
     const [selectedLanguage, setSelectedLanguage] = useState('English');
+
+    // ── Phase 5 Map & Navigation State ──────────────────────────────────
+    const [userLocation, setUserLocation] = useState({ lat: 19.0760, lng: 72.8777 });
+    const [mapPlaces, setMapPlaces] = useState([]);
+    const [selectedPlaceId, setSelectedPlaceId] = useState(null);
+    const [activeMapCategory, setActiveMapCategory] = useState('hospitals');
+    const [activeRoute, setActiveRoute] = useState(null);
+    const [navDestination, setNavDestination] = useState(null);
+    const [isNavigating, setIsNavigating] = useState(false);
+    const [emergencyMapActive, setEmergencyMapActive] = useState(false);
+    const [emergencyMapData, setEmergencyMapData] = useState(null);
     // Mobile: sidebar closed by default; Desktop: open by default
     const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 768 : false);
     const [sidebarOpen, setSidebarOpen] = useState(typeof window !== 'undefined' ? window.innerWidth >= 768 : true);
@@ -224,6 +239,56 @@ const AiAssistant = () => {
         }
     };
 
+    // ── Phase 5 Map Navigation Engine Handlers ────────────────────────────
+    const fetchNearbyMapPlaces = async (category = 'hospitals', loc = userLocation) => {
+        try {
+            const { data } = await axios.get(
+                `${backendUrl}/api/map/nearby?lat=${loc.lat}&lng=${loc.lng}&category=${category}`
+            );
+            if (data.success && data.places) {
+                setMapPlaces(data.places);
+            }
+        } catch (err) {
+            console.error("Failed to fetch nearby map places", err);
+        }
+    };
+
+    useEffect(() => {
+        if (typeof window !== 'undefined' && 'geolocation' in navigator) {
+            navigator.geolocation.getCurrentPosition(
+                (pos) => {
+                    const loc = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+                    setUserLocation(loc);
+                    fetchNearbyMapPlaces(activeMapCategory, loc);
+                },
+                (err) => {
+                    fetchNearbyMapPlaces(activeMapCategory, userLocation);
+                }
+            );
+        } else {
+            fetchNearbyMapPlaces(activeMapCategory, userLocation);
+        }
+    }, []);
+
+    const handleStartNavigation = async (place) => {
+        try {
+            const { data } = await axios.post(`${backendUrl}/api/map/route`, {
+                origin: userLocation,
+                destination: { lat: place.lat, lng: place.lng }
+            });
+            if (data.success && data.route) {
+                setActiveRoute(data.route);
+                setNavDestination(place);
+                setIsNavigating(true);
+                setSelectedPlaceId(place.id);
+                setActiveTab('map');
+                toast.success(`🚀 Live in-app navigation started for ${place.name}`);
+            }
+        } catch (err) {
+            toast.error("Could not compute route guidance");
+        }
+    };
+
     const handleFetchReport = async () => {
         try {
             const { data } = await axios.post(
@@ -311,8 +376,29 @@ const AiAssistant = () => {
                     text: aiResp.reply,
                     riskBadge: aiResp.riskBadge || null,
                     recommendedSpecialty: aiResp.recommendedSpecialty || null,
-                    bookingAction: Boolean(aiResp.bookingAction)
+                    bookingAction: Boolean(aiResp.bookingAction),
+                    mapCommand: aiResp.mapCommand || null
                 };
+
+                // ── AI Map Controller Command Handling ──
+                if (aiResp.mapCommand) {
+                    const cmd = aiResp.mapCommand;
+                    if (cmd.category) setActiveMapCategory(cmd.category);
+                    if (cmd.places && cmd.places.length > 0) {
+                        setMapPlaces(cmd.places);
+                        setSelectedPlaceId(cmd.places[0].id);
+                    }
+                    if (cmd.action === 'START_NAVIGATION' && cmd.places && cmd.places.length > 0) {
+                        handleStartNavigation(cmd.places[0]);
+                    } else if (cmd.action === 'SHOW_EMERGENCY') {
+                        setEmergencyMapActive(true);
+                        setActiveTab('map');
+                    } else if (cmd.action === 'CANCEL_NAVIGATION') {
+                        setIsNavigating(false);
+                        setActiveRoute(null);
+                        setNavDestination(null);
+                    }
+                }
 
                 setSessions(prev => prev.map(s => {
                     if (s.id === targetSessId) {
@@ -914,6 +1000,70 @@ const AiAssistant = () => {
                 {activeTab === 'emergency' && (
                     <div className="flex-1 flex flex-col p-4 min-h-0 overflow-hidden w-full">
                         <EmergencyEmbedded />
+                    </div>
+                )}
+
+                {/* STAGE 3b: PHASE 5 INTERACTIVE MEDICAL MAP & LIVE NAVIGATION */}
+                {activeTab === 'map' && (
+                    <div className="flex-1 flex flex-col relative h-full w-full bg-gray-50 dark:bg-gray-950 overflow-hidden">
+                        {/* Live Turn-by-Turn Navigation Overlay */}
+                        {isNavigating && activeRoute && (
+                            <LiveNavigationOverlay
+                                activeRoute={activeRoute}
+                                destinationPlace={navDestination}
+                                onCancelNavigation={() => {
+                                    setIsNavigating(false);
+                                    setActiveRoute(null);
+                                    setNavDestination(null);
+                                    toast.info("Live navigation stopped");
+                                }}
+                                onRecalculateRoute={(loc) => {
+                                    if (navDestination) handleStartNavigation(navDestination);
+                                }}
+                                onArrival={(place) => {
+                                    toast.success(`🎉 You arrived at ${place.name}!`);
+                                }}
+                            />
+                        )}
+
+                        {/* Emergency Mode Panel Overlay */}
+                        {emergencyMapActive && (
+                            <div className="p-4 z-[1600]">
+                                <EmergencyModePanel
+                                    emergencyData={emergencyMapData}
+                                    onStartNavigation={handleStartNavigation}
+                                    onDismiss={() => setEmergencyMapActive(false)}
+                                />
+                            </div>
+                        )}
+
+                        {/* Interactive Leaflet Map Engine */}
+                        <div className="flex-1 w-full relative">
+                            <MedicalMapEngine
+                                userLocation={userLocation}
+                                places={mapPlaces}
+                                selectedPlaceId={selectedPlaceId}
+                                onSelectPlace={(id) => setSelectedPlaceId(id)}
+                                onStartNavigation={handleStartNavigation}
+                                routePolyline={activeRoute?.polyline || []}
+                                activeCategory={activeMapCategory}
+                                height="100%"
+                            />
+                        </div>
+
+                        {/* Draggable Bottom Sheet */}
+                        <DraggableBottomSheet
+                            places={mapPlaces}
+                            selectedPlaceId={selectedPlaceId}
+                            onSelectPlace={(id) => setSelectedPlaceId(id)}
+                            onStartNavigation={handleStartNavigation}
+                            activeCategory={activeMapCategory}
+                            onChangeCategory={(cat) => {
+                                setActiveMapCategory(cat);
+                                fetchNearbyMapPlaces(cat);
+                            }}
+                            topRecommendation={mapPlaces[0] || null}
+                        />
                     </div>
                 )}
 

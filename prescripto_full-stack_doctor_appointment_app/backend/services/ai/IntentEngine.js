@@ -13,6 +13,7 @@ export const INTENTS = {
     LIFESTYLE: 'Lifestyle',
     APPOINTMENT_BOOKING: 'Appointment Booking',
     NEARBY_HOSPITAL: 'Nearby Hospital',
+    MAP_NAVIGATION: 'Map Navigation',
     EMERGENCY: 'Emergency',
     GENERAL_CONVERSATION: 'General Conversation',
     GENERAL_KNOWLEDGE: 'General Knowledge',
@@ -95,7 +96,50 @@ export function detectIntent(message = '', context = {}) {
         };
     }
 
-    // 5. Nearby Hospital
+    // 5. AI Map Controller & Navigation Commands
+    const mapNavRegex = /\b(take me to|navigate|navigation|find|find a|show|show me|search|search for|blood bank|pharmacy|chemist|ambulance|clinic|diagnostic|police|fire station|pediatric|orthopedic|cardiac|maternity|within \d+|cancel navigation|stop navigation|call hospital)\b/i;
+    if (mapNavRegex.test(text) && /\b(hospitals?|pharmac(y|ies)|blood banks?|ambulances?|clinics?|diagnostics?|navigate|navigation|er|trauma|police|fire)\b/i.test(text)) {
+        let mapAction = 'SEARCH_FACILITY';
+        let mapCategory = 'hospitals';
+        let mapSpecialty = null;
+        let maxRadiusKm = null;
+
+        if (/\b(take me to|navigate to|start navigation|navigate there)\b/i.test(text)) mapAction = 'START_NAVIGATION';
+        if (/\b(cancel navigation|stop navigation|exit navigation)\b/i.test(text)) mapAction = 'CANCEL_NAVIGATION';
+        if (/\b(call|phone|contact)\b/i.test(text)) mapAction = 'CALL_FACILITY';
+        if (/\b(another|next hospital|different hospital)\b/i.test(text)) mapAction = 'SHOW_ANOTHER';
+
+        if (/\b(pharmacy|chemist|medical shop|medicine)\b/i.test(text)) mapCategory = 'pharmacies';
+        else if (/\b(blood bank|blood)\b/i.test(text)) mapCategory = 'blood_banks';
+        else if (/\b(ambulance)\b/i.test(text)) mapCategory = 'ambulances';
+        else if (/\b(clinic)\b/i.test(text)) mapCategory = 'clinics';
+        else if (/\b(diagnostic|lab|mri|ct scan|scan)\b/i.test(text)) mapCategory = 'diagnostics';
+        else if (/\b(police)\b/i.test(text)) mapCategory = 'police';
+        else if (/\b(fire station|fire)\b/i.test(text)) mapCategory = 'fire_stations';
+
+        if (/\b(pediatric|children|kids)\b/i.test(text)) mapSpecialty = 'Pediatrics';
+        if (/\b(orthopedic|ortho|bone|fracture)\b/i.test(text)) mapSpecialty = 'Orthopedics';
+        if (/\b(cardiac|heart|chest)\b/i.test(text)) mapSpecialty = 'Cardiology';
+        if (/\b(maternity|pregnancy|gynec)\b/i.test(text)) mapSpecialty = 'Maternity';
+
+        const radiusMatch = text.match(/within (\d+)\s*km/i);
+        if (radiusMatch) maxRadiusKm = parseInt(radiusMatch[1]);
+
+        return {
+            intent: INTENTS.MAP_NAVIGATION,
+            confidence: 0.95,
+            medicalConfidence: 0.80,
+            reason: 'User requesting interactive map action or navigation',
+            isMedical: true,
+            intentCategory: 'MAP_NAVIGATION',
+            mapAction,
+            mapCategory,
+            mapSpecialty,
+            maxRadiusKm
+        };
+    }
+
+    // 5b. Nearby Hospital (Legacy Fallback)
     const hospitalRegex = /\b(hospital|clinic|emergency room|er near me|nearby hospital|trauma center|ambulance|pharmacy near me)\b/i;
     if (hospitalRegex.test(text)) {
         return {
@@ -104,7 +148,9 @@ export function detectIntent(message = '', context = {}) {
             medicalConfidence: 0.70,
             reason: 'User searching for hospital or emergency facility',
             isMedical: true,
-            intentCategory: 'OPERATIONAL'
+            intentCategory: 'OPERATIONAL',
+            mapAction: 'SEARCH_FACILITY',
+            mapCategory: 'hospitals'
         };
     }
 

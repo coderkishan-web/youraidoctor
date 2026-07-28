@@ -7,9 +7,12 @@ import express from 'express';
 import { handleChat, handleOnboard, getChatHistory, handleGenerateReport } from '../controllers/aiController.js';
 import { recordFeedback, getFeedbackSummary } from '../services/ai/FeedbackEngine.js';
 import { observability } from '../services/ai/Observability.js';
+import mapRouter from './mapRoute.js';
 import authUser from '../middleware/authUser.js';
 
 const v1Router = express.Router();
+
+v1Router.use('/map', mapRouter);
 
 // 1. Health Status Endpoint
 v1Router.get('/health', (req, res) => {
