@@ -170,14 +170,18 @@ async function fetchHospitalsFromOverpass(lat, lng) {
         out center 10;
     `;
 
-    // Race against an 8-second timeout
+    // Race against a 15-second timeout
     const timeoutPromise = new Promise((_, reject) =>
-        setTimeout(() => reject(new Error('Overpass timeout')), 8000)
+        setTimeout(() => reject(new Error('Overpass timeout')), 15000)
     );
 
     const fetchPromise = fetch('https://overpass-api.de/api/interpreter', {
         method: 'POST',
-        body: query,
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Accept': 'application/json'
+        },
+        body: 'data=' + encodeURIComponent(query),
     }).then(r => r.json());
 
     const json = await Promise.race([fetchPromise, timeoutPromise]);

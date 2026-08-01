@@ -8,9 +8,6 @@ import fetch from 'node-fetch';
 export async function generateContent(systemPrompt = '', userMessage = '') {
     const apiKey = process.env.GEMINI_API_KEY;
 
-    if (!apiKey) {
-        return null;
-    }
 
     // Try Gemini API first
     try {

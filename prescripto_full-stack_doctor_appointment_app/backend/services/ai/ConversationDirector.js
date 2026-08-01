@@ -29,6 +29,36 @@ import { planNextQuestion } from './QuestionPlanner.js';
 import { validateAIOutput } from './ValidationEngine.js';
 import { buildSystemPrompt } from './PromptBuilder.js';
 import { generateContent } from './GeminiService.js';
+// Sanitizer defined inline to avoid import issues
+function sanitizeReply(reply) {
+  if (!reply) return reply;
+  const boilerplate = [
+    "I am paying close attention to your symptoms",
+    "Based on what you've described",
+    "I think",
+    "I see",
+    "I understand",
+    "Based on the information you provided",
+    "I am here to help",
+    "Feel free to ask",
+    "Let me know if you need anything else",
+    "If you'd like, we can continue discussing your health whenever you're ready",
+    "If you have any other questions"
+  ];
+  let cleaned = reply;
+  boilerplate.forEach(p => {
+    const regex = new RegExp(p, 'gi');
+    cleaned = cleaned.replace(regex, '').replace(/\s{2,}/g, ' ');
+  });
+  const sentences = cleaned.split(/(?<=[.!?])\s+/).map(s=>s.trim()).filter(s=>s.length>0);
+  const seen = new Set();
+  const unique = [];
+  sentences.forEach(s => {
+    const key = s.toLowerCase();
+    if (!seen.has(key)) { seen.add(key); unique.push(s); }
+  });
+  return unique.join(' ');
+}
 import { loadUserSession, saveUserSession } from './SessionManager.js';
 import { mapIntelligenceEngine } from './MapIntelligenceEngine.js';
 import { logger } from './Logger.js';
@@ -185,6 +215,8 @@ ${hasPendingAssessment ? 'End your answer with: "If you\'d like, we can continue
         if (!reply) {
             reply = `${responsePlan.opening} That's a great question! While I can share insights on that topic, I want to make sure you get the best information. ${hasPendingAssessment ? "If you'd like, we can continue discussing your health whenever you're ready! 😊" : ''}`;
         }
+        // Sanitize off‑topic reply to avoid AI‑like phrasing and duplicate sentences
+        reply = sanitizeReply(reply);
 
         chatHistory.push({ id: 'msg-' + Date.now() + '-user', sessionId, sender: 'user', message, timestamp: new Date().toISOString() });
         chatHistory.push({ id: 'msg-' + Date.now() + '-ai', sessionId, sender: 'ai', message: reply, timestamp: new Date().toISOString() });
@@ -326,8 +358,10 @@ Provide evidence-based, warm, and actionable advice in 3-4 sentences. Be support
 
     let rawReply = await generateContent(systemPrompt, message);
     if (!rawReply) {
-        rawReply = `${responsePlan.opening} I am paying close attention to your symptoms (${memory.currentSymptoms.join(', ') || 'health inquiry'}). Based on what you've described, we classify this as **${urgencyAssessment.badge}**.\n\n${plannedQuestion}`;
+        rawReply = `${responsePlan.opening} I see you're experiencing ${memory.currentSymptoms.join(', ') || 'some health concerns'}. Based on what you've described, we classify this as **${urgencyAssessment.badge}**.\n\n${plannedQuestion}`;
     }
+    // Sanitize clinical reply for repeated sentences and AI‑sounding phrasing
+    rawReply = sanitizeReply(rawReply);
 
     if (medAnalysis.warnings.length > 0) {
         rawReply = `${medAnalysis.warnings.join('\n')}\n\n${rawReply}`;

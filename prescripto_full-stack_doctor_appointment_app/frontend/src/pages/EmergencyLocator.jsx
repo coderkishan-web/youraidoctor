@@ -63,23 +63,55 @@ const EmergencyLocator = () => {
                     const lat = position.coords.latitude;
                     const lng = position.coords.longitude;
                     setUserCoords({ lat, lng });
-                    generateNearbyHospitals(lat, lng);
+                    fetchNearbyHospitals(lat, lng);
                     setLoadingLoc(false);
                 },
                 (err) => {
                     console.log("Geolocation error, using fallback city", err);
-                    generateNearbyHospitals(19.076, 72.8777); // Mumbai fallback
+                    // Use fallback coordinates and still attempt fetch (which will fallback internally)
+                    fetchNearbyHospitals(19.076, 72.8777);
                     setLoadingLoc(false);
                 }
             );
         } else {
-            generateNearbyHospitals(19.076, 72.8777);
+            // No geolocation support, use fallback coordinates
+            fetchNearbyHospitals(19.076, 72.8777);
             setLoadingLoc(false);
         }
     };
 
-    const generateNearbyHospitals = (lat, lng) => {
-        // Generate realistic nearby emergency hospital nodes
+    // Async fetch from backend; fallback to sample data on error
+    const fetchNearbyHospitals = async (lat, lng) => {
+        try {
+            const query = `lat=${encodeURIComponent(lat)}&lng=${encodeURIComponent(lng)}`;
+            const res = await fetch(`/api/map/nearby?${query}`);
+            if (!res.ok) throw new Error('Backend response not ok');
+            const data = await res.json();
+            if (data.success && data.places && data.places.length > 0) {
+                const mapped = data.places.map(p => ({
+                    name: p.name || 'Unnamed Hospital',
+                    distance: p.distanceKm ? `${p.distanceKm.toFixed(1)} km` : 'N/A',
+                    eta: p.estimatedTimeMin ? `${p.estimatedTimeMin} mins` : 'N/A',
+                    phone: p.phone || '',
+                    address: p.address || '',
+                    lat: p.lat,
+                    lng: p.lng,
+                    open24x7: p.isOpen24x7 || false
+                }));
+                setHospitals(mapped);
+            } else {
+                // No results, fallback to static sample
+                generateFallbackHospitals(lat, lng);
+            }
+        } catch (e) {
+            console.error('Fetch nearby hospitals error:', e);
+            // Fallback to static sample hospitals
+            generateFallbackHospitals(lat, lng);
+        }
+    };
+
+    // Helper fallback generator (previous static data)
+    const generateFallbackHospitals = (lat, lng) => {
         const sampleHospitals = [
             {
                 name: "City Care Super Speciality & Emergency Hospital",
